@@ -7,7 +7,7 @@ A static blog template built with [Astro](https://astro.build), forked/inspired 
 
 [**🖥️ Live Demo**](https://kukuru.netlify.app)
 
-![Preview Image](https://raw.githubusercontent.com/saicaca/resource/main/fuwari/home.png)
+![Preview Image](https://raw.githubusercontent.com/iyanarmanda/resource/main/kukuru/home.png)
 
 ## ✨ Features
 
@@ -17,21 +17,21 @@ A static blog template built with [Astro](https://astro.build), forked/inspired 
 - [x] Customizable theme colors & banner
 - [x] Responsive design
 - [x] Search functionality with [Pagefind](https://pagefind.app/)
-- [x] [Markdown extended features](https://github.com/saicaca/fuwari?tab=readme-ov-file#-markdown-extended-syntax)
+- [x] [Markdown extended features](https://github.com/iyanarmanda/kukuru?tab=readme-ov-file#-markdown-extended-syntax)
 - [x] Table of contents
 - [x] RSS feed
 
 ## 🚀 Getting Started
 
 1. Create your blog repository:
-    - [Generate a new repository](https://github.com/saicaca/fuwari/generate) from this template or fork this repository.
-    - Or run one of the following commands:
+    - [Generate a new repository](https://github.com/iyanarmanda/kukuru/generate) from this template or fork this repository.
+    - Or run one of the following commands (*soon*):
        ```sh
-       npm create fuwari@latest
-       yarn create fuwari
-       pnpm create fuwari@latest
-       bun create fuwari@latest
-       deno run -A npm:create-fuwari@latest
+       npm create kukuru@latest
+       yarn create kukuru
+       pnpm create kukuru@latest
+       bun create kukuru@latest
+       deno run -A npm:create-kukuru@latest
        ```
 2. To edit your blog locally, clone your repository, run `pnpm install` to install dependencies.
     - Install [pnpm](https://pnpm.io) `npm install -g pnpm` if you haven't.
@@ -58,9 +58,9 @@ lang: jp      # Set only if the post's language differs from the site's language
 
 In addition to Astro's default support for [GitHub Flavored Markdown](https://github.github.com/gfm/), several extra Markdown features are included:
 
-- Admonitions ([Preview and Usage](https://fuwari.vercel.app/posts/markdown-extended/#admonitions))
-- GitHub repository cards ([Preview and Usage](https://fuwari.vercel.app/posts/markdown-extended/#github-repository-cards))
-- Enhanced code blocks with Expressive Code ([Preview](https://fuwari.vercel.app/posts/expressive-code/) / [Docs](https://expressive-code.com/))
+- Admonitions ([Preview and Usage](https://iyanarmanda.github.io/kukuru/posts/markdown-extended/#admonitions))
+- GitHub repository cards ([Preview and Usage](https://iyanarmanda.github.io/kukuru/posts/markdown-extended/#github-repository-cards))
+- Enhanced code blocks with Expressive Code ([Preview](https://iyanarmanda.github.io/kukuru/posts/expressive-code/) / [Docs](https://expressive-code.com/))
 
 ## ⚡ Commands
 
