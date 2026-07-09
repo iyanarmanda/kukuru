@@ -84,14 +84,14 @@ All commands are run from the root of the project, from a terminal:
 - [ ] Performance, Dependency & Architecture Optimization
     - [ ] Optimization of style dependencies
         - [x] Rewrite **Stylus** to **SASS/SCSS**
-        - [ ] Migration from Tailwind v3 to **Tailwind v4**.
-        - [ ] Reduce heavy reliance on **PostCSS** plugins.
+        - [x] Migration from Tailwind v3 to **Tailwind v4**.
+        - [x] Remove **PostCSS** plugins.
         - [ ] CSS performance and compatibility
     - [ ] Reconfiguring **TypeScript** config
     - [ ] Optimazation of JS and **Svelte** islands.
     - [ ] Migration from Astro v5 toward Astro **v6** or **v7**.
 - [ ] Feature Adjustments
-    - [ ] Remove dynamic theme color.
+    - [ ] Adjust dynamic theme color.
     - [ ] Add **Giscus** or **Discus**.
     - [ ] Add 404 (*Not Found*) page.
     - [ ] Add **md-svelte** support.
