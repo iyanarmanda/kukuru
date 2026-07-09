@@ -22,11 +22,11 @@ export async function getSortedPosts(): Promise<GetSortedPosts[]> {
 	const sorted = await getRawSortedPosts();
 
 	for (let i = 1; i < sorted.length; i++) {
-		sorted[i].data.nextSlug = sorted[i - 1].slug;
+		sorted[i].data.nextSlug = sorted[i - 1].id;
 		sorted[i].data.nextTitle = sorted[i - 1].data.title;
 	}
 	for (let i = 0; i < sorted.length - 1; i++) {
-		sorted[i].data.prevSlug = sorted[i + 1].slug;
+		sorted[i].data.prevSlug = sorted[i + 1].id;
 		sorted[i].data.prevTitle = sorted[i + 1].data.title;
 	}
 
@@ -46,7 +46,7 @@ export async function getSortedPostsList(): Promise<PostForList[]> {
 		const { category, ...restData } = post.data;
 
 		return {
-			slug: post.slug,
+			slug: post.id,
 			data: {
 				...restData,
 				category: category ?? undefined,
