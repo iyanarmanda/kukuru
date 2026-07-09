@@ -20,10 +20,6 @@
   @apply rounded-(--radius-large) overflow-hidden bg-(--card-bg) transition;
 }
 
-@utility card-shadow {
-  @apply drop-shadow-[0_2px_4px_rgba(0,0,0,0.005)];
-}
-
 @utility expand-animation {
   @apply relative before:ease-out before:transition active:bg-none hover:before:bg-(--btn-plain-bg-hover) active:before:bg-(--btn-plain-bg-active) z-0
         before:absolute before:rounded-[inherit] before:inset-0 before:scale-[0.85] hover:before:scale-100 before:-z-10;
@@ -86,7 +82,7 @@
 
 @utility link-underline {
   @apply transition underline decoration-2 decoration-dashed decoration-(--link-underline)
-        hover:decoration-(--link-hover) active:decoration-(--link-active) underline-offset-[0.25rem];
+        hover:decoration-(--link-hover) active:decoration-(--link-active) underline-offset-4;
 }
 
 @utility toc-hide {
