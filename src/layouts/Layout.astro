@@ -73,7 +73,7 @@ const bannerOffset =
 ---
 
 <!DOCTYPE html>
-<html lang={siteLang} class="bg-[var(--page-bg)] transition text-[14px] md:text-[16px]"
+<html lang={siteLang} class="bg-(--page-bg) transition text-[14px] md:text-[16px]"
 	  data-overlayscrollbars-initialize
 >
 	<head>
@@ -167,13 +167,13 @@ const bannerOffset =
 @reference "../styles/main.css";
 @layer components {
 	.enable-banner #banner-wrapper {
-		@apply h-[var(--banner-height-home)];
+		@apply h-(--banner-height-home);
 	}
 	.enable-banner #banner {
-		@apply h-[var(--banner-height-home)] translate-y-[var(--bannerOffset)];
+		@apply h-(--banner-height-home) translate-y-(--bannerOffset);
 	}
 	.enable-banner #top-row {
-		@apply h-[calc(var(--banner-height-home)_-_4.5rem)] transition-all duration-300;
+		@apply h-[calc(var(--banner-height-home)-4.5rem)] transition-all duration-300;
 	}
 	.navbar-hidden {
 		@apply opacity-0 -translate-y-16;
@@ -181,13 +181,13 @@ const bannerOffset =
 
 	@variant lg {
 		.enable-banner.is-home #banner-wrapper {
-			@apply h-[var(--banner-height-home)] translate-y-[var(--banner-height-extend)];
+			@apply h-(--banner-height-home) translate-y-(--banner-height-extend);
 		}
 		.enable-banner.is-home #banner {
-			@apply h-[var(--banner-height-home)] translate-y-0;
+			@apply h-(--banner-height-home) translate-y-0;
 		}
 		.enable-banner.is-home #main-grid {
-			@apply translate-y-[var(--banner-height-extend)];
+			@apply translate-y-(--banner-height-extend);
 		}
 		.enable-banner.is-home #sidebar-sticky {
 			@apply top-[calc(1rem-var(--banner-height-extend))]!;
