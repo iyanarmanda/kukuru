@@ -4,12 +4,12 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "astro dev",
-		"start": "astro dev",
-		"check": "astro check",
 		"build": "astro build && pagefind --site dist",
 		"preview": "astro preview",
 		"astro": "astro",
+		"astro-check": "astro check",
 		"type-check": "tsc --noEmit",
+		"svelte-check": "svelte-check --tsconfig tsconfig.json",
 		"new-post": "node scripts/new-post.js",
 		"format": "biome format --write ./src",
 		"lint": "biome check --write ./src",
@@ -72,6 +72,7 @@
 		"@types/sanitize-html": "^2.16.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^17.0.8",
+		"svelte-check": "^4.7.2",
 		"typescript": "^5.9.3"
 	},
 	"packageManager": "pnpm@9.14.4"
