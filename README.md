@@ -82,19 +82,19 @@ All commands are run from the root of the project, from a terminal:
 ## 🗺️ Roadmap
 
 - [ ] Performance, Dependency & Architecture Optimization
-    - [ ] Optimization of style dependencies
+    - [x] Optimization of style dependencies
         - [x] Rewrite **Stylus** to **SASS/SCSS**
         - [x] Migration from Tailwind v3 to **Tailwind v4**.
         - [x] Remove **PostCSS** plugins.
-        - [ ] CSS performance and compatibility
+    - [ ] CSS Optimization
     - [ ] Reconfiguring **TypeScript** config
     - [ ] Optimazation of JS and **Svelte** islands.
-    - [ ] Migration from Astro v5 toward Astro **v6** or **v7**.
+    - [x] Migration from Astro v5 toward Astro **v6** or **v7**.
 - [ ] Feature Adjustments
     - [ ] Adjust dynamic theme color.
     - [ ] Add **Giscus** or **Discus**.
     - [ ] Add 404 (*Not Found*) page.
-    - [ ] Add **md-svelte** support.
+    - [ ] Add **md svelte** and **mdx** support.
 
 ## 📄 License
 
