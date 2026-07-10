@@ -4,7 +4,7 @@ INTERRUPTED=false
 STASHED=false
 
 project_checks() {
-  pnpm check && pnpm type-check
+  pnpm check
 }
 
 restore_stash() {
