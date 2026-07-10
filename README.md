@@ -90,7 +90,7 @@ All commands are run from the root of the project, from a terminal:
     - [ ] Reconfiguring DevDependencies.
         - [x] Reconfiguring **TypeScript** config.
         - [ ] Reconfiguring **Biome** rules.
-        - [ ] Add **Svelte** check.
+        - [x] Add **Svelte** check.
     - [ ] Optimazation of JS and **Svelte** islands.
     - [x] Migration from Astro v5 toward Astro **v6** or **v7**.
 - [ ] Feature Adjustments.
