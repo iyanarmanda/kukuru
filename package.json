@@ -7,6 +7,7 @@
 		"build": "astro build && pagefind --site dist",
 		"preview": "astro preview",
 		"astro": "astro",
+		"check": "pnpm run astro-check && pnpm run type-check && pnpm run svelte-check",
 		"astro-check": "astro check",
 		"type-check": "tsc --noEmit",
 		"svelte-check": "svelte-check --tsconfig tsconfig.json",
@@ -64,7 +65,7 @@
 	"devDependencies": {
 		"@astrojs/check": "^0.9.9",
 		"@astrojs/ts-plugin": "^1.10.10",
-		"@biomejs/biome": "2.2.5",
+		"@biomejs/biome": "2.5.3",
 		"@rollup/plugin-yaml": "^4.1.2",
 		"@types/hast": "^3.0.4",
 		"@types/markdown-it": "^14.1.2",

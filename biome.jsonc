@@ -1,5 +1,6 @@
+// See https://biomejs.dev/guides/configure-biome/ for more information about Biome configuration.
 {
-	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.4.13/schema.json",
 	"vcs": {
 		"enabled": false,
 		"clientKind": "git",
@@ -9,10 +10,12 @@
 		"ignoreUnknown": false,
 		"includes": [
 			"**",
-			"!**/src/**/*.css",
-			"!**/src/public/**/*",
-			"!**/dist/**/*",
-			"!**/node_modules/**/*"
+			"!**/src/**/*.css", // Disable biome for CSS files, Biome can't read TailwindCSS v4 for formatting and linting.
+			"!!**/src/public",
+			"!!**/dist",
+			"!!**/node_modules",
+			"!!**/.husky",
+			"!!**/.astro"
 		]
 	},
 	"formatter": {
@@ -43,9 +46,14 @@
 			"quoteStyle": "double"
 		}
 	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
 	"overrides": [
 		{
-			"includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
+			"includes": ["**/*.svelte", "**/*.astro"],
 			"linter": {
 				"rules": {
 					"style": {

@@ -1,5 +1,5 @@
 {
-	"*.{js,mjs,ts,astro,svelte}": [
-		"biome format --write --no-errors-on-unmatched"
+	"*": [
+		"biome check --write --no-errors-on-unmatched --files-ignore-unknown=true"
 	]
 }
