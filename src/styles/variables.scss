@@ -13,8 +13,13 @@ $rainbow-light: linear-gradient(to right, oklch(0.80 0.10 0), oklch(0.80 0.10 30
 $rainbow-dark: linear-gradient(to right, oklch(0.70 0.10 0), oklch(0.70 0.10 30), oklch(0.70 0.10 60), oklch(0.70 0.10 90), oklch(0.70 0.10 120), oklch(0.70 0.10 150), oklch(0.70 0.10 180), oklch(0.70 0.10 210), oklch(0.70 0.10 240), oklch(0.70 0.10 270), oklch(0.70 0.10 300), oklch(0.70 0.10 330), oklch(0.70 0.10 360));
 
 :root {
+  color-scheme: light;
   --radius-large: 1rem;
   --content-delay: 150ms;
+}
+
+:root.dark {
+  color-scheme: dark;
 }
 
 /* An util to define variables that vary with light and dark mode */
