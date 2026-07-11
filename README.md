@@ -81,27 +81,37 @@ All commands are run from the root of the project, from a terminal:
 
 ## 🗺️ Roadmap
 
-- [ ] Performance, Dependency & Architecture Optimization.
-    - [x] Optimization of style dependencies.
-        - [x] Rewrite **Stylus** to **SASS/SCSS**.
-        - [x] Migration from Tailwind v3 to **Tailwind v4**.
-        - [x] Remove **PostCSS** plugins.
-    - [ ] CSS Optimization.
-    - [ ] Reconfiguring DevDependencies.
-        - [x] Reconfiguring **TypeScript** config.
-        - [ ] Reconfiguring **Biome** rules.
-        - [x] Add **Svelte** check.
-    - [ ] Optimazation of JS and **Svelte** islands.
-    - [x] Migration from Astro v5 toward Astro **v6** or **v7**.
-- [ ] Feature Adjustments.
-    - [ ] Adjust dynamic theme color.
-    - [ ] Adapters support.
-        - [ ] **Netlify**.
-        - [ ] **Cloudflare**.
-    - [ ] Expand **Husky** utilities.
-    - [ ] Add **Giscus** or **Discus**.
-    - [ ] Add 404 (*Not Found*) page.
-    - [ ] Add **mdoc** or **mdx** support.
+- [ ] Performance, Dependency & Architecture Optimization
+    - [x] Optimization of style dependencies
+        - [x] Rewrite **Stylus** to **SASS/SCSS**
+        - [x] Migration from Tailwind v3 to **Tailwind v4**
+        - [x] Remove **PostCSS** plugins
+    - [ ] CSS Optimization
+    - [ ] Reconfiguring DevDependencies
+        - [x] Reconfiguring **TypeScript** config
+        - [ ] Reconfiguring **Biome** rules
+        - [x] Add **Svelte** check
+    - [ ] Optimazation of JS and **Svelte** islands
+    - [x] Migration from Astro v5 toward Astro **v6** or **v7**
+    - [x] Dependencies update (*Major Bump*)
+        - [x] `@iconify/svelte@5.2.2`
+        - [x] `remark-directive@4.0.0`
+        - [x] `remark-github-admonitions-to-directives@2.1.0`
+        - [x] `remark-directive-rehype@1.0.0`
+        - [x] `@expressive-code 0.44.0`
+        - [x] `astro-expressive-code@0.44.0`
+        - [x] `@tailwindcss/typography@0.5.20`
+        - [x] `katex@0.17.0`
+        - [x] `sharp@0.35.3`
+- [ ] Feature Adjustments
+    - [ ] Adjust dynamic theme color
+    - [ ] Adapters support
+        - [ ] **Netlify**
+        - [ ] **Cloudflare**
+    - [ ] Expand **Husky** utilities
+    - [ ] Add **Giscus** or **Discus**
+    - [ ] Add 404 (*Not Found*) page
+    - [ ] Add **mdoc** or **mdx** support
 
 ## 📄 License
 
