@@ -110,7 +110,7 @@ All commands are run from the root of the project, from a terminal:
         - [ ] **Cloudflare**
     - [ ] Expand **Husky** utilities
     - [ ] Add **Giscus** or **Discus**
-    - [ ] Add 404 (*Not Found*) page
+    - [x] Add 404 (*Not Found*) page
     - [ ] Add **mdoc** or **mdx** support
 
 ## 📄 License
