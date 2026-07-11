@@ -29,7 +29,6 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 export default defineConfig({
 	site: "https://iyanarmanda.github.io/",
 	base: "/kukuru",
-	trailingSlash: "always",
 	integrations: [
 		swup({
 			theme: false,
