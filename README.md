@@ -93,13 +93,13 @@ All commands are run from the root of the project, from a terminal:
         - [x] Add **Svelte** check
     - [ ] Optimazation of JS and **Svelte** islands
     - [x] Migration from Astro v5 toward Astro **v6** or **v7**
-    - [ ] Dependencies update (*Major Bump*)
+    - [x] Dependencies update (*Major Bump*)
         - [x] `@iconify/svelte@5.2.2`
-        - [ ] `remark-directive@4.0.0`
-        - [ ] `remark-github-admonitions-to-directives@2.1.0`
-        - [ ] `remark-directive-rehype@1.0.0`
-        - [ ] `@expressive-code 0.44.0`
-        - [ ] `astro-expressive-code@0.44.0`
+        - [x] `remark-directive@4.0.0`
+        - [x] `remark-github-admonitions-to-directives@2.1.0`
+        - [x] `remark-directive-rehype@1.0.0`
+        - [x] `@expressive-code 0.44.0`
+        - [x] `astro-expressive-code@0.44.0`
         - [x] `@tailwindcss/typography@0.5.20`
         - [x] `katex@0.17.0`
         - [x] `sharp@0.35.3`
