@@ -81,6 +81,8 @@ All commands are run from the root of the project, from a terminal:
 
 ## 🗺️ Roadmap
 
+> ( ***?** ) *this mean TBD (**To Be Determined**)*
+
 - [ ] Performance, Dependency & Architecture Optimization
     - [x] Optimization of style dependencies
         - [x] Rewrite **Stylus** to **SASS/SCSS**
@@ -103,15 +105,37 @@ All commands are run from the root of the project, from a terminal:
         - [x] `@tailwindcss/typography@0.5.20`
         - [x] `katex@0.17.0`
         - [x] `sharp@0.35.3`
+    - [ ] Expand **Husky** utilities
 - [ ] Feature Adjustments
-    - [ ] Adjust dynamic theme color
     - [ ] Adapters support
         - [ ] **Netlify**
         - [ ] **Cloudflare**
-    - [ ] Expand **Husky** utilities
-    - [ ] Add **Giscus** or **Discus**
-    - [x] Add 404 (*Not Found*) page
-    - [ ] Add **mdoc** or **mdx** support
+    - [ ] Blog features
+        - [ ] Add **Giscus**
+        - [ ] Add **mdx** support
+        - [ ] spotify iframe for music embed
+        - [ ] Image embed (URL or local) and zoom-in feature
+        - [ ] GitHub file card **?**
+        - [ ] External site embed
+        - [ ] Table row colours and horizontal scroll bar
+        - [ ] Mermaid support
+        - [ ] Unlisted post (accessible via direct URL only) **?**
+        - [ ] swup navigation progress bar for load content
+        - [ ] Responsive for large screens
+        - [ ] Lazy load
+    - [ ] New pages
+        - [x] 404 (*Not Found*) page
+        - [ ] Friends page **?**
+    - [ ] Partytown integration for google analytics
+    - [ ] Improve OG Image, tags, time, and desc
+    - [ ] Layout/base adjustment
+        - [ ] Nested category
+        - [ ] Multilingual support (*including content*) with switch on navbar **?**
+        - [ ] Round avatar option
+        - [ ] Remove paginator for single page
+    - [ ] Restyle homepage and route **?**
+        - [ ] Post pinning feature
+        - [ ] "About" page become root and renamed to "Home"
 
 ## 📄 License
 
