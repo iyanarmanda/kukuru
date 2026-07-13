@@ -107,11 +107,11 @@ All commands are run from the root of the project, from a terminal:
         - [x] `sharp@0.35.3`
     - [ ] Expand **Husky** utilities
 - [ ] Feature Adjustments
-    - [ ] Adapters support
-        - [ ] **Netlify**
-        - [ ] **Cloudflare**
     - [ ] Blog features
-        - [ ] Add **Giscus**
+        - [ ] Add comment feature
+            - [ ] **Giscus**
+            - [ ] **Discus**
+            - [ ] **Twikoo**
         - [ ] Add **mdx** support
         - [x] music embed with iframe
         - [ ] Image embed (URL or local) and zoom-in feature
