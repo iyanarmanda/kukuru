@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { commentConfig } from "@/config";
-// import Giscus from "./Giscus.astro";
 
 import Giscus from "./Giscus.svelte";
 
@@ -21,7 +20,6 @@ if (commentConfig?.giscus) {
 ---
 
 <div class="card-base p-6 mb-4">
-  <!-- {commentService === 'giscus' && <Giscus />} -->
   {commentService === 'giscus' && <Giscus client:only="svelte" />}
   {commentService === '' && null }
 </div>
