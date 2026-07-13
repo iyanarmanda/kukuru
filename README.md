@@ -109,16 +109,16 @@ All commands are run from the root of the project, from a terminal:
 - [ ] Feature Adjustments
     - [ ] Blog features
         - [ ] Add comment feature
-            - [ ] **Giscus**
+            - [x] **Giscus**
             - [ ] **Discus**
             - [ ] **Twikoo**
         - [ ] Add **mdx** support
-        - [x] music embed with iframe
+        - [x] Music embed with iframe
         - [ ] Image embed (URL or local) and zoom-in feature
         - [ ] GitHub file card **?**
         - [ ] External site embed
         - [ ] Table row colours and horizontal scroll bar
-        - [ ] Mermaid support
+        - [ ] **Mermaid** support
         - [ ] Unlisted post (accessible via direct URL only) **?**
         - [ ] swup navigation progress bar for load content
         - [ ] Responsive for large screens
@@ -126,10 +126,10 @@ All commands are run from the root of the project, from a terminal:
     - [ ] New pages
         - [x] 404 (*Not Found*) page
         - [ ] Friends page **?**
-    - [ ] Partytown integration for google analytics
+    - [ ] **@astrojs/partytown** integration for Google analytics
     - [ ] Improve OG Image, tags, time, and desc
     - [ ] Layout/base adjustment
-        - [ ] Nested category
+        - [ ] Nested category **?**
         - [ ] Multilingual support (*including content*) with switch on navbar **?**
         - [ ] Round avatar option
         - [ ] Remove paginator for single page

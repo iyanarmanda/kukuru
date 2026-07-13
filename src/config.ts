@@ -90,11 +90,12 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 	theme: "github-dark",
 };
 
+// Check https://giscus.app/ to get repoId and categoryId
 export const commentConfig: CommentConfig = {
 	giscus: {
 		repo: "iyanarmanda/kukuru",
 		repoId: "R_kgDOTQYphQ",
-		category: "General",
+		category: "General", // Choose "Announcements" for prevent visitor leave a comment on GitHub directly
 		categoryId: "DIC_kwDOTQYphc4DBG8B",
 		mapping: "pathname",
 		strict: "0",
