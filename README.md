@@ -113,7 +113,7 @@ All commands are run from the root of the project, from a terminal:
     - [ ] Blog features
         - [ ] Add **Giscus**
         - [ ] Add **mdx** support
-        - [ ] spotify iframe for music embed
+        - [x] music embed with iframe
         - [ ] Image embed (URL or local) and zoom-in feature
         - [ ] GitHub file card **?**
         - [ ] External site embed
