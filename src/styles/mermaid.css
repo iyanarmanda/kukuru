@@ -1,0 +1,69 @@
+:root {
+  --mermaid-node-bg: hsl(var(--hue), 15%, 95%);
+  --mermaid-node-text: hsl(var(--hue), 80%, 15%);
+  --mermaid-node-border: hsl(var(--hue), 30%, 80%);
+  --mermaid-line: hsl(var(--hue), 40%, 40%);
+  --mermaid-label-bg: #ffffff;
+}
+
+.dark {
+  --mermaid-node-bg: hsl(var(--hue), 20%, 15%);
+  --mermaid-node-text: hsl(var(--hue), 10%, 90%);
+  --mermaid-node-border: hsl(var(--hue), 25%, 30%);
+  --mermaid-line: hsl(var(--hue), 30%, 65%);
+  --mermaid-label-bg: hsl(var(--hue), 20%, 10%);
+}
+
+.node rect, 
+.node circle, 
+.node polygon, 
+.node path, 
+.node ellipse,
+.node .outer { 
+  fill: var(--mermaid-node-bg) !important; 
+  stroke: var(--mermaid-node-border) !important;
+  stroke-width: 1.5px !important;
+}
+
+.node .label, 
+.node text,
+.node span { 
+  fill: var(--mermaid-node-text) !important; 
+  color: var(--mermaid-node-text) !important;
+}
+
+.edgePaths path,
+.edgePath path,
+.edge-paths path,
+.edge-path path,
+.flowchart-link,
+path.path,
+path.link { 
+  stroke: var(--mermaid-line) !important; 
+  stroke-width: 2px !important;
+  fill: none !important;
+  opacity: 1 !important;
+}
+
+marker path,
+.arrowheadPath,
+[id*="arrowhead"] path {
+  fill: var(--mermaid-line) !important; 
+  stroke: var(--mermaid-line) !important;
+}
+
+.edgeLabel rect,
+.edge-label-bg { 
+  fill: var(--mermaid-label-bg) !important; 
+}
+
+.edgeLabel text, 
+.label text,
+.edgeLabel span { 
+  fill: var(--mermaid-node-text) !important; 
+  color: var(--mermaid-node-text) !important;
+}
+
+svg.mermaid * {
+  transition: fill 0.3s ease, stroke 0.3s ease, color 0.3s ease;
+}
