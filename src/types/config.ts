@@ -1,5 +1,6 @@
 import type { InferEntrySchema, RenderedContent } from "astro:content";
 import type { AUTO_MODE, DARK_MODE, LIGHT_MODE } from "@constants/constants";
+import type * as Giscus from "@giscus/svelte";
 
 export type SiteConfig = {
 	title: string;
@@ -109,4 +110,27 @@ export type GetSortedPosts = {
 	data: InferEntrySchema<"posts">;
 	rendered?: RenderedContent | undefined;
 	filePath?: string;
+};
+
+export type GiscusConfig = {
+	repo: Giscus.Repo;
+	host?: string;
+	repoId: string;
+	category: string;
+	categoryId: string;
+	mapping?: Giscus.Mapping;
+	term?: string;
+	strict?: Giscus.BooleanString;
+	reactionsEnabled?: Giscus.BooleanString;
+	emitMetadata?: Giscus.BooleanString;
+	inputPosition?: Giscus.InputPosition;
+	theme?: Giscus.Theme;
+	lang?: Giscus.AvailableLanguage;
+	loading?: Giscus.Loading;
+};
+
+export type CommentConfig = {
+	giscus?: GiscusConfig;
+	disqus?: null;
+	twikoo?: null;
 };

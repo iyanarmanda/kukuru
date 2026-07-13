@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { commentConfig } from "@/config";
+// import Giscus from "./Giscus.astro";
+
+import Giscus from "./Giscus.svelte";
+
+interface Props {
+	post: CollectionEntry<"posts">;
+}
+
+const { id, data } = Astro.props.post;
+
+const path = `/posts/${id}`;
+const url = `${Astro.site?.href}${path}`;
+
+let commentService = "";
+if (commentConfig?.giscus) {
+	commentService = "giscus";
+}
+---
+
+<div class="card-base p-6 mb-4">
+  <!-- {commentService === 'giscus' && <Giscus />} -->
+  {commentService === 'giscus' && <Giscus client:only="svelte" />}
+  {commentService === '' && null }
+</div>
