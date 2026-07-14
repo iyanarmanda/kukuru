@@ -130,10 +130,21 @@ Crash   --> [*]
 
 ```mermaid
 pie
-"Dogs" : 386
+title Favorite Pets in VSCode
 "Cats" : 85.9
-"Rats" : 15
+"Duck" : 186
+"Dogs" : 15
 ```
+
+```
+pie
+title Favorite Pets in VSCode
+"Cats" : 85.9
+"Duck" : 186
+"Dogs" : 15
+```
+
+> Source: [https://mermaid.js.org/syntax/pie.html](https://mermaid.js.org/syntax/pie.html)
 
 ### Git graph
 
@@ -150,6 +161,22 @@ gitGraph
   commit
   commit
 ```
+
+```
+gitGraph
+  commit
+  commit
+  branch develop
+  checkout develop
+  commit
+  commit
+  checkout main
+  merge develop
+  commit
+  commit
+```
+
+> Note: Git Graph is on experimental, [live editor](https://mermaid.live/edit#pako:eNptkktv2zAMx7-KodOK5WHLjuwIvQx9ADvs1FthoKAlxRZiSake7dIs332yW7tdO53EH_knKVInxAwXiCLWg3PXEloLqtZJPD-0VNAnl3-Wy-Q6sP1Xeitd95Xei8bCP5gm36X2CbTiM77zVuo2aYXmwn50DhL3C1S8frv45FDgxQTHtsf2Tq8gmZM2AvZXpjd2drhnqSZhNB8DsP1knz_mGx4251sOvTv5In7qWyH8jBnoG_D_1Y8jeG-oMaZPpHt4lj2foQ161qIFaq3kiHobxAIpYRUMJhpz1Mh3Qoka0XjlYPc1qvWgOYC-N0ZNMmtC2yG6g95FKxx4nNPbRqeQV3jDpTd2joTgzd1RsymoNxC3gegJ-eNh-ButdD6WY0bvZDvwYPuIO-8Pjq7Xg3vVSt-FZsWMWjvJO7C-e9qSNcGkApwLUuawyXPOmmxb7XCR7XiZZhjQ-RwbH9d_ZYL2iGYEjy8b6vxGNC9XVVlstzgvU5JuinKBjjEoy1cF2USWlRXGmJCY5mWcRRrjN2k8uKxyUmVpcf4LoCLg6A)
 
 ### Bar chart
 
@@ -184,6 +211,20 @@ journey
     Go downstairs : 5: Me
     Sit down      : 3: Me
 ```
+
+```
+journey
+  title My working day
+  section Go to work
+    Make tea      : 5: Me
+    Go upstairs   : 3: Me
+    Do work       : 1: Me, Cat
+  section Go home
+    Go downstairs : 5: Me
+    Sit down      : 3: Me
+```
+
+> Source: [https://mermaid.js.org/syntax/userJourney.html](https://mermaid.js.org/syntax/userJourney.html)
 
 ### C4 Diagram
 
