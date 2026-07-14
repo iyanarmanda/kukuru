@@ -6,7 +6,8 @@
   --mermaid-flowchart-class-state-node-border: hsl(var(--hue), 30%, 80%);
   --mermaid-flowchart-class-state-line: hsl(var(--hue), 40%, 40%);
   --mermaid-class-namespace: hsl(var(--hue), 5%, 98%);
-
+  --mermaid-gantt-exclude: hsl(var(--hue), 50%, 90%);
+  --mermaid-gantt-section: rgba(0, 0, 0, 0.2);
   --mermaid-legend: #333;
 }
 
@@ -16,7 +17,8 @@
   --mermaid-flowchart-class-state-node-border: hsl(var(--hue), 25%, 30%);
   --mermaid-flowchart-class-state-line: hsl(var(--hue), 30%, 65%);
   --mermaid-class-namespace: hsl(var(--hue), 20%, 10%);
-
+  --mermaid-gantt-exclude: hsl(var(--hue), 95%, 5%);
+  --mermaid-gantt-section: rgba(255, 255, 255, 0.8);
   --mermaid-legend: #eee;
 }
 
@@ -149,6 +151,56 @@ svg[id^="mermaid-"] text {
 /* it's apply to Git Graph too  */
 svg[id^="mermaid-"] line {
   stroke: var(--mermaid-legend) !important;
+}
+
+
+/* 
+
+GANTT DIAGRAM
+BAR CHART
+
+*/
+svg[aria-roledescription="gantt"] .titleText,
+svg[aria-roledescription="gantt"] .sectionTitle tspan,
+svg[aria-roledescription="gantt"] .grid .tick text,
+svg[aria-roledescription="gantt"] g text.taskTextOutsideRight,
+svg[aria-roledescription="gantt"] g text[class*="doneText"],
+svg[aria-roledescription="gantt"] g text[class*="doneCritText" i],
+svg[aria-roledescription="gantt"] g text[class*="taskTextOutside"] {
+  fill: var(--mermaid-legend) !important;
+}
+/* cannot override text color of outside critical and done task text */
+/* svg[aria-roledescription="gantt"] g text.taskTextOutsideRight[id*="mermaid-2-des1-text"],
+svg[aria-roledescription="gantt"] g text.taskTextOutsideRight[class*="doneCritText" i],
+svg[aria-roledescription="gantt"] text.doneCritText0,
+svg[aria-roledescription="gantt"] text.doneCritText1 {
+  fill: var(--mermaid-legend) !important;
+} */
+
+svg[aria-roledescription="gantt"] g text.taskText[class*="critText"] {
+  fill: #fff !important;
+}
+
+/* bug UI: stroke don't have a same width and some stroke dissapear */
+svg[aria-roledescription="gantt"] .grid .tick line {
+  stroke-width: 1.6px !important; /* to prevent some stroke dissapear, but it cost inconsistent width */
+}
+
+svg[aria-roledescription="gantt"] g rect.exclude-range {
+  fill: var(--mermaid-gantt-exclude) !important;
+}
+
+/* manual zebra striping section */
+svg[aria-roledescription="gantt"] g .section[class$="0"], 
+svg[aria-roledescription="gantt"] g .section[class$="2"], 
+svg[aria-roledescription="gantt"] g .section[class$="4"],
+svg[aria-roledescription="gantt"] g .section[class$="6"],
+svg[aria-roledescription="gantt"] g .section[class$="8"],
+svg[aria-roledescription="gantt"] g .section[class$="10"],
+svg[aria-roledescription="gantt"] g .section[class$="12"],
+svg[aria-roledescription="gantt"] g .section[class$="14"],
+svg[aria-roledescription="gantt"] g .section[class$="16"] {
+  fill: var(--mermaid-gantt-section) !important;
 }
 
 

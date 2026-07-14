@@ -51,14 +51,70 @@ Bob-->>John: Jolly good!
 
 ```mermaid
 gantt
-  section Section
-  Completed   :done,    des1, 2014-01-06,2014-01-08
-  Active      :active,  des2, 2014-01-07, 3d
-  Parallel 1  :         des3, after des1, 1d
-  Parallel 2  :         des4, after des1, 1d
-  Parallel 3  :         des5, after des3, 1d
-  Parallel 4  :         des6, after des4, 1d
+  dateFormat  YYYY-MM-DD
+  title       Adding GANTT diagram functionality to mermaid
+  excludes    weekends
+  %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".)
+
+  section A section
+  Completed task            :done,    des1, 2014-01-06,2014-01-08
+  Active task               :active,  des2, 2014-01-09, 3d
+  Future task               :         des3, after des2, 5d
+  Future task2              :         des4, after des3, 5d
+
+  section Critical tasks
+  Completed task in the critical line :2014-01-06,24h
+  Implement parser and jison          :after des1, 2d
+  Create tests for parser             :crit, active, 3d
+  Future task in critical line        :crit, 5d
+  Create tests for renderer           :3d
+  Functionality added                 :milestone, isadded, 2014-01-25, 0d
+
+  section Documentation
+  Describe gantt syntax               :active, a1, after des1, 3d
+  Add gantt diagram to demo page      :after a1  , 20h
+  Add another diagram to demo page    :doc1, after a1  , 48h
+
+  section Last section
+  Describe gantt syntax               :after doc1, 3d
+  Add gantt diagram to demo page      :20h
+  Add another diagram to demo page    :48h
 ```
+
+```
+gantt
+gantt
+  dateFormat  YYYY-MM-DD
+  title       Adding GANTT diagram functionality to mermaid
+  excludes    weekends
+  %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".)
+
+  section A section
+  Completed task            :done,    des1, 2014-01-06,2014-01-08
+  Active task               :active,  des2, 2014-01-09, 3d
+  Future task               :         des3, after des2, 5d
+  Future task2              :         des4, after des3, 5d
+
+  section Critical tasks
+  Completed task in the critical line :2014-01-06,24h
+  Implement parser and jison          :after des1, 2d
+  Create tests for parser             :crit, active, 3d
+  Future task in critical line        :crit, 5d
+  Create tests for renderer           :3d
+  Functionality added                 :milestone, isadded, 2014-01-25, 0d
+
+  section Documentation
+  Describe gantt syntax               :active, a1, after des1, 3d
+  Add gantt diagram to demo page      :after a1  , 20h
+  Add another diagram to demo page    :doc1, after a1  , 48h
+
+  section Last section
+  Describe gantt syntax               :after doc1, 3d
+  Add gantt diagram to demo page      :20h
+  Add another diagram to demo page    :48h
+```
+
+> Source: [https://mermaid.js.org/syntax/gantt.html](https://mermaid.js.org/syntax/gantt.html)
 
 ### Class Diagram
 
@@ -197,6 +253,26 @@ gantt
   section Issue1300
   5    : 0, 5
 ```
+
+```
+gantt
+  title Git Issues - days since last update
+  dateFormat  X
+  axisFormat %s
+
+  section Issue19062
+  71   : 0, 71
+  section Issue19401
+  36   : 0, 36
+  section Issue193
+  34   : 0, 34
+  section Issue7441
+  9    : 0, 9
+  section Issue1300
+  5    : 0, 5
+```
+
+> Note: Using gantt chart documentation. [https://mermaid.js.org/syntax/gantt.html](https://mermaid.js.org/syntax/gantt.html)
 
 ### User Journey Diagram
 
