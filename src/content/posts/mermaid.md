@@ -83,7 +83,6 @@ gantt
 
 ```
 gantt
-gantt
   dateFormat  YYYY-MM-DD
   title       Adding GANTT diagram functionality to mermaid
   excludes    weekends
@@ -185,19 +184,39 @@ Crash   --> [*]
 ### Pie Chart
 
 ```mermaid
-pie
-title Favorite Pets in VSCode
-"Cats" : 85.9
-"Duck" : 186
-"Dogs" : 15
+---
+config:
+  pie:
+    textPosition: 0.5
+    donutHole: 0.2
+    highlightSlice: Potassium
+  themeVariables:
+    pieOuterStrokeWidth: "5px"
+---
+pie showData
+  title Key elements in Product X
+  "Calcium" : 42.96
+  "Potassium" : 50.05
+  "Magnesium" : 10.01
+  "Iron" :  5
 ```
 
 ```
-pie
-title Favorite Pets in VSCode
-"Cats" : 85.9
-"Duck" : 186
-"Dogs" : 15
+---
+config:
+  pie:
+    textPosition: 0.5
+    donutHole: 0.2
+    highlightSlice: Potassium
+  themeVariables:
+    pieOuterStrokeWidth: "5px"
+---
+pie showData
+  title Key elements in Product X
+  "Calcium" : 42.96
+  "Potassium" : 50.05
+  "Magnesium" : 10.01
+  "Iron" :  5
 ```
 
 > Source: [https://mermaid.js.org/syntax/pie.html](https://mermaid.js.org/syntax/pie.html)
