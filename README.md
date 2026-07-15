@@ -135,7 +135,9 @@ All commands are run from the root of the project, from a terminal:
     - [ ] New pages
         - [x] 404 (*Not Found*) page
         - [ ] Friends page **?**
-    - [ ] **@astrojs/partytown** integration for Google analytics
+    - [ ] **@astrojs/partytown**
+        - [ ] Google Analytics (**GA4**)
+        - [ ] Google Analytics bloker bypass using **proxying request** **?**
     - [ ] Improve OG Image, tags, time, and desc
     - [ ] Layout/base adjustment
         - [ ] Nested category **?**

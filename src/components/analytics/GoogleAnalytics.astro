@@ -1,0 +1,26 @@
+---
+import { analyticsConfig } from "@/config";
+
+const showGoogleAnalytics =
+	analyticsConfig.enabled && analyticsConfig.google?.id;
+---
+
+{showGoogleAnalytics && (
+  <>
+    <script 
+      type="text/partytown"
+      src={`https://www.googletagmanager.com/gtag/js?id=${analyticsConfig.google?.id}`}
+    ></script>
+
+    <script 
+      type="text/partytown" 
+      is:inline
+      set:html={`
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '${analyticsConfig.google?.id}');
+      `}
+    />
+  </>
+)}

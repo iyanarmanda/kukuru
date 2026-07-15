@@ -134,3 +134,13 @@ export type CommentConfig = {
 	disqus?: null;
 	twikoo?: null;
 };
+
+export type GoogleAnalytics = {
+	id: string;
+};
+
+export type AnalyticsConfig = {
+	enabled: boolean;
+	google?: GoogleAnalytics;
+	umami?: null;
+};
