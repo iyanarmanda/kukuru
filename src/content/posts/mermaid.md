@@ -15,20 +15,18 @@ Here are several examples of how to create diagrams and charts using [Mermaid](h
 
 ```mermaid
 flowchart LR
-
-A[Hard] -->|Text| B(Round)
-B --> C{Decision}
-C -->|One| D["`**Result 1**`"]
-C -->|Two| E["`**Result 2**`"]
+  A[Hard] -->|Text| B(Round)
+  B --> C{Decision}
+  C -->|One| D["`**Result 1**`"]
+  C -->|Two| E["`**Result 2**`"]
 ```
 
 ```
 flowchart TD
-
-A[Hard] -->|Text| B(Round)
-B --> C{Decision}
-C -->|One| D["`**Result 1**`"]
-C -->|Two| E["`**Result 2**`"]
+  A[Hard] -->|Text| B(Round)
+  B --> C{Decision}
+  C -->|One| D["`**Result 1**`"]
+  C -->|Two| E["`**Result 2**`"]
 ```
 
 > Source: [https://mermaid.js.org/syntax/flowchart.html](https://mermaid.js.org/syntax/flowchart.html)
@@ -37,26 +35,26 @@ C -->|Two| E["`**Result 2**`"]
 
 ```mermaid
 sequenceDiagram
-Alice->>John: Hello John, how are you?
-loop HealthCheck
-  John->>John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John-->>Alice: Great!
-John->>Bob: How about you?
-Bob-->>John: Jolly good!
+  Alice->>John: Hello John, how are you?
+  loop HealthCheck
+    John->>John: Fight against hypochondria
+  end
+  Note right of John: Rational thoughts!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
 ```
 
 ```
 sequenceDiagram
-Alice->>John: Hello John, how are you?
-loop HealthCheck
-  John->>John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John-->>Alice: Great!
-John->>Bob: How about you?
-Bob-->>John: Jolly good!
+  Alice->>John: Hello John, how are you?
+  loop HealthCheck
+    John->>John: Fight against hypochondria
+  end
+  Note right of John: Rational thoughts!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
 ```
 
 > Source: [https://mermaid.js.org/syntax/sequenceDiagram.html](https://mermaid.js.org/syntax/sequenceDiagram.html)
@@ -133,40 +131,40 @@ gantt
 
 ```mermaid
 classDiagram
-Class01 <|-- AveryLongClass : Cool
-<<Interface>> Class01
-Class09 --> C2 : Where am I?
-Class09 --* C3
-Class09 --|> Class07
-Class07 : equals()
-Class07 : Object[] elementData
-Class01 : size()
-Class01 : int chimp
-Class01 : int gorilla
-class Class10 {
-  <<service>>
-  int id
-  size()
-}
+  Class01 <|-- AveryLongClass : Cool
+  <<Interface>> Class01
+  Class09 --> C2 : Where am I?
+  Class09 --* C3
+  Class09 --|> Class07
+  Class07 : equals()
+  Class07 : Object[] elementData
+  Class01 : size()
+  Class01 : int chimp
+  Class01 : int gorilla
+  class Class10 {
+    <<service>>
+    int id
+    size()
+  }
 ```
 
 ```
 classDiagram
-Class01 <|-- AveryLongClass : Cool
-<<Interface>> Class01
-Class09 --> C2 : Where am I?
-Class09 --* C3
-Class09 --|> Class07
-Class07 : equals()
-Class07 : Object[] elementData
-Class01 : size()
-Class01 : int chimp
-Class01 : int gorilla
-class Class10 {
-  <<service>>
-  int id
-  size()
-}
+  Class01 <|-- AveryLongClass : Cool
+  <<Interface>> Class01
+  Class09 --> C2 : Where am I?
+  Class09 --* C3
+  Class09 --|> Class07
+  Class07 : equals()
+  Class07 : Object[] elementData
+  Class01 : size()
+  Class01 : int chimp
+  Class01 : int gorilla
+  class Class10 {
+    <<service>>
+    int id
+    size()
+  }
 ```
 
 > Source: [https://mermaid.js.org/syntax/classDiagram.html](https://mermaid.js.org/syntax/classDiagram.html)
@@ -175,22 +173,22 @@ class Class10 {
 
 ```mermaid
 stateDiagram-v2
-[*]     --> Still
-Still   --> [*]
-Still   --> Moving
-Moving  --> Still
-Moving  --> Crash
-Crash   --> [*]
+  [*]     --> Still
+  Still   --> [*]
+  Still   --> Moving
+  Moving  --> Still
+  Moving  --> Crash
+  Crash   --> [*]
 ```
 
 ```
 stateDiagram-v2
-[*]     --> Still
-Still   --> [*]
-Still   --> Moving
-Moving  --> Still
-Moving  --> Crash
-Crash   --> [*]
+  [*]     --> Still
+  Still   --> [*]
+  Still   --> Moving
+  Moving  --> Still
+  Moving  --> Crash
+  Crash   --> [*]
 ```
 
 > Source: [https://mermaid.js.org/syntax/stateDiagram.html](https://mermaid.js.org/syntax/stateDiagram.html)
@@ -343,72 +341,72 @@ journey
 
 ```mermaid
 C4Context
-title System Context diagram for Internet Banking System
+  title System Context diagram for Internet Banking System
 
-Person(customerA, "Banking Customer A", "A customer of the bank, with personal bank accounts.")
-Person(customerB, "Banking Customer B")
-Person_Ext(customerC, "Banking Customer C")
-System(SystemAA, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
+  Person(customerA, "Banking Customer A", "A customer of the bank, with personal bank accounts.")
+  Person(customerB, "Banking Customer B")
+  Person_Ext(customerC, "Banking Customer C")
+  System(SystemAA, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
 
-Person(customerD, "Banking Customer D", "A customer of the bank, <br/> with personal bank accounts.")
+  Person(customerD, "Banking Customer D", "A customer of the bank, <br/> with personal bank accounts.")
 
-Enterprise_Boundary(b1, "BankBoundary") {
+  Enterprise_Boundary(b1, "BankBoundary") {
 
-  SystemDb_Ext(SystemE, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+    SystemDb_Ext(SystemE, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
 
-  System_Boundary(b2, "BankBoundary2") {
-    System(SystemA, "Banking System A")
-    System(SystemB, "Banking System B", "A system of the bank, with personal bank accounts.")
+    System_Boundary(b2, "BankBoundary2") {
+      System(SystemA, "Banking System A")
+      System(SystemB, "Banking System B", "A system of the bank, with personal bank accounts.")
+    }
+
+    System_Ext(SystemC, "E-mail system", "The internal Microsoft Exchange e-mail system.")
+    SystemDb(SystemD, "Banking System D Database", "A system of the bank, with personal bank accounts.")
+
+    Boundary(b3, "BankBoundary3", "boundary") {
+      SystemQueue(SystemF, "Banking System F Queue", "A system of the bank, with personal bank accounts.")
+      SystemQueue_Ext(SystemG, "Banking System G Queue", "A system of the bank, with personal bank accounts.")
+    }
   }
 
-  System_Ext(SystemC, "E-mail system", "The internal Microsoft Exchange e-mail system.")
-  SystemDb(SystemD, "Banking System D Database", "A system of the bank, with personal bank accounts.")
-
-  Boundary(b3, "BankBoundary3", "boundary") {
-    SystemQueue(SystemF, "Banking System F Queue", "A system of the bank, with personal bank accounts.")
-    SystemQueue_Ext(SystemG, "Banking System G Queue", "A system of the bank, with personal bank accounts.")
-  }
-}
-
-BiRel(customerA, SystemAA, "Uses")
-BiRel(SystemAA, SystemE, "Uses")
-Rel(SystemAA, SystemC, "Sends e-mails", "SMTP")
-Rel(SystemC, customerA, "Sends e-mails to")
+  BiRel(customerA, SystemAA, "Uses")
+  BiRel(SystemAA, SystemE, "Uses")
+  Rel(SystemAA, SystemC, "Sends e-mails", "SMTP")
+  Rel(SystemC, customerA, "Sends e-mails to")
 ```
 
 ```
 C4Context
-title System Context diagram for Internet Banking System
+  title System Context diagram for Internet Banking System
 
-Person(customerA, "Banking Customer A", "A customer of the bank, with personal bank accounts.")
-Person(customerB, "Banking Customer B")
-Person_Ext(customerC, "Banking Customer C")
-System(SystemAA, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
+  Person(customerA, "Banking Customer A", "A customer of the bank, with personal bank accounts.")
+  Person(customerB, "Banking Customer B")
+  Person_Ext(customerC, "Banking Customer C")
+  System(SystemAA, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
 
-Person(customerD, "Banking Customer D", "A customer of the bank, <br/> with personal bank accounts.")
+  Person(customerD, "Banking Customer D", "A customer of the bank, <br/> with personal bank accounts.")
 
-Enterprise_Boundary(b1, "BankBoundary") {
+  Enterprise_Boundary(b1, "BankBoundary") {
 
-  SystemDb_Ext(SystemE, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+    SystemDb_Ext(SystemE, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
 
-  System_Boundary(b2, "BankBoundary2") {
-    System(SystemA, "Banking System A")
-    System(SystemB, "Banking System B", "A system of the bank, with personal bank accounts.")
+    System_Boundary(b2, "BankBoundary2") {
+      System(SystemA, "Banking System A")
+      System(SystemB, "Banking System B", "A system of the bank, with personal bank accounts.")
+    }
+
+    System_Ext(SystemC, "E-mail system", "The internal Microsoft Exchange e-mail system.")
+    SystemDb(SystemD, "Banking System D Database", "A system of the bank, with personal bank accounts.")
+
+    Boundary(b3, "BankBoundary3", "boundary") {
+      SystemQueue(SystemF, "Banking System F Queue", "A system of the bank, with personal bank accounts.")
+      SystemQueue_Ext(SystemG, "Banking System G Queue", "A system of the bank, with personal bank accounts.")
+    }
   }
 
-  System_Ext(SystemC, "E-mail system", "The internal Microsoft Exchange e-mail system.")
-  SystemDb(SystemD, "Banking System D Database", "A system of the bank, with personal bank accounts.")
-
-  Boundary(b3, "BankBoundary3", "boundary") {
-    SystemQueue(SystemF, "Banking System F Queue", "A system of the bank, with personal bank accounts.")
-    SystemQueue_Ext(SystemG, "Banking System G Queue", "A system of the bank, with personal bank accounts.")
-  }
-}
-
-BiRel(customerA, SystemAA, "Uses")
-BiRel(SystemAA, SystemE, "Uses")
-Rel(SystemAA, SystemC, "Sends e-mails", "SMTP")
-Rel(SystemC, customerA, "Sends e-mails to")
+  BiRel(customerA, SystemAA, "Uses")
+  BiRel(SystemAA, SystemE, "Uses")
+  Rel(SystemAA, SystemC, "Sends e-mails", "SMTP")
+  Rel(SystemC, customerA, "Sends e-mails to")
 ```
 
 > Note: *C4 is on experimental*

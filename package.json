@@ -15,7 +15,7 @@
 		"format": "biome format --write ./src",
 		"lint": "biome check --write ./src",
 		"preinstall": "npx only-allow pnpm",
-		"prepare": "husky"
+		"prepare": "husky && pnpm playwright install --with-deps chromium"
 	},
 	"dependencies": {
 		"@astrojs/markdown-remark": "^7.2.1",
