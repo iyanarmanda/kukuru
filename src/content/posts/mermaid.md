@@ -47,6 +47,20 @@ John->>Bob: How about you?
 Bob-->>John: Jolly good!
 ```
 
+```
+sequenceDiagram
+Alice->>John: Hello John, how are you?
+loop HealthCheck
+  John->>John: Fight against hypochondria
+end
+Note right of John: Rational thoughts!
+John-->>Alice: Great!
+John->>Bob: How about you?
+Bob-->>John: Jolly good!
+```
+
+> Source: [https://mermaid.js.org/syntax/sequenceDiagram.html](https://mermaid.js.org/syntax/sequenceDiagram.html)
+
 ### Gantt Chart
 
 ```mermaid
@@ -251,7 +265,9 @@ gitGraph
   commit
 ```
 
-> Note: Git Graph is on experimental, [live editor](https://mermaid.live/edit#pako:eNptkktv2zAMx7-KodOK5WHLjuwIvQx9ADvs1FthoKAlxRZiSake7dIs332yW7tdO53EH_knKVInxAwXiCLWg3PXEloLqtZJPD-0VNAnl3-Wy-Q6sP1Xeitd95Xei8bCP5gm36X2CbTiM77zVuo2aYXmwn50DhL3C1S8frv45FDgxQTHtsf2Tq8gmZM2AvZXpjd2drhnqSZhNB8DsP1knz_mGx4251sOvTv5In7qWyH8jBnoG_D_1Y8jeG-oMaZPpHt4lj2foQ161qIFaq3kiHobxAIpYRUMJhpz1Mh3Qoka0XjlYPc1qvWgOYC-N0ZNMmtC2yG6g95FKxx4nNPbRqeQV3jDpTd2joTgzd1RsymoNxC3gegJ-eNh-ButdD6WY0bvZDvwYPuIO-8Pjq7Xg3vVSt-FZsWMWjvJO7C-e9qSNcGkApwLUuawyXPOmmxb7XCR7XiZZhjQ-RwbH9d_ZYL2iGYEjy8b6vxGNC9XVVlstzgvU5JuinKBjjEoy1cF2USWlRXGmJCY5mWcRRrjN2k8uKxyUmVpcf4LoCLg6A)
+> Note: *Git Graph is on experimental*
+
+> Source: [live editor](https://mermaid.live/edit#pako:eNptkktv2zAMx7-KodOK5WHLjuwIvQx9ADvs1FthoKAlxRZiSake7dIs332yW7tdO53EH_knKVInxAwXiCLWg3PXEloLqtZJPD-0VNAnl3-Wy-Q6sP1Xeitd95Xei8bCP5gm36X2CbTiM77zVuo2aYXmwn50DhL3C1S8frv45FDgxQTHtsf2Tq8gmZM2AvZXpjd2drhnqSZhNB8DsP1knz_mGx4251sOvTv5In7qWyH8jBnoG_D_1Y8jeG-oMaZPpHt4lj2foQ161qIFaq3kiHobxAIpYRUMJhpz1Mh3Qoka0XjlYPc1qvWgOYC-N0ZNMmtC2yG6g95FKxx4nNPbRqeQV3jDpTd2joTgzd1RsymoNxC3gegJ-eNh-ButdD6WY0bvZDvwYPuIO-8Pjq7Xg3vVSt-FZsWMWjvJO7C-e9qSNcGkApwLUuawyXPOmmxb7XCR7XiZZhjQ-RwbH9d_ZYL2iGYEjy8b6vxGNC9XVVlstzgvU5JuinKBjjEoy1cF2USWlRXGmJCY5mWcRRrjN2k8uKxyUmVpcf4LoCLg6A)
 
 ### Bar chart
 
@@ -291,7 +307,9 @@ gantt
   5    : 0, 5
 ```
 
-> Note: Using gantt chart documentation. [https://mermaid.js.org/syntax/gantt.html](https://mermaid.js.org/syntax/gantt.html)
+> Note: *Bar chart using **gantt chart** documentation*
+
+> Source: [https://mermaid.js.org/syntax/gantt.html](https://mermaid.js.org/syntax/gantt.html)
 
 ### User Journey Diagram
 
@@ -357,3 +375,42 @@ BiRel(SystemAA, SystemE, "Uses")
 Rel(SystemAA, SystemC, "Sends e-mails", "SMTP")
 Rel(SystemC, customerA, "Sends e-mails to")
 ```
+
+```
+C4Context
+title System Context diagram for Internet Banking System
+
+Person(customerA, "Banking Customer A", "A customer of the bank, with personal bank accounts.")
+Person(customerB, "Banking Customer B")
+Person_Ext(customerC, "Banking Customer C")
+System(SystemAA, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
+
+Person(customerD, "Banking Customer D", "A customer of the bank, <br/> with personal bank accounts.")
+
+Enterprise_Boundary(b1, "BankBoundary") {
+
+  SystemDb_Ext(SystemE, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+
+  System_Boundary(b2, "BankBoundary2") {
+    System(SystemA, "Banking System A")
+    System(SystemB, "Banking System B", "A system of the bank, with personal bank accounts.")
+  }
+
+  System_Ext(SystemC, "E-mail system", "The internal Microsoft Exchange e-mail system.")
+  SystemDb(SystemD, "Banking System D Database", "A system of the bank, with personal bank accounts.")
+
+  Boundary(b3, "BankBoundary3", "boundary") {
+    SystemQueue(SystemF, "Banking System F Queue", "A system of the bank, with personal bank accounts.")
+    SystemQueue_Ext(SystemG, "Banking System G Queue", "A system of the bank, with personal bank accounts.")
+  }
+}
+
+BiRel(customerA, SystemAA, "Uses")
+BiRel(SystemAA, SystemE, "Uses")
+Rel(SystemAA, SystemC, "Sends e-mails", "SMTP")
+Rel(SystemC, customerA, "Sends e-mails to")
+```
+
+> Note: *C4 is on experimental*
+
+> Source: [https://mermaid.js.org/syntax/c4.html](https://mermaid.js.org/syntax/c4.html)

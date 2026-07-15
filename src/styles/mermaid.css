@@ -6,9 +6,19 @@
   --mermaid-flowchart-class-state-node-border: hsl(var(--hue), 30%, 80%);
   --mermaid-flowchart-class-state-line: hsl(var(--hue), 40%, 40%);
   --mermaid-class-namespace: hsl(var(--hue), 5%, 98%);
+  --mermaid-sequence-node-bg-primary: hsl(var(--hue), 15%, 95%);
+  --mermaid-sequence-node-bg-secondary: hsl(var(--hue), 20%, 70%);
+  --mermaid-sequence-node-text-primary: hsl(var(--hue), 80%, 15%);
+  --mermaid-sequence-node-text-secondary: hsl(var(--hue), 75%, 30%);
+  --mermaid-sequence-node-border-primary: hsl(var(--hue), 30%, 15%);
+  --mermaid-sequence-node-border-secondary: hsl(var(--hue), 35%, 10%);
+  --mermaid-sequence-line-primary: hsl(var(--hue), 40%, 40%);
+  --mermaid-sequence-line-secondary: hsl(var(--hue), 80%, 40%);
+  --mermaid-sequence-actor-man-stroke: hsl(var(--hue), 70%, 10%);
   --mermaid-gantt-exclude: hsl(var(--hue), 50%, 90%);
   --mermaid-gantt-section: rgba(0, 0, 0, 0.2);
-  --mermaid-legend: #333;
+  --mermaid-text-primary: #333;
+  --mermaid-text-secondary: #555;
 }
 
 .dark {
@@ -17,9 +27,19 @@
   --mermaid-flowchart-class-state-node-border: hsl(var(--hue), 25%, 30%);
   --mermaid-flowchart-class-state-line: hsl(var(--hue), 30%, 65%);
   --mermaid-class-namespace: hsl(var(--hue), 20%, 10%);
+  --mermaid-sequence-node-bg-primary: hsl(var(--hue), 20%, 15%);
+  --mermaid-sequence-node-bg-secondary: hsl(var(--hue), 20%, 50%);
+  --mermaid-sequence-node-text-primary: hsl(var(--hue), 10%, 90%);
+  --mermaid-sequence-node-text-secondary: hsl(var(--hue), 5%, 80%);
+  --mermaid-sequence-node-border-primary: hsl(var(--hue), 25%, 30%);
+  --mermaid-sequence-node-border-secondary: hsl(var(--hue), 20%, 70%);
+  --mermaid-sequence-line-primary: hsl(var(--hue), 30%, 65%);
+  --mermaid-sequence-line-secondary: hsl(var(--hue), 55%, 40%);
+  --mermaid-sequence-actor-man-stroke: hsl(var(--hue), 10%, 70%);
   --mermaid-gantt-exclude: hsl(var(--hue), 95%, 5%);
   --mermaid-gantt-section: rgba(255, 255, 255, 0.8);
-  --mermaid-legend: #eee;
+  --mermaid-text-primary: #eee;
+  --mermaid-text-secondary: #bbb;
 }
 
 
@@ -121,6 +141,67 @@ svg[class^="statediagram"] [id*="-note"] .nodeLabel p {
   color: var(--mermaid-flowchart-class-state-node-text);
 }
 
+/* 
+
+SEQUENCE DIAGRAM
+
+*/
+svg[aria-roledescription="sequence"] .messageText,
+svg[aria-roledescription="sequence"] .sectionTitle,
+svg[aria-roledescription="sequence"] g .actor-man tspan {
+  fill: var(--mermaid-text-primary) !important;
+}
+
+svg[aria-roledescription="sequence"] .loopText tspan,
+svg[aria-roledescription="sequence"] text.sectionTitle {
+  fill: var(--mermaid-text-secondary) !important;
+}
+
+svg[aria-roledescription="sequence"] g polygon.labelBox {
+  fill: var(--mermaid-sequence-node-bg-secondary) !important;
+  stroke: var(--mermaid-sequence-node-border-secondary) !important;
+}
+svg[aria-roledescription="sequence"] g text.labelText {
+  fill: var(--mermaid-sequence-node-text-secondary) !important;
+}
+
+svg[aria-roledescription="sequence"] g rect.actor,
+svg[aria-roledescription="sequence"] g.actor circle,
+svg[aria-roledescription="sequence"] g g.actor,
+svg[aria-roledescription="sequence"] g.actor g,
+svg[aria-roledescription="sequence"] g rect.note {
+  fill: var(--mermaid-sequence-node-bg-primary) !important;
+  stroke: var(--mermaid-sequence-node-border-primary) !important;
+}
+svg[aria-roledescription="sequence"] g text.actor-box tspan,
+svg[aria-roledescription="sequence"] g text.noteText tspan {
+  fill: var(--mermaid-sequence-node-text-primary) !important;
+}
+
+svg[aria-roledescription="sequence"] g rect[class^="activation"] {
+  fill: var(--mermaid-sequence-node-bg-secondary) !important;
+  stroke: var(--mermaid-sequence-node-border-primary) !important;
+  stroke-width: 2px;
+}
+
+svg[aria-roledescription="sequence"] g line.actor-line,
+svg[aria-roledescription="sequence"] line[class^="messageLine"] {
+  stroke: var(--mermaid-sequence-line-primary) !important;
+}
+svg[aria-roledescription="sequence"] g line.loopLine,
+svg[aria-roledescription="sequence"] path[class^="messageLine"] {
+  stroke: var(--mermaid-sequence-line-secondary) !important;
+}
+
+svg[aria-roledescription="sequence"] g.actor-man circle {
+  fill: var(--mermaid-sequence-node-bg-primary) !important;
+  stroke: var(--mermaid-sequence-actor-man-stroke) !important;
+}
+svg[aria-roledescription="sequence"] g.actor-man line {
+  stroke: var(--mermaid-sequence-actor-man-stroke) !important;
+}
+
+
 
 /* 
 
@@ -129,11 +210,11 @@ PIE
 */
 svg[id^="mermaid-"] .pieTitleText,
 svg[id^="mermaid-"] .legend text {
-  fill: var(--mermaid-legend) !important;
+  fill: var(--mermaid-text-primary) !important;
 }
 
 svg[id^="mermaid-"] .legend rect {
-  stroke: var(--mermaid-legend) !important;
+  stroke: var(--mermaid-text-primary) !important;
 }
 
 
@@ -145,12 +226,12 @@ User Journey Diagram
 /* it's apply to C4 Diagram too, need to be fixed */
 svg[id^="mermaid-"] .legend tspan,
 svg[id^="mermaid-"] text {
-  fill: var(--mermaid-legend);
+  fill: var(--mermaid-text-primary);
 }
 
 /* it's apply to Git Graph too  */
 svg[id^="mermaid-"] line {
-  stroke: var(--mermaid-legend) !important;
+  stroke: var(--mermaid-text-primary) !important;
 }
 
 
@@ -167,14 +248,14 @@ svg[aria-roledescription="gantt"] g text.taskTextOutsideRight,
 svg[aria-roledescription="gantt"] g text[class*="doneText"],
 svg[aria-roledescription="gantt"] g text[class*="doneCritText" i],
 svg[aria-roledescription="gantt"] g text[class*="taskTextOutside"] {
-  fill: var(--mermaid-legend) !important;
+  fill: var(--mermaid-text-primary) !important;
 }
 /* cannot override text color of outside critical and done task text */
 /* svg[aria-roledescription="gantt"] g text.taskTextOutsideRight[id*="mermaid-2-des1-text"],
 svg[aria-roledescription="gantt"] g text.taskTextOutsideRight[class*="doneCritText" i],
 svg[aria-roledescription="gantt"] text.doneCritText0,
 svg[aria-roledescription="gantt"] text.doneCritText1 {
-  fill: var(--mermaid-legend) !important;
+  fill: var(--mermaid-text-primary) !important;
 } */
 
 svg[aria-roledescription="gantt"] g text.taskText[class*="critText"] {
