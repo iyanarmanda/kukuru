@@ -77,24 +77,29 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm new-post <filename>` | Create a new post                                   |
 | `pnpm astro ...`           | Run CLI commands like `astro add`, `astro check`    |
 | `pnpm astro --help`        | Get help using the Astro CLI                        |
-| `pnpm prepare`             | Install dev tools like huksy                        |
+| `pnpm prepare`             | Install dev tools like huksy and playwright         |
 
 ## 🗺️ Roadmap
 
 > ( ***?** ) *this mean TBD (**To Be Determined**)*
 
+> ( ***!** ) *this mean BREAKING CHANGE*
+
 - [ ] Performance, Dependency & Architecture Optimization
-    - [x] Optimization of style dependencies
+    - [x] Optimization of style dependencies **!**
         - [x] Rewrite **Stylus** to **SASS/SCSS**
         - [x] Migration from Tailwind v3 to **Tailwind v4**
         - [x] Remove **PostCSS** plugins
     - [ ] CSS Optimization
+        - [ ] Refactor & reconfigure base style of `main.css`, `variables.scss` **!**
+        - [ ] Refactor `mermaid.css`
+        - [ ] Simplify `giscus-*.css`
     - [ ] Reconfiguring DevDependencies
         - [x] Reconfiguring **TypeScript** config
-        - [ ] Reconfiguring **Biome** rules
+        - [ ] Reconfiguring **Biome** rules **!**
         - [x] Add **Svelte** check
     - [ ] Optimazation of JS and **Svelte** islands
-    - [x] Migration from Astro v5 toward Astro **v6** or **v7**
+    - [x] Migration from Astro v5 toward Astro **v6** or **v7** **!**
     - [x] Dependencies update (*Major Bump*)
         - [x] `@iconify/svelte@5.2.2`
         - [x] `remark-directive@4.0.0`
@@ -106,6 +111,7 @@ All commands are run from the root of the project, from a terminal:
         - [x] `katex@0.17.0`
         - [x] `sharp@0.35.3`
     - [ ] Expand **Husky** utilities
+    - [ ] Add and reconfigure **Dependabot**
 - [ ] Feature Adjustments
     - [ ] Blog features
         - [ ] Add comment feature
@@ -118,7 +124,10 @@ All commands are run from the root of the project, from a terminal:
         - [ ] GitHub file card **?**
         - [ ] External site embed
         - [ ] Table row colours and horizontal scroll bar
-        - [ ] **Mermaid** support
+        - [ ] **Mermaid**
+            - [x] Integrate using **playwright** and **rehype-mermaid**
+            - [ ] Fix UI bug
+            - [ ] Expand mermaid features
         - [ ] Unlisted post (accessible via direct URL only) **?**
         - [ ] swup navigation progress bar for load content
         - [ ] Responsive for large screens
@@ -130,11 +139,12 @@ All commands are run from the root of the project, from a terminal:
     - [ ] Improve OG Image, tags, time, and desc
     - [ ] Layout/base adjustment
         - [ ] Nested category **?**
-        - [ ] Multilingual support (*including content*) with switch on navbar **?**
+        - [ ] Multilingual support (*including content*) with switch on navbar **?**  **!**
         - [ ] Round avatar option
         - [ ] Remove paginator for single page
+        - [ ] Remove GitHub link on navbar
     - [ ] Restyle homepage and route **?**
-        - [ ] Post pinning feature
+        - [ ] Post pinning feature **!**
         - [ ] "About" page become root and renamed to "Home"
 
 ## 📄 License
