@@ -1,4 +1,5 @@
 import type {
+	AnalyticsConfig,
 	CommentConfig,
 	ExpressiveCodeConfig,
 	LicenseConfig,
@@ -105,5 +106,13 @@ export const commentConfig: CommentConfig = {
 		theme: "reactive",
 		lang: "en",
 		loading: "lazy",
+	},
+};
+
+// Site analytics config, only support GA4 for now
+export const analyticsConfig: AnalyticsConfig = {
+	enabled: true,
+	google: {
+		id: "G-YTP13TQ4DH",
 	},
 };

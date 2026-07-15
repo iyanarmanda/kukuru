@@ -1,4 +1,5 @@
 import { unified } from "@astrojs/markdown-remark";
+import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import { pluginCollapsibleSections } from "@expressive-code/plugin-collapsible-sections";
@@ -100,6 +101,11 @@ export default defineConfig({
 		}),
 		svelte(),
 		sitemap(),
+		partytown({
+			config: {
+				forward: ["dataLayer.push"],
+			},
+		}),
 	],
 	markdown: {
 		processor: unified({
