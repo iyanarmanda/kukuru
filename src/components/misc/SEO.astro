@@ -1,5 +1,4 @@
 ---
-import { getImage } from "astro:assets";
 import { getCollection } from "astro:content";
 import { profileConfig, siteConfig } from "@/config";
 
@@ -47,17 +46,37 @@ try {
 }
 
 let ogImage: string | undefined;
+
+const baseUrl =
+	import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+
+const defaultImagePath = siteConfig.ogImage.defaultSrc?.startsWith("/")
+	? siteConfig.ogImage.defaultSrc
+	: `/${siteConfig.ogImage.defaultSrc}`;
+const defaultImageFullPath = new URL(
+	`${baseUrl}${defaultImagePath}`,
+	Astro.site || Astro.url.origin,
+).href;
+
+if (siteConfig.ogImage.useDefault && siteConfig.ogImage.defaultSrc) {
+	ogImage = defaultImageFullPath;
+}
+
 if (image && typeof image === "string" && image.trim() !== "") {
 	if (image.startsWith("http://") || image.startsWith("https://")) {
 		ogImage = image;
-	} else {
+	} else if (image.startsWith("/media") || image.startsWith("media")) {
 		// GitHub Pages compatibility
-		const baseUrl =
-			import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
 		const imagePath = image.startsWith("/") ? image : `/${image}`;
 		const imageFullPath = `${baseUrl}${imagePath}`;
 
 		ogImage = new URL(imageFullPath, Astro.site || Astro.url.origin).href;
+	} else {
+		if (siteConfig.ogImage.useDefault && siteConfig.ogImage.defaultSrc) {
+			ogImage = defaultImageFullPath;
+		} else {
+			ogImage = undefined;
+		}
 	}
 }
 

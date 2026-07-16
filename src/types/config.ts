@@ -38,6 +38,11 @@ export type SiteConfig = {
 	};
 
 	favicon: Favicon[];
+
+	ogImage: {
+		useDefault: boolean;
+		defaultSrc?: string;
+	};
 };
 
 export type Favicon = {
