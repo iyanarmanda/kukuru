@@ -99,6 +99,7 @@ All commands are run from the root of the project, from a terminal:
         - [ ] Reconfiguring **Biome** rules **!**
         - [x] Add **Svelte** check
     - [ ] Optimazation of JS and **Svelte** islands
+        - [ ] Reconfigure (*remove*) script in `Markdown.astro`
     - [x] Migration from Astro v5 toward Astro **v6** or **v7** **!**
     - [x] Dependencies update (*Major Bump*)
         - [x] `@iconify/svelte@5.2.2`
@@ -143,7 +144,6 @@ All commands are run from the root of the project, from a terminal:
         - [ ] Multilingual support (*including content*) with switch on navbar **?**  **!**
         - [ ] Round avatar option
         - [ ] Remove paginator for single page
-        - [ ] Remove GitHub link on navbar
         - [ ] Music album above of tag list **?**
     - [ ] Restyle homepage and route **?**
         - [ ] Post pinning feature **!**

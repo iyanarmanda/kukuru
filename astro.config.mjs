@@ -1,4 +1,5 @@
 import { unified } from "@astrojs/markdown-remark";
+import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
@@ -106,6 +107,7 @@ export default defineConfig({
 				forward: ["dataLayer.push"],
 			},
 		}),
+		mdx(),
 	],
 	markdown: {
 		processor: unified({
