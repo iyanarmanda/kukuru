@@ -42,3 +42,18 @@ export function getDir(path: string): string {
 export function url(path: string): string {
 	return joinUrl("", import.meta.env.BASE_URL, path);
 }
+
+export const siteUrl = (path = ""): string => {
+	if (path.startsWith("http://") || path.startsWith("https://")) return path;
+
+	const site = import.meta.env.SITE;
+	const base = import.meta.env.BASE_URL || "/";
+
+	const cleanSite = site.endsWith("/") ? site.slice(0, -1) : site;
+	const cleanBase = base.startsWith("/") ? base.slice(1) : base;
+	const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+
+	const fullUrl = `${cleanSite}/${cleanBase}/${cleanPath}`;
+
+	return fullUrl.replace(/([^:]\/)\/+/g, "$1");
+};
