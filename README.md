@@ -135,9 +135,8 @@ All commands are run from the root of the project, from a terminal:
     - [ ] New pages
         - [x] 404 (*Not Found*) page
         - [ ] Friends page **?**
-    - [ ] **@astrojs/partytown**
-        - [ ] Google Analytics (**GA4**)
-        - [ ] Google Analytics bloker bypass using **proxying request** **?**
+    - [x] **@astrojs/partytown**
+        - [x] Google Analytics (**GA4**)
     - [ ] Improve OG Image, tags, time, and desc
     - [ ] Layout/base adjustment
         - [ ] Nested category **?**
@@ -145,6 +144,7 @@ All commands are run from the root of the project, from a terminal:
         - [ ] Round avatar option
         - [ ] Remove paginator for single page
         - [ ] Remove GitHub link on navbar
+        - [ ] Music album above of tag list **?**
     - [ ] Restyle homepage and route **?**
         - [ ] Post pinning feature **!**
         - [ ] "About" page become root and renamed to "Home"
