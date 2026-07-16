@@ -5,19 +5,5 @@
 		"siteDesc": "✨A static blog template built with Astro.",
 		"siteUrl": "https://fuwari.vercel.app/",
 		"siteIcon": "https://raw.githubusercontent.com/saicaca/fuwari/refs/heads/main/src/assets/images/demo-avatar.png"
-	},
-	{
-		"id": "fuwari1",
-		"siteTitle": "Yukina",
-		"siteDesc": "https://fuwari.vercel.app/",
-		"siteUrl": "https://github.com/saicaca/fuwari/",
-		"siteIcon": "https://raw.githubusercontent.com/saicaca/fuwari/refs/heads/main/src/assets/images/demo-avatar.png"
-	},
-	{
-		"id": "fuwari2",
-		"siteTitle": "Meow",
-		"siteDesc": "https://fuwari.vercel.app/",
-		"siteUrl": "https://github.com/saicaca/fuwari/",
-		"siteIcon": "https://raw.githubusercontent.com/saicaca/fuwari/refs/heads/main/src/assets/images/demo-avatar.png"
 	}
 ]

@@ -132,9 +132,9 @@ All commands are run from the root of the project, from a terminal:
         - [ ] swup navigation progress bar for load content
         - [ ] Responsive for large screens
         - [ ] Lazy load
-    - [ ] New pages
+    - [x] New pages
         - [x] 404 (*Not Found*) page
-        - [ ] Friends page **?**
+        - [x] Friends page **?**
     - [x] **@astrojs/partytown**
         - [x] Google Analytics (**GA4**)
     - [ ] Improve OG Image, tags, time, and desc
