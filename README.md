@@ -137,7 +137,7 @@ All commands are run from the root of the project, from a terminal:
         - [x] Friends page **?**
     - [x] **@astrojs/partytown**
         - [x] Google Analytics (**GA4**)
-    - [ ] Improve meta tags and open graph tags
+    - [x] Improve meta tags and open graph tags
     - [ ] Layout/base adjustment
         - [ ] Nested category **?**
         - [ ] Multilingual support (*including content*) with switch on navbar **?**  **!**
