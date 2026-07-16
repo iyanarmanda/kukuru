@@ -118,7 +118,7 @@ All commands are run from the root of the project, from a terminal:
             - [x] **Giscus**
             - [ ] **Discus**
             - [ ] **Twikoo**
-        - [ ] Add **mdx** support
+        - [ ] Add **mdx** support **!**
         - [x] Music embed with iframe
         - [ ] Image embed (URL or local) and zoom-in feature
         - [ ] GitHub file card **?**
@@ -137,7 +137,7 @@ All commands are run from the root of the project, from a terminal:
         - [x] Friends page **?**
     - [x] **@astrojs/partytown**
         - [x] Google Analytics (**GA4**)
-    - [ ] Improve OG Image, tags, time, and desc
+    - [ ] Improve meta tags and open graph tags
     - [ ] Layout/base adjustment
         - [ ] Nested category **?**
         - [ ] Multilingual support (*including content*) with switch on navbar **?**  **!**
