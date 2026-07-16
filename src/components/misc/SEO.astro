@@ -1,18 +1,19 @@
 ---
+import { getImage } from "astro:assets";
 import { getCollection } from "astro:content";
 import { profileConfig, siteConfig } from "@/config";
 
 interface Props {
 	title?: string;
 	description?: string;
-	image?: string;
+	banner?: string;
 	setOGTypeArticle?: boolean;
 }
 
 let {
 	title,
-	description = siteConfig.subtitle || "Welcome to my blog",
-	image,
+	description = siteConfig.subtitle,
+	banner,
 	setOGTypeArticle = false,
 } = Astro.props;
 
@@ -24,13 +25,6 @@ if (title) {
 }
 
 const canonicalUrl = Astro.url;
-
-let ogImage = image || siteConfig.banner.src;
-if (ogImage && typeof ogImage === "string" && ogImage.trim() !== "") {
-	if (!ogImage.startsWith("http://") && !ogImage.startsWith("https://")) {
-		ogImage = new URL(ogImage, Astro.site || Astro.url.origin).href;
-	}
-}
 
 const slug = Astro.url.pathname.split("/").filter(Boolean).pop();
 
@@ -50,6 +44,15 @@ try {
 	}
 } catch (e) {
 	// silent fail if no blog/post page
+}
+
+let ogImage: string | undefined;
+if (banner && typeof banner === "string" && banner.trim() !== "") {
+	if (banner.startsWith("http://") || banner.startsWith("https://")) {
+		ogImage = banner;
+	} else {
+		ogImage = new URL(banner, Astro.site || Astro.url.origin).href;
+	}
 }
 
 const formatDate = (date: Date | string | undefined): string | null => {
