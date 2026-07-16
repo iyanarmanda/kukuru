@@ -1,5 +1,5 @@
 import { defineCollection } from "astro:content";
-import { glob } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 const postsCollection = defineCollection({
@@ -35,7 +35,18 @@ const specCollection = defineCollection({
 	schema: z.object({}),
 });
 
+const friendsCollection = defineCollection({
+	loader: file("./src/data/friends.json"),
+	schema: z.object({
+		siteTitle: z.string(),
+		siteDesc: z.string(),
+		siteUrl: z.url(),
+		siteIcon: z.url(),
+	}),
+});
+
 export const collections = {
 	posts: postsCollection,
 	spec: specCollection,
+	friends: friendsCollection,
 };
