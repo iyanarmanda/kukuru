@@ -1,10 +1,11 @@
+import { siteUrl } from "@utils/url-utils";
 import type { APIRoute } from "astro";
 
 const robotsTxt = `
 User-agent: *
 Disallow: /_astro/
 
-Sitemap: ${new URL("sitemap-index.xml", import.meta.env.SITE).href}
+Sitemap: ${siteUrl("sitemap-index.xml")}
 `.trim();
 
 export const GET: APIRoute = () => {
