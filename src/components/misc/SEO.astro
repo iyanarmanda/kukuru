@@ -51,7 +51,13 @@ if (image && typeof image === "string" && image.trim() !== "") {
 	if (image.startsWith("http://") || image.startsWith("https://")) {
 		ogImage = image;
 	} else {
-		ogImage = new URL(image, Astro.site || Astro.url.origin).href;
+		// GitHub Pages compatibility
+		const baseUrl =
+			import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+		const imagePath = image.startsWith("/") ? image : `/${image}`;
+		const imageFullPath = `${baseUrl}${imagePath}`;
+
+		ogImage = new URL(imageFullPath, Astro.site || Astro.url.origin).href;
 	}
 }
 
@@ -88,7 +94,7 @@ if (!description) {
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={description} />
-{ogImage && <meta name="og:image" content={ogImage} />}
+{ogImage && <meta property="og:image" content={ogImage} />}
 
 {setOGTypeArticle ? (
   <>
