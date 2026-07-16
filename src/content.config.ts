@@ -36,8 +36,9 @@ const specCollection = defineCollection({
 });
 
 const friendsCollection = defineCollection({
-	loader: file("./src/data/friends.json"),
+	loader: file("./src/content/data/friends.json"),
 	schema: z.object({
+		id: z.string(),
 		siteTitle: z.string(),
 		siteDesc: z.string(),
 		siteUrl: z.url(),
