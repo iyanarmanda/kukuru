@@ -6,14 +6,14 @@ import { profileConfig, siteConfig } from "@/config";
 interface Props {
 	title?: string;
 	description?: string;
-	banner?: string;
+	image?: string;
 	setOGTypeArticle?: boolean;
 }
 
 let {
 	title,
 	description = siteConfig.subtitle,
-	banner,
+	image,
 	setOGTypeArticle = false,
 } = Astro.props;
 
@@ -47,11 +47,11 @@ try {
 }
 
 let ogImage: string | undefined;
-if (banner && typeof banner === "string" && banner.trim() !== "") {
-	if (banner.startsWith("http://") || banner.startsWith("https://")) {
-		ogImage = banner;
+if (image && typeof image === "string" && image.trim() !== "") {
+	if (image.startsWith("http://") || image.startsWith("https://")) {
+		ogImage = image;
 	} else {
-		ogImage = new URL(banner, Astro.site || Astro.url.origin).href;
+		ogImage = new URL(image, Astro.site || Astro.url.origin).href;
 	}
 }
 
