@@ -39,6 +39,10 @@ export const siteConfig: SiteConfig = {
 		//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
 		// }
 	],
+	ogImage: {
+		useDefault: true,
+		defaultSrc: "/media/images/banner.webp",
+	},
 };
 
 export const navBarConfig: NavBarConfig = {
