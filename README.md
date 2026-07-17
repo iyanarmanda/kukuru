@@ -123,7 +123,7 @@ All commands are run from the root of the project, from a terminal:
         - [ ] Image embed (URL or local) and zoom-in feature
         - [ ] GitHub file card **?**
         - [ ] External site embed
-        - [ ] Table row colours and horizontal scroll bar
+        - [x] Table row colours and horizontal scroll bar
         - [ ] **Mermaid**
             - [x] Integrate using **playwright** and **rehype-mermaid**
             - [ ] Fix UI bug
@@ -143,7 +143,6 @@ All commands are run from the root of the project, from a terminal:
         - [ ] Multilingual support (*including content*) with switch on navbar **?**  **!**
         - [ ] Round avatar option
         - [ ] Remove paginator for single page
-        - [ ] Remove GitHub link on navbar
         - [ ] Music album above of tag list **?**
     - [ ] Restyle homepage and route **?**
         - [ ] Post pinning feature **!**
