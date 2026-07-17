@@ -5,6 +5,7 @@ description: "How to use this blog template."
 image: "./cover.webp"
 tags: ["Kukuru", "Blogging", "Customization"]
 category: Guides
+ogImage: "/media/images/guide-cover.webp"
 draft: false
 ---
 
