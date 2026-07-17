@@ -49,6 +49,7 @@ description: This is the first post of my new Astro blog.
 image: ./cover.jpg
 tags: [Foo, Bar]
 category: Front-end
+ogImage: /media/images/cover.webp   # by default is empty and use `image` frontmatter if it from public directories or url.
 draft: false
 lang: jp      # Set only if the post's language differs from the site's language in `config.ts`
 ---
@@ -122,8 +123,8 @@ All commands are run from the root of the project, from a terminal:
             - [ ] **Discus**
             - [ ] **Twikoo**
         - [ ] Add **mdx** support **!**
+            - [ ] Image embed with local path
         - [x] Music embed with iframe
-        - [ ] Image embed (URL or local) and zoom-in feature
         - [ ] GitHub file card **?**
         - [ ] External site embed
         - [x] Table row colours and horizontal scroll bar
@@ -134,6 +135,7 @@ All commands are run from the root of the project, from a terminal:
         - [ ] Unlisted post (accessible via direct URL only) **?**
         - [ ] swup navigation progress bar for load content
         - [ ] Responsive for large screens
+        - [ ] Carousel images
     - [x] New pages
         - [x] 404 (*Not Found*) page
         - [x] Friends page **?**
