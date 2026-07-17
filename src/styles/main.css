@@ -157,7 +157,7 @@
 }
 
 .custom-md img, #post-cover img {
-    @apply cursor-zoom-in
+    @apply cursor-zoom-in mx-auto;
 }
 
 ::selection {
