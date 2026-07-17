@@ -104,6 +104,19 @@ doc](#an-h2-header). Here's a footnote [^1].
 
 Tables can look like this:
 
+| Feature Name | Status | Category | Complexity | Priority | Dependencies | Owner | Last Updated | ETA | Risk Level | Est. Cost |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Authentication System** | In Progress | Security | High | P0 | DB, Redis | Admin Team | 2026-07-16 | 2026-08-01 | Low | $500 |
+| **API Rate Limiting** | Pending | Performance | Medium | P1 | Redis | DevOps | 2026-07-10 | 2026-08-15 | Medium | $200 |
+| **Dark Mode UI** | Testing | Frontend | Low | P2 | Design System | UX/UI Team | 2026-07-15 | 2026-07-20 | Low | $100 |
+| **Analytics Dashboard** | Backlog | Reporting | High | P3 | Data Warehouse | Data Team | 2026-07-01 | 2026-09-01 | High | $1200 |
+| **User Notifications** | Completed | Communication | Medium | P1 | WebSocket | Backend Team | 2026-06-25 | 2026-06-30 | Medium | $300 |
+| **Payment Gateway** | Review | Finance | High | P0 | Stripe API | Finance Team | 2026-07-17 | 2026-08-10 | Critical | $800 |
+
+</br>
+
+Also tables can look like this:
+
 size material color
 
 ---
