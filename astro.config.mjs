@@ -22,6 +22,7 @@ import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-cop
 import { pluginLanguageBadge } from "./src/plugins/expressive-code/language-badge.ts";
 import { AdmonitionComponent } from "./src/plugins/rehype-component-admonition.mjs";
 import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.mjs";
+import { rehypeLazyLoadImage } from "./src/plugins/rehype-lazy-load-image.mjs";
 import { rehypeMermaidConfig } from "./src/plugins/rehype-mermaid.mjs";
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
@@ -121,6 +122,7 @@ export default defineConfig({
 			rehypePlugins: [
 				rehypeKatex,
 				rehypeSlug,
+				rehypeLazyLoadImage,
 				rehypeMermaidConfig,
 				[
 					rehypeComponents,

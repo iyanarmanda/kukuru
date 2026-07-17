@@ -112,6 +112,9 @@ All commands are run from the root of the project, from a terminal:
         - [x] `sharp@0.35.3`
     - [ ] Expand **Husky** utilities
     - [ ] Add and reconfigure **Dependabot**
+    - [ ] Page load performance
+        - [x] Image lazy load
+        - [ ] Minimize icon bundle
 - [ ] Feature Adjustments
     - [ ] Blog features
         - [ ] Add comment feature
@@ -131,7 +134,6 @@ All commands are run from the root of the project, from a terminal:
         - [ ] Unlisted post (accessible via direct URL only) **?**
         - [ ] swup navigation progress bar for load content
         - [ ] Responsive for large screens
-        - [ ] Lazy load
     - [x] New pages
         - [x] 404 (*Not Found*) page
         - [x] Friends page **?**
