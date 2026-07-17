@@ -1,6 +1,7 @@
 ---
 title: Markdown Example
 published: 2023-10-01
+updated: 2026-07-16
 description: A simple example of a Markdown blog post.
 tags: [Markdown, Blogging, Demo]
 category: Examples
@@ -31,6 +32,20 @@ Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
 in chapters 12--14"). Three dots ... will be converted to an ellipsis.
 Unicode is supported. ☺
 
+This is example embed image from another site:
+
+![example image](https://filepicker-images.genius.com/jlz3qkbiyil)
+
+> Source: [Rokudenashi - One Voice](https://www.youtube.com/watch?v=5GUaMOpfmr8&list=RD5GUaMOpfmr8&start_radio=1)
+
+```markdown
+![image description](image-url)
+```
+
+Or use image from public directory like:
+
+![example image2](/kukuru/media/images/banner.webp)
+
 ## An h2 header
 
 Here's a numbered list:
@@ -42,10 +57,8 @@ Here's a numbered list:
 Note again how the actual text starts at 4 columns in (4 characters
 from the left side). Here's a code sample:
 
-```
-# Let me re-iterate ...
-for i in 1 .. 10 { do-something(i) }
-```
+    # Let me re-iterate ...
+    for i in 1 .. 10 { do-something(i) }
 
 As you probably guessed, indented 4 spaces. By the way, instead of
 indenting the block, you can use delimited blocks, if you like:
