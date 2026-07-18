@@ -14,6 +14,7 @@
 		"new-post": "node scripts/new-post.js",
 		"format": "biome format --write ./src",
 		"lint": "biome check --write ./src",
+		"test": "vitest",
 		"preinstall": "npx only-allow pnpm",
 		"prepare": "husky && pnpm playwright install --with-deps chromium"
 	},
@@ -78,7 +79,8 @@
 		"lint-staged": "^17.0.8",
 		"playwright": "^1.61.1",
 		"svelte-check": "^4.7.2",
-		"typescript": "^5.9.3"
+		"typescript": "^5.9.3",
+		"vitest": "^4.1.10"
 	},
 	"packageManager": "pnpm@9.14.4"
 }
