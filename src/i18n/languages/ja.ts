@@ -33,7 +33,10 @@ export const ja: Translation = {
 
 	[Key.more]: "もっと",
 
-	[Key.author]: "作者",
+	[Key.author]: "著者",
 	[Key.publishedAt]: "公開日",
 	[Key.license]: "ライセンス",
+
+	[Key.unsupportedLang]: "このページはまだ%sに翻訳されていません。",
+	[Key.langName]: "日本語",
 };

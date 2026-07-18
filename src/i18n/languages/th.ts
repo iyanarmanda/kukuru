@@ -33,7 +33,10 @@ export const th: Translation = {
 
 	[Key.more]: "ดูเพิ่ม",
 
-	[Key.author]: "ผู้เขียน",
+	[Key.author]: "ผู้แต่ง",
 	[Key.publishedAt]: "เผยแพร่เมื่อ",
-	[Key.license]: "สัญญาอนุญาต",
+	[Key.license]: "ใบอนุญาต",
+
+	[Key.unsupportedLang]: "หน้านี้ยังไม่ได้แปลเป็น%s",
+	[Key.langName]: "ภาษาไทย",
 };

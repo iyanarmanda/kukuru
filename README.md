@@ -138,16 +138,18 @@ All commands are run from the root of the project, from a terminal:
         - [ ] Carousel images
     - [x] New pages
         - [x] 404 (*Not Found*) page
-        - [x] Friends page **?**
+        - [x] Friends page
     - [x] **@astrojs/partytown**
         - [x] Google Analytics (**GA4**)
     - [x] Improve meta tags and open graph tags
     - [ ] Layout/base adjustment
         - [ ] Nested category **?**
-        - [ ] Multilingual support (*including content*) with switch on navbar **?**  **!**
+        - [ ] **i18n** adjustment
+            - [ ] Multilingual support (*including content*) with switch on navbar
+            - [ ] Add **french** translation
         - [ ] Round avatar option
         - [ ] Remove paginator for single page
-        - [ ] Music album above of tag list **?**
+        - [ ] Music album under the tag list **?**
     - [ ] Restyle homepage and route **?**
         - [ ] Post pinning feature **!**
         - [ ] "About" page become root and renamed to "Home"
