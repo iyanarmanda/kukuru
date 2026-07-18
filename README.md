@@ -136,6 +136,7 @@ All commands are run from the root of the project, from a terminal:
         - [ ] swup navigation progress bar for load content
         - [ ] Responsive for large screens
         - [ ] Carousel images
+        - [ ] Updated date on license
     - [x] New pages
         - [x] 404 (*Not Found*) page
         - [x] Friends page
@@ -146,7 +147,7 @@ All commands are run from the root of the project, from a terminal:
         - [ ] Nested category **?**
         - [ ] **i18n** adjustment
             - [ ] Multilingual support (*including content*) with switch on navbar
-            - [ ] Add **french** translation
+            - [x] Add **french** translation
         - [ ] Round avatar option
         - [ ] Remove paginator for single page
         - [ ] Music album under the tag list **?**
