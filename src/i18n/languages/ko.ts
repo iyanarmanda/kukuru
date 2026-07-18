@@ -36,4 +36,7 @@ export const ko: Translation = {
 	[Key.author]: "저자",
 	[Key.publishedAt]: "게시일",
 	[Key.license]: "라이선스",
+
+	[Key.unsupportedLang]: "이 페이지는 아직 %s로 번역되지 않았습니다.",
+	[Key.langName]: "한국어",
 };

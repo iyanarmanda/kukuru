@@ -1,3 +1,4 @@
+import { DEFAULT_LANG } from "@constants/constants";
 import { siteConfig } from "../config";
 import type I18nKey from "./i18nKey";
 import { en } from "./languages/en";
@@ -38,11 +39,15 @@ const map: { [key: string]: Translation } = {
 	tr_tr: tr,
 };
 
+export function normalizeLang(lang: string): string {
+	return lang.toLowerCase().replace("-", "_");
+}
+
 export function getTranslation(lang: string): Translation {
-	return map[lang.toLowerCase()] || defaultTranslation;
+	return map[normalizeLang(lang)] || defaultTranslation;
 }
 
 export function i18n(key: I18nKey): string {
-	const lang = siteConfig.lang || "en";
+	const lang = siteConfig.lang || DEFAULT_LANG;
 	return getTranslation(lang)[key];
 }

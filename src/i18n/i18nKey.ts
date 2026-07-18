@@ -33,6 +33,9 @@ enum I18nKey {
 	author = "author",
 	publishedAt = "publishedAt",
 	license = "license",
+
+	unsupportedLang = "unsupportedLang",
+	langName = "langName",
 }
 
 export default I18nKey;

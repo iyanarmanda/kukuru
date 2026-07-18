@@ -1,22 +1,30 @@
 import type { InferEntrySchema, RenderedContent } from "astro:content";
-import type { AUTO_MODE, DARK_MODE, LIGHT_MODE } from "@constants/constants";
+import type {
+	ALL_LANGUAGES,
+	AUTO_MODE,
+	DARK_MODE,
+	LIGHT_MODE,
+} from "@constants/constants";
 import type * as Giscus from "@giscus/svelte";
+
+export type ConfigLang =
+	| "en"
+	| "zh_CN"
+	| "zh_TW"
+	| "ja"
+	| "ko"
+	| "es"
+	| "th"
+	| "vi"
+	| "tr"
+	| "id";
 
 export type SiteConfig = {
 	title: string;
 	subtitle: string;
 
-	lang:
-		| "en"
-		| "zh_CN"
-		| "zh_TW"
-		| "ja"
-		| "ko"
-		| "es"
-		| "th"
-		| "vi"
-		| "tr"
-		| "id";
+	lang: ConfigLang;
+	supportedLangs: ConfigLang[];
 
 	themeColor: {
 		hue: number;
@@ -150,3 +158,5 @@ export type AnalyticsConfig = {
 	google?: GoogleAnalytics;
 	umami?: null;
 };
+
+export type SupportedLang = (typeof ALL_LANGUAGES)[number];
