@@ -35,6 +35,11 @@ enum I18nKey {
 	updatedAt = "updatedAt",
 	license = "license",
 
+	footnotes = "footnotes",
+
+	notFound = "notFound",
+	returnToHomepage = "returnToHomepage",
+
 	unsupportedLang = "unsupportedLang",
 	langName = "langName",
 }

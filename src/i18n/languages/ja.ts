@@ -38,6 +38,11 @@ export const ja: Translation = {
 	[Key.updatedAt]: "更新日時",
 	[Key.license]: "ライセンス",
 
+	[Key.footnotes]: "脚注",
+
+	[Key.notFound]: "見つかりません",
+	[Key.returnToHomepage]: "ホームに戻る",
+
 	[Key.unsupportedLang]: "このページはまだ%sに翻訳されていません。",
 	[Key.langName]: "日本語",
 };

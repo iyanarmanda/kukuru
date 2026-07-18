@@ -38,6 +38,11 @@ export const vi: Translation = {
 	[Key.updatedAt]: "Cập nhật lúc",
 	[Key.license]: "Giấy phép",
 
+	[Key.footnotes]: "Chú chân",
+
+	[Key.notFound]: "Không tìm thấy",
+	[Key.returnToHomepage]: "Quay lại trang chủ",
+
 	[Key.unsupportedLang]: "Trang này chưa được dịch sang %s.",
 	[Key.langName]: "Tiếng Việt",
 };

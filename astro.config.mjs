@@ -18,6 +18,8 @@ import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-di
 import remarkMath from "remark-math";
 import remarkSectionize from "remark-sectionize";
 import { expressiveCodeConfig } from "./src/config.ts";
+import I18nKey from "./src/i18n/i18nKey.ts";
+import { i18n } from "./src/i18n/translation.ts";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
 import { pluginLanguageBadge } from "./src/plugins/expressive-code/language-badge.ts";
 import { AdmonitionComponent } from "./src/plugins/rehype-component-admonition.mjs";
@@ -110,6 +112,9 @@ export default defineConfig({
 	],
 	markdown: {
 		processor: unified({
+			remarkRehype: {
+				footnoteLabel: i18n(I18nKey.footnotes),
+			},
 			remarkPlugins: [
 				remarkMath,
 				remarkReadingTime,

@@ -1,5 +1,5 @@
-import { DEFAULT_LANG } from "@constants/constants";
 import { siteConfig } from "../config";
+import { DEFAULT_LANG } from "../constants/constants";
 import type I18nKey from "./i18nKey";
 import { en } from "./languages/en";
 import { es } from "./languages/es";

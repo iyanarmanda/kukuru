@@ -38,6 +38,11 @@ export const es: Translation = {
 	[Key.updatedAt]: "Actualizado el",
 	[Key.license]: "Licencia",
 
+	[Key.footnotes]: "Notas al pie",
+
+	[Key.notFound]: "No encontrado",
+	[Key.returnToHomepage]: "Volver a la página de inicio",
+
 	[Key.unsupportedLang]: "Esta página aún no ha sido traducida al %s.",
 	[Key.langName]: "Español",
 };

@@ -38,6 +38,11 @@ export const id: Translation = {
 	[Key.updatedAt]: "Diperbarui pada",
 	[Key.license]: "Lisensi",
 
+	[Key.footnotes]: "Catatan kaki",
+
+	[Key.notFound]: "Tidak Ditemukan",
+	[Key.returnToHomepage]: "Kembali ke Beranda",
+
 	[Key.unsupportedLang]: "Halaman ini belum diterjemahkan ke dalam %s.",
 	[Key.langName]: "Bahasa Indonesia",
 };

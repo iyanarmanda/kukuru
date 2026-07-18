@@ -38,6 +38,11 @@ export const zh_CN: Translation = {
 	[Key.updatedAt]: "更新于",
 	[Key.license]: "许可协议",
 
+	[Key.footnotes]: "脚注",
+
+	[Key.notFound]: "未找到",
+	[Key.returnToHomepage]: "返回首页",
+
 	[Key.unsupportedLang]: "该页面尚未翻译成%s。",
 	[Key.langName]: "中文",
 };

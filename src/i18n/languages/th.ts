@@ -38,6 +38,11 @@ export const th: Translation = {
 	[Key.updatedAt]: "อัปเดตเมื่อ",
 	[Key.license]: "ใบอนุญาต",
 
+	[Key.footnotes]: "หมายเหตุท้ายหน้า",
+
+	[Key.notFound]: "ไม่พบหน้าเว็บ",
+	[Key.returnToHomepage]: "กลับสู่หน้าหลัก",
+
 	[Key.unsupportedLang]: "หน้านี้ยังไม่ได้แปลเป็น%s",
 	[Key.langName]: "ภาษาไทย",
 };
