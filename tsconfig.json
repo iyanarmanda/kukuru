@@ -18,7 +18,8 @@
 			"@layouts/*": ["./src/layouts/*"],
 			"@styles/*": ["./src/styles/*"],
 			"@/*": ["./src/*"]
-		}
+		},
+		"types": ["vitest/globals"]
 	},
 	"include": ["./src/**/*"]
 }

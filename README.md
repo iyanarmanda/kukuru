@@ -116,6 +116,9 @@ All commands are run from the root of the project, from a terminal:
     - [ ] Page load performance
         - [x] Image lazy load
         - [ ] Minimize icon bundle
+    - [ ] Testing **?**
+        - [x] **Vitest** (*unit testing*)
+        - [ ] **Playwright** (*e2e*)
 - [ ] Feature Adjustments
     - [ ] Blog features
         - [ ] Add comment feature
