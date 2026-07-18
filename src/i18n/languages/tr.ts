@@ -38,6 +38,11 @@ export const tr: Translation = {
 	[Key.updatedAt]: "Güncellenme tarihi",
 	[Key.license]: "Lisans",
 
+	[Key.footnotes]: "Altı not",
+
+	[Key.notFound]: "Bulunamadı",
+	[Key.returnToHomepage]: "Ana sayfaya dön",
+
 	[Key.unsupportedLang]: "Bu sayfa henüz %s diline çevrilmedi.",
 	[Key.langName]: "Türkçe",
 };

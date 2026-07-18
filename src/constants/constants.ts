@@ -1,5 +1,5 @@
-import { siteConfig } from "@/config";
 import type { LIGHT_DARK_MODE, SupportedLang } from "@/types/config";
+import { siteConfig } from "../config";
 
 export const PAGE_SIZE = 8;
 
