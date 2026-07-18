@@ -17,7 +17,8 @@ export type ConfigLang =
 	| "th"
 	| "vi"
 	| "tr"
-	| "id";
+	| "id"
+	| "fr";
 
 export type SiteConfig = {
 	title: string;

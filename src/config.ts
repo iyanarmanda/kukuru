@@ -13,7 +13,7 @@ export const siteConfig: SiteConfig = {
 	title: "Kukuru",
 	subtitle: "Demo Site",
 	lang: "en", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
-	supportedLangs: ["en", "id", "ja", "zh_CN"], // Use all supported language if empty, []. It can be sorted by array order
+	supportedLangs: [], // Use all supported language if empty. It can be sorted by array order
 	themeColor: {
 		hue: 260, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
 		fixed: false, // Hide the theme color picker for visitors
