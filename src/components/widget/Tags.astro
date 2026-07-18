@@ -10,12 +10,11 @@ import WidgetLayout from "./WidgetLayout.astro";
 interface Props {
 	class?: string;
 	style?: string;
-	lang?: string;
 }
 
-const { class: className, style, lang } = Astro.props;
+const { class: className, style } = Astro.props;
 
-const tags = await getTagList(lang);
+const tags = await getTagList();
 
 const COLLAPSED_HEIGHT = "7.5rem";
 
@@ -24,7 +23,7 @@ const isCollapsed = tags.length >= 20;
 <WidgetLayout name={i18n(I18nKey.tags)} id="tags" isCollapsed={isCollapsed} collapsedHeight={COLLAPSED_HEIGHT} class={className} style={style}>
     <div class="flex gap-2 flex-wrap">
         {tags.map(t => (
-            <ButtonTag href={getTagUrl(t.name, lang)} label={`View all posts with the ${t.name.trim()} tag`}>
+            <ButtonTag href={getTagUrl(t.name)} label={`View all posts with the ${t.name.trim()} tag`}>
                 {t.name.trim()}
             </ButtonTag>
         ))}

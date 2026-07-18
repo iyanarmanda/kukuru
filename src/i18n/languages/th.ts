@@ -35,6 +35,7 @@ export const th: Translation = {
 
 	[Key.author]: "ผู้แต่ง",
 	[Key.publishedAt]: "เผยแพร่เมื่อ",
+	[Key.updatedAt]: "อัปเดตเมื่อ",
 	[Key.license]: "ใบอนุญาต",
 
 	[Key.unsupportedLang]: "หน้านี้ยังไม่ได้แปลเป็น%s",

@@ -35,6 +35,7 @@ export const fr: Translation = {
 
 	[Key.author]: "Auteur",
 	[Key.publishedAt]: "Publié à",
+	[Key.updatedAt]: "Mis à jour le",
 	[Key.license]: "Licence",
 
 	[Key.unsupportedLang]: "Cette page n'est pas encore traduite en %s.",

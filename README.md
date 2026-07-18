@@ -136,7 +136,7 @@ All commands are run from the root of the project, from a terminal:
         - [ ] swup navigation progress bar for load content
         - [ ] Responsive for large screens
         - [ ] Carousel images
-        - [ ] Updated date on license
+        - [x] Updated date on license
     - [x] New pages
         - [x] 404 (*Not Found*) page
         - [x] Friends page

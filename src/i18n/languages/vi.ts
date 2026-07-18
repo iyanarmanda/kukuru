@@ -35,6 +35,7 @@ export const vi: Translation = {
 
 	[Key.author]: "Tác giả",
 	[Key.publishedAt]: "Xuất bản tại",
+	[Key.updatedAt]: "Cập nhật lúc",
 	[Key.license]: "Giấy phép",
 
 	[Key.unsupportedLang]: "Trang này chưa được dịch sang %s.",
