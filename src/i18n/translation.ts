@@ -3,6 +3,7 @@ import { DEFAULT_LANG } from "../constants/constants";
 import type I18nKey from "./i18nKey";
 import { en } from "./languages/en";
 import { es } from "./languages/es";
+import { fa } from "./languages/fa";
 import { fr } from "./languages/fr";
 import { id } from "./languages/id";
 import { ja } from "./languages/ja";
@@ -40,6 +41,8 @@ const map: { [key: string]: Translation } = {
 	tr_tr: tr,
 	fr: fr,
 	fr_fr: fr,
+	fa: fa,
+	fa_ir: fa,
 };
 
 export function normalizeLang(lang: string): string {

@@ -18,7 +18,8 @@ export type ConfigLang =
 	| "vi"
 	| "tr"
 	| "id"
-	| "fr";
+	| "fr"
+	| "fa";
 
 export type SiteConfig = {
 	title: string;
@@ -26,6 +27,7 @@ export type SiteConfig = {
 
 	lang: ConfigLang;
 	supportedLangs: ConfigLang[];
+	// rtl: boolean;  // TODO make it work without destryoing layouts
 
 	themeColor: {
 		hue: number;

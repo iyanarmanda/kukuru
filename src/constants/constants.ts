@@ -22,6 +22,7 @@ export const PAGE_WIDTH = 75;
 export const ALL_LANGUAGES = [
 	"en",
 	"es",
+	"fa",
 	"fr",
 	"id",
 	"ja",

@@ -149,7 +149,8 @@ All commands are run from the root of the project, from a terminal:
             - [x] Expand translation (Footnotes, 404)
             - [ ] Multilingual support (*including content*) with switch on navbar
             - [x] **French** translation
-            - [ ] **Persian** translation
+            - [x] **Persian** translation
+            - [ ] rtl feature
         - [ ] Round avatar option
         - [ ] Remove paginator for single page
         - [ ] Music album under the tag list **?**
