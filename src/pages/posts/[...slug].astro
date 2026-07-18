@@ -110,7 +110,7 @@ const ogImage = entry.data.ogImage ?? entry.data.image;
                 <Content />
             </Markdown>
 
-            {licenseConfig.enable && <License title={entry.data.title} slug={entry.id} pubDate={entry.data.published} class="mb-6 rounded-xl license-container onload-animation"></License>}
+            {licenseConfig.enable && <License title={entry.data.title} slug={entry.id} pubDate={entry.data.published} updateDate={entry.data.updated} class="mb-6 rounded-xl license-container onload-animation"></License>}
 
         </div>
     </div>
