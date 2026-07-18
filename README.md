@@ -84,7 +84,9 @@ All commands are run from the root of the project, from a terminal:
 
 > ( ***?** ) *this mean TBD (**To Be Determined**)*
 
-> ( ***!** ) *this mean BREAKING CHANGE*
+> ( ***!** ) *this mean BREAKING CHANGE for developers*
+
+> ( ***!!** ) *this mean BREAKING CHANGE for **USERS***
 
 - [ ] Performance, Dependency & Architecture Optimization
     - [x] Optimization of style dependencies **!**
@@ -125,7 +127,7 @@ All commands are run from the root of the project, from a terminal:
             - [x] **Giscus**
             - [ ] **Discus**
             - [ ] **Twikoo**
-        - [ ] Add **mdx** support **!**
+        - [ ] Add **mdx** support **?**
             - [ ] Image embed with local path
         - [x] Music embed with iframe
         - [ ] GitHub file card **?**
@@ -158,7 +160,7 @@ All commands are run from the root of the project, from a terminal:
         - [ ] Remove paginator for single page
         - [ ] Music album under the tag list **?**
     - [ ] Restyle homepage and route **?**
-        - [ ] Post pinning feature **!**
+        - [ ] Post pinning feature **?**
         - [ ] "About" page become root and renamed to "Home"
 
 ## 📄 License
