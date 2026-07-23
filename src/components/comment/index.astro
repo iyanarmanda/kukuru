@@ -6,7 +6,9 @@ import Giscus from "./Giscus.svelte";
 
 interface Props {
 	post?: CollectionEntry<"posts">;
+	lang?: string;
 }
+const { lang } = Astro.props;
 
 // const { post } = Astro.props;
 // const path = post ? `/posts/${post.id}` : Astro.url.pathname;
@@ -19,6 +21,6 @@ if (commentConfig?.giscus) {
 ---
 
 <div class="card-base p-6 mb-4">
-  {commentService === 'giscus' && <Giscus client:only="svelte" />}
+  {commentService === 'giscus' && <Giscus client:only="svelte" lang={lang} />}
   {commentService === '' && null }
 </div>

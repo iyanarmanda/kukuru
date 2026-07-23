@@ -139,7 +139,7 @@ const ogImage = entry.data.ogImage ?? entry.data.image;
         </div>
     </div>
 
-    <Comment post={entry}></Comment>
+    <Comment post={entry} lang={lang}></Comment>
 
     <div class="flex flex-col md:flex-row justify-between mb-4 gap-4 overflow-hidden w-full">
         <a href={entry.data.nextSlug ? getPostUrlBySlug(entry.data.nextSlug) : "#"}
