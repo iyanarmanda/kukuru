@@ -113,7 +113,7 @@ function setLang(targetLang: string) {
 					class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5"
 					role="menuitem"
 					class:current-theme-btn={currentLang === lang}
-					// onclick={() => setLang(lang)}
+					onclick={() => setLang(lang)}
 				>
 					{getTranslation(lang)[I18nKey.langName]}
 				</button>

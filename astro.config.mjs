@@ -33,7 +33,7 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://iyanarmanda.github.io/",
-	base: "/kukuru",
+	base: "/",
 	integrations: [
 		swup({
 			theme: false,
