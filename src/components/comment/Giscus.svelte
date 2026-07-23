@@ -8,6 +8,11 @@ if (!commentConfig.giscus) {
 	throw new Error("Giscus comments are not configured");
 }
 
+interface Props {
+	lang?: string;
+}
+let { lang }: Props = $props();
+
 const giscus = commentConfig.giscus;
 
 let hue = getHue();
@@ -19,6 +24,19 @@ let giscus_base: string | null = null;
 let giscus_dark: string | null = null;
 let giscus_light: string | null = null;
 let theme: string;
+
+function formatGiscusLang(lang?: string): string {
+	if (!lang) return giscus.lang || "en";
+	const langMap: Record<string, string> = {
+		"zh-cn": "zh-CN",
+		"zh-hans": "zh-CN",
+		"zh-tw": "zh-TW",
+		"zh-hant": "zh-TW",
+		"pt-br": "pt-BR",
+	};
+	return langMap[lang.toLowerCase()] || lang.toLowerCase();
+}
+let currentLang = $derived(formatGiscusLang(lang));
 
 if (giscus.theme === "reactive") {
 	(async () => {
@@ -110,6 +128,7 @@ function updateGiscusTheme(retries = 0, maxRetries = 10) {
 		giscus: {
 			setConfig: {
 				theme: getGiscusThemeValue(),
+				lang: currentLang,
 			},
 		},
 	};
@@ -131,7 +150,7 @@ function updateGiscusTheme(retries = 0, maxRetries = 10) {
   emitMetadata={giscus.emitMetadata}
   inputPosition={giscus.inputPosition}
   theme={theme}
-  lang={giscus.lang}
+  lang={currentLang}
   loading={giscus.loading}
 >
 </Giscus>
