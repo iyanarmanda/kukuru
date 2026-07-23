@@ -11,8 +11,8 @@ interface Props {
 	lang?: string;
 }
 
-const { class: className, style } = Astro.props;
-const categories = await getCategoryList();
+const { class: className, style, lang } = Astro.props;
+const categories = await getCategoryList(lang);
 
 const COLLAPSED_HEIGHT = "7.5rem";
 const COLLAPSE_THRESHOLD = 5;
@@ -20,8 +20,8 @@ const COLLAPSE_THRESHOLD = 5;
 const isCollapsed = categories.length >= COLLAPSE_THRESHOLD;
 ---
 
-<WidgetLayout name={i18n(I18nKey.categories)} id="categories" isCollapsed={isCollapsed} collapsedHeight={COLLAPSED_HEIGHT}
-                class={className} style={style}
+<WidgetLayout name={i18n(I18nKey.categories, lang)} id="categories" isCollapsed={isCollapsed} collapsedHeight={COLLAPSED_HEIGHT}
+                class={className} style={style} lang={lang}
 >
     {categories.map((c) =>
         <ButtonLink

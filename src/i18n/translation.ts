@@ -53,7 +53,7 @@ export function getTranslation(lang: string): Translation {
 	return map[normalizeLang(lang)] || defaultTranslation;
 }
 
-export function i18n(key: I18nKey): string {
-	const lang = siteConfig.lang || DEFAULT_LANG;
-	return getTranslation(lang)[key];
+export function i18n(key: I18nKey, lang?: string): string {
+	const activeLang = lang || siteConfig.lang || DEFAULT_LANG;
+	return getTranslation(activeLang)[key];
 }
