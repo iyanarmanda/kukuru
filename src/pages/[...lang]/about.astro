@@ -1,18 +1,15 @@
 ---
 
-import { getEntry, render } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Markdown from "@components/misc/Markdown.astro";
 import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import { normalizeLangTag } from "@utils/content-utils";
 import type { GetStaticPaths } from "astro";
 import I18nKey from "../../i18n/i18nKey";
 import { i18n } from "../../i18n/translation";
 import MainGridLayout from "../../layouts/MainGridLayout.astro";
 
-const aboutPost = await getEntry("spec", "about");
-
-if (!aboutPost) {
-	throw new Error("About page content not found");
-}
+const { lang = DEFAULT_LANG } = Astro.props;
 
 export const getStaticPaths = (async () => {
 	return SUPPORTED_LANG.map((lang) => ({
@@ -23,9 +20,27 @@ export const getStaticPaths = (async () => {
 	}));
 }) satisfies GetStaticPaths;
 
-const { Content } = await render(aboutPost);
+const allSpecEntries = await getCollection("spec");
+const targetSlug = `${lang}/about`;
 
-const { lang } = Astro.props;
+let aboutPost = allSpecEntries.find(
+	(entry) => normalizeLangTag(entry.id) === normalizeLangTag(targetSlug),
+);
+
+if (!aboutPost) {
+	const defaultSlug = `${DEFAULT_LANG}/about`;
+	aboutPost = allSpecEntries.find(
+		(entry) =>
+			normalizeLangTag(entry.id) === normalizeLangTag(defaultSlug) ||
+			normalizeLangTag(entry.id) === "about",
+	);
+}
+
+if (!aboutPost) {
+	throw new Error("About page content not found");
+}
+
+const { Content } = await render(aboutPost);
 ---
 <MainGridLayout title={i18n(I18nKey.about, lang)} description={i18n(I18nKey.about, lang)} lang={lang}>
     <div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32">
