@@ -21,6 +21,7 @@ if (commentConfig?.giscus) {
 ---
 
 <div class="card-base p-6 mb-4">
+	<!-- TODO sometimes Giscus theme color not reactive -->
   {commentService === 'giscus' && <Giscus client:only="svelte" lang={lang} />}
   {commentService === '' && null }
 </div>

@@ -152,7 +152,7 @@ All commands are run from the root of the project, from a terminal:
         - [ ] Nested category **?**
         - [ ] **i18n** adjustment
             - [x] Expand translation (Footnotes, 404)
-            - [ ] Multilingual support (*including content*) with switch on navbar
+            - [x] Multilingual support (*including content*) with switch on navbar
             - [x] **French** translation
             - [x] **Persian** translation
             - [ ] rtl feature
