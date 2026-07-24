@@ -20,12 +20,23 @@ function getMatchedLang(
 	);
 }
 
+function getRelativePathname(): string {
+	const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, "");
+	let pathname = window.location.pathname;
+
+	if (baseUrl && pathname.startsWith(baseUrl)) {
+		pathname = pathname.slice(baseUrl.length);
+	}
+
+	return pathname || "/";
+}
+
 const configLang = getMatchedLang(siteConfig.lang) || DEFAULT_LANG;
 
 let currentLang = $state<SupportedLang>(configLang);
 
 onMount(() => {
-	const pathname = window.location.pathname;
+	const pathname = getRelativePathname();
 	const parts = pathname.split("/").filter(Boolean);
 	const firstPath = parts[0];
 
@@ -58,7 +69,7 @@ function togglePanel() {
 function setLang(targetLang: string) {
 	if (targetLang === currentLang) return;
 
-	const pathname = window.location.pathname;
+	const pathname = getRelativePathname();
 	const search = window.location.search;
 	const hash = window.location.hash;
 
