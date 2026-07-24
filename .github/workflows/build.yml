@@ -37,8 +37,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run Astro Check
+      - name: Run Project Check (Astro, Svelte, TypeScript)
         run: pnpm check
+
+      - name: Run Unit Testing (Vitest)
+        run: pnpm test-coverage
 
   build:
     strategy:
