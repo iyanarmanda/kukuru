@@ -15,15 +15,13 @@ let { lang }: Props = $props();
 
 const giscus = commentConfig.giscus;
 
-let hue = getHue();
-let mode = document.documentElement.classList.contains("dark")
-	? "dark"
-	: "light";
+let hue = $state(getHue());
+let mode = $state("light");
 
-let giscus_base: string | null = null;
-let giscus_dark: string | null = null;
-let giscus_light: string | null = null;
-let theme: string;
+let giscus_base = $state<string | null>(null);
+let giscus_dark = $state<string | null>(null);
+let giscus_light = $state<string | null>(null);
+let giscus_iframe = $state<HTMLIFrameElement | null>(null);
 
 function formatGiscusLang(lang?: string): string {
 	if (!lang) return giscus.lang || "en";
@@ -36,10 +34,43 @@ function formatGiscusLang(lang?: string): string {
 	};
 	return langMap[lang.toLowerCase()] || lang.toLowerCase();
 }
+
 let currentLang = $derived(formatGiscusLang(lang));
 
-if (giscus.theme === "reactive") {
-	(async () => {
+let theme = $derived.by(() => {
+	if (giscus.theme !== "reactive") {
+		return giscus.theme || mode;
+	}
+	if (!giscus_base || !giscus_dark || !giscus_light) {
+		return mode;
+	}
+	const hue_style = `main { --hue: ${hue}; }`;
+	const css =
+		mode === "dark"
+			? hue_style + giscus_dark + giscus_base
+			: hue_style + giscus_light + giscus_base;
+	return `data:text/css;base64,${btoa(css)}`;
+});
+
+const observer =
+	typeof MutationObserver !== "undefined"
+		? new MutationObserver(() => {
+				const new_hue = getHue();
+				const new_mode = document.documentElement.classList.contains("dark")
+					? "dark"
+					: "light";
+				if (hue !== new_hue || mode !== new_mode) {
+					hue = new_hue;
+					mode = new_mode;
+					updateGiscusTheme();
+				}
+			})
+		: null;
+
+onMount(async () => {
+	mode = document.documentElement.classList.contains("dark") ? "dark" : "light";
+
+	if (giscus.theme === "reactive") {
 		try {
 			const [baseModule, darkModule, lightModule] = await Promise.all([
 				import("@styles/giscus-base.css?raw"),
@@ -49,40 +80,16 @@ if (giscus.theme === "reactive") {
 			giscus_base = baseModule.default;
 			giscus_dark = darkModule.default;
 			giscus_light = lightModule.default;
-			theme = getGiscusThemeValue();
 		} catch (error) {
 			console.error("Failed to load giscus styles:", error);
 		}
-	})();
-} else {
-	theme = giscus.theme ? giscus.theme : mode;
-}
 
-let giscus_iframe: HTMLIFrameElement | null = null;
-
-const observer = new MutationObserver(() => {
-	const new_hue = getHue();
-	const new_mode = document.documentElement.classList.contains("dark")
-		? "dark"
-		: "light";
-	if (hue !== new_hue || mode !== new_mode) {
-		hue = new_hue;
-		mode = new_mode;
-		updateGiscusTheme();
+		findGiscusIframe();
+		observer?.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ["class", "style"],
+		});
 	}
-});
-
-onMount(async () => {
-	if (giscus.theme !== "reactive") {
-		return;
-	}
-
-	findGiscusIframe();
-
-	observer.observe(document.documentElement, {
-		attributes: true,
-		attributeFilter: ["class", "style"],
-	});
 });
 
 onDestroy(() => {
@@ -101,19 +108,6 @@ function findGiscusIframe(retries = 0, maxRetries = 10) {
 	}
 }
 
-function getGiscusThemeValue() {
-	if (!giscus_base || !giscus_dark || !giscus_light) {
-		console.error("Giscus styles not loaded yet");
-		return mode;
-	}
-	const hue_style = `main { --hue: ${hue}; }`;
-	const css =
-		mode === "dark"
-			? hue_style + giscus_dark + giscus_base
-			: hue_style + giscus_light + giscus_base;
-	return `data:text/css;base64,${btoa(css)}`;
-}
-
 function updateGiscusTheme(retries = 0, maxRetries = 10) {
 	if (!giscus_iframe?.contentWindow) {
 		if (retries < maxRetries) {
@@ -127,7 +121,7 @@ function updateGiscusTheme(retries = 0, maxRetries = 10) {
 	const message = {
 		giscus: {
 			setConfig: {
-				theme: getGiscusThemeValue(),
+				theme,
 				lang: currentLang,
 			},
 		},
@@ -136,7 +130,6 @@ function updateGiscusTheme(retries = 0, maxRetries = 10) {
 }
 </script>
 
-
 <Giscus
   id="comments"
   repo={giscus.repo}
@@ -144,7 +137,7 @@ function updateGiscusTheme(retries = 0, maxRetries = 10) {
   category={giscus.category}
   categoryId={giscus.categoryId}
   mapping={giscus.mapping}
-  term={giscus.term? giscus.term : ""}
+  term={giscus.term ? giscus.term : ""}
   strict={giscus.strict}
   reactionsEnabled={giscus.reactionsEnabled}
   emitMetadata={giscus.emitMetadata}
