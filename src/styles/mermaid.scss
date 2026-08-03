@@ -565,6 +565,13 @@ svg[aria-roledescription="kanban"] {
 
 /* ARCHITECTURE */
 
+/* RADAR DIAGRAM */
+svg[aria-roledescription="radar"] {
+  text {
+    fill: var(--mermaid-text-primary) !important;
+  }
+}
+
 /* EVENT MODELING */
 
 /* TREEMAP */
