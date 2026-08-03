@@ -535,6 +535,21 @@ svg[aria-roledescription="sankey"] {
 /* BLOCK DIAGRAM */
 
 /* PACKET */
+svg[aria-roledescription="packet"] {
+  .packetBlock {
+    fill: var(--mermaid-node-bg-primary) !important;
+    stroke: var(--mermaid-node-border-primary) !important;
+  }
+
+  .packetLabel {
+    fill: var(--mermaid-node-text-primary) !important;
+  }
+
+  > text,
+  .packetByte {
+    fill: var(--mermaid-text-primary) !important;
+  }
+}
 
 /* KANBAN */
 
