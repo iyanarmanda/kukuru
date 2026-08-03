@@ -1053,3 +1053,33 @@ kanban
 
 > Source: [https://mermaid.js.org/syntax/kanban.html](https://mermaid.js.org/syntax/kanban.html)
 
+## Venn Diagram
+
+:::warning
+*Venn Diagram is beta version*
+:::
+
+```mermaid
+venn-beta
+  set A["Frontend"]:20
+    text A1["React"]
+    text A2["Design Systems"]
+  set B["Backend"]:12
+    text B1["API"]
+  union A,B["Shared"]:3
+    text AB1["OpenAPI"]
+```
+
+```
+venn-beta
+  set A["Frontend"]:20
+    text A1["React"]
+    text A2["Design Systems"]
+  set B["Backend"]:12
+    text B1["API"]
+  union A,B["Shared"]:3
+    text AB1["OpenAPI"]
+```
+
+> Source: [https://mermaid.js.org/syntax/venn.html](https://mermaid.js.org/syntax/venn.html)
+
