@@ -9,9 +9,8 @@ draft: false
 
 Here are several examples of how to create diagrams and charts using [Mermaid](https://mermaid.js.org/). These examples are based on the official documentation, where you can find more advanced details.
 
-## Mermaid
 
-### Flowchart
+## Flowchart
 
 ```mermaid
 flowchart LR
@@ -31,7 +30,7 @@ flowchart TD
 
 > Source: [https://mermaid.js.org/syntax/flowchart.html](https://mermaid.js.org/syntax/flowchart.html)
 
-### Swimlane Diagram
+## Swimlane Diagram
 
 ```mermaid
 swimlane-beta LR
@@ -81,7 +80,9 @@ swimlane-beta LR
   answer --> receive
 ```
 
-### Sequence Diagram
+> Source: [https://mermaid.js.org/syntax/swimlanes.html](https://mermaid.js.org/syntax/swimlanes.html)
+
+## Sequence Diagram
 
 ```mermaid
 sequenceDiagram
@@ -109,7 +110,7 @@ sequenceDiagram
 
 > Source: [https://mermaid.js.org/syntax/sequenceDiagram.html](https://mermaid.js.org/syntax/sequenceDiagram.html)
 
-### Class Diagram
+## Class Diagram
 
 ```mermaid
 classDiagram
@@ -151,7 +152,7 @@ classDiagram
 
 > Source: [https://mermaid.js.org/syntax/classDiagram.html](https://mermaid.js.org/syntax/classDiagram.html)
 
-### State Diagram
+## State Diagram
 
 ```mermaid
 stateDiagram-v2
@@ -176,7 +177,87 @@ stateDiagram-v2
 > Source: [https://mermaid.js.org/syntax/stateDiagram.html](https://mermaid.js.org/syntax/stateDiagram.html)
 
 
-### Gantt Chart
+## Entity Relationship Diagram
+
+```mermaid
+erDiagram
+  CAR ||--o{ NAMED-DRIVER : allows
+  CAR {
+    string registrationNumber PK
+    string make
+    string model
+    string[] parts
+  }
+  PERSON ||--o{ NAMED-DRIVER : is
+  PERSON {
+    string driversLicense PK "The license #"
+    string(99) firstName "Only 99 characters are allowed"
+    string lastName
+    string phone UK
+    int age
+  }
+  NAMED-DRIVER {
+    string carRegistrationNumber PK, FK
+    string driverLicence PK, FK
+  }
+  MANUFACTURER only one to zero or more CAR : makes
+```
+
+```
+erDiagram
+  CAR ||--o{ NAMED-DRIVER : allows
+  CAR {
+    string registrationNumber PK
+    string make
+    string model
+    string[] parts
+  }
+  PERSON ||--o{ NAMED-DRIVER : is
+  PERSON {
+    string driversLicense PK "The license #"
+    string(99) firstName "Only 99 characters are allowed"
+    string lastName
+    string phone UK
+    int age
+  }
+  NAMED-DRIVER {
+    string carRegistrationNumber PK, FK
+    string driverLicence PK, FK
+  }
+  "**MANUFACTURER**" only one to zero or more CAR : makes
+```
+
+>Source: [https://mermaid.js.org/syntax/entityRelationshipDiagram.html](https://mermaid.js.org/syntax/entityRelationshipDiagram.html)
+
+## User Journey Diagram
+
+```mermaid
+journey
+  title My working day
+  section Go to work
+    Make tea      : 5: Me
+    Go upstairs   : 3: Me
+    Do work       : 1: Me, Cat
+  section Go home
+    Go downstairs : 5: Me
+    Sit down      : 3: Me
+```
+
+```
+journey
+  title My working day
+  section Go to work
+    Make tea      : 5: Me
+    Go upstairs   : 3: Me
+    Do work       : 1: Me, Cat
+  section Go home
+    Go downstairs : 5: Me
+    Sit down      : 3: Me
+```
+
+> Source: [https://mermaid.js.org/syntax/userJourney.html](https://mermaid.js.org/syntax/userJourney.html)
+
+## Gantt Chart
 
 ```mermaid
 gantt
@@ -243,80 +324,6 @@ gantt
 ```
 
 > Source: [https://mermaid.js.org/syntax/gantt.html](https://mermaid.js.org/syntax/gantt.html)
-
-### Pie Chart
-
-```mermaid
----
-config:
-  pie:
-    textPosition: 0.5
-    donutHole: 0.2
-    highlightSlice: Potassium
-  themeVariables:
-    pieOuterStrokeWidth: "5px"
----
-pie showData
-  title Key elements in Product X
-  "Calcium" : 42.96
-  "Potassium" : 50.05
-  "Magnesium" : 10.01
-  "Iron" :  5
-```
-
-```
----
-config:
-  pie:
-    textPosition: 0.5
-    donutHole: 0.2
-    highlightSlice: Potassium
-  themeVariables:
-    pieOuterStrokeWidth: "5px"
----
-pie showData
-  title Key elements in Product X
-  "Calcium" : 42.96
-  "Potassium" : 50.05
-  "Magnesium" : 10.01
-  "Iron" :  5
-```
-
-> Source: [https://mermaid.js.org/syntax/pie.html](https://mermaid.js.org/syntax/pie.html)
-
-### Git graph
-
-```mermaid
-gitGraph
-  commit
-  commit
-  branch develop
-  checkout develop
-  commit
-  commit
-  checkout main
-  merge develop
-  commit
-  commit
-```
-
-```
-gitGraph
-  commit
-  commit
-  branch develop
-  checkout develop
-  commit
-  commit
-  checkout main
-  merge develop
-  commit
-  commit
-```
-
-> Note: *Git Graph is on experimental*
-
-> Source: [live editor](https://mermaid.live/edit#pako:eNptkktv2zAMx7-KodOK5WHLjuwIvQx9ADvs1FthoKAlxRZiSake7dIs332yW7tdO53EH_knKVInxAwXiCLWg3PXEloLqtZJPD-0VNAnl3-Wy-Q6sP1Xeitd95Xei8bCP5gm36X2CbTiM77zVuo2aYXmwn50DhL3C1S8frv45FDgxQTHtsf2Tq8gmZM2AvZXpjd2drhnqSZhNB8DsP1knz_mGx4251sOvTv5In7qWyH8jBnoG_D_1Y8jeG-oMaZPpHt4lj2foQ161qIFaq3kiHobxAIpYRUMJhpz1Mh3Qoka0XjlYPc1qvWgOYC-N0ZNMmtC2yG6g95FKxx4nNPbRqeQV3jDpTd2joTgzd1RsymoNxC3gegJ-eNh-ButdD6WY0bvZDvwYPuIO-8Pjq7Xg3vVSt-FZsWMWjvJO7C-e9qSNcGkApwLUuawyXPOmmxb7XCR7XiZZhjQ-RwbH9d_ZYL2iGYEjy8b6vxGNC9XVVlstzgvU5JuinKBjjEoy1cF2USWlRXGmJCY5mWcRRrjN2k8uKxyUmVpcf4LoCLg6A)
 
 ### Bar chart
 
@@ -358,37 +365,81 @@ gantt
 
 > Note: *Bar chart using **gantt chart** documentation*
 
-> Source: [https://mermaid.js.org/syntax/gantt.html](https://mermaid.js.org/syntax/gantt.html)
-
-### User Journey Diagram
+## Pie Chart
 
 ```mermaid
-journey
-  title My working day
-  section Go to work
-    Make tea      : 5: Me
-    Go upstairs   : 3: Me
-    Do work       : 1: Me, Cat
-  section Go home
-    Go downstairs : 5: Me
-    Sit down      : 3: Me
+---
+config:
+  pie:
+    textPosition: 0.5
+    donutHole: 0.2
+    highlightSlice: Potassium
+  themeVariables:
+    pieOuterStrokeWidth: "5px"
+---
+pie showData
+  title Key elements in Product X
+  "Calcium" : 42.96
+  "Potassium" : 50.05
+  "Magnesium" : 10.01
+  "Iron" :  5
 ```
 
 ```
-journey
-  title My working day
-  section Go to work
-    Make tea      : 5: Me
-    Go upstairs   : 3: Me
-    Do work       : 1: Me, Cat
-  section Go home
-    Go downstairs : 5: Me
-    Sit down      : 3: Me
+---
+config:
+  pie:
+    textPosition: 0.5
+    donutHole: 0.2
+    highlightSlice: Potassium
+  themeVariables:
+    pieOuterStrokeWidth: "5px"
+---
+pie showData
+  title Key elements in Product X
+  "Calcium" : 42.96
+  "Potassium" : 50.05
+  "Magnesium" : 10.01
+  "Iron" :  5
 ```
 
-> Source: [https://mermaid.js.org/syntax/userJourney.html](https://mermaid.js.org/syntax/userJourney.html)
+> Source: [https://mermaid.js.org/syntax/pie.html](https://mermaid.js.org/syntax/pie.html)
 
-### C4 Diagram
+## Git graph
+
+```mermaid
+gitGraph
+  commit
+  commit
+  branch develop
+  checkout develop
+  commit
+  commit
+  checkout main
+  merge develop
+  commit
+  commit
+```
+
+```
+gitGraph
+  commit
+  commit
+  branch develop
+  checkout develop
+  commit
+  commit
+  checkout main
+  merge develop
+  commit
+  commit
+```
+
+> Note: *Git Graph is on experimental*
+
+> Source: [live editor](https://mermaid.live/edit#pako:eNptkktv2zAMx7-KodOK5WHLjuwIvQx9ADvs1FthoKAlxRZiSake7dIs332yW7tdO53EH_knKVInxAwXiCLWg3PXEloLqtZJPD-0VNAnl3-Wy-Q6sP1Xeitd95Xei8bCP5gm36X2CbTiM77zVuo2aYXmwn50DhL3C1S8frv45FDgxQTHtsf2Tq8gmZM2AvZXpjd2drhnqSZhNB8DsP1knz_mGx4251sOvTv5In7qWyH8jBnoG_D_1Y8jeG-oMaZPpHt4lj2foQ161qIFaq3kiHobxAIpYRUMJhpz1Mh3Qoka0XjlYPc1qvWgOYC-N0ZNMmtC2yG6g95FKxx4nNPbRqeQV3jDpTd2joTgzd1RsymoNxC3gegJ-eNh-ButdD6WY0bvZDvwYPuIO-8Pjq7Xg3vVSt-FZsWMWjvJO7C-e9qSNcGkApwLUuawyXPOmmxb7XCR7XiZZhjQ-RwbH9d_ZYL2iGYEjy8b6vxGNC9XVVlstzgvU5JuinKBjjEoy1cF2USWlRXGmJCY5mWcRRrjN2k8uKxyUmVpcf4LoCLg6A)
+
+## C4 Diagram
 
 ```mermaid
 C4Context
