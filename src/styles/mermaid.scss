@@ -316,6 +316,50 @@ svg[aria-roledescription="stateDiagram"] {
 }
 
 /* ENTITY RELATIONSHIP DIAGRAM */
+svg[aria-roledescription="er"] {
+  .outer-path path,
+  .label-container {
+    fill: var(--mermaid-node-border-primary) !important;
+  }
+
+  .row-rect-odd path {
+    fill: var(--mermaid-node-bg-primary) !important;
+  }
+
+  .row-rect-even path {
+    fill: var(--mermaid-node-bg-secondary) !important;
+  }
+
+  .edgePaths path {
+    stroke: var(--mermaid-line-primary) !important;
+  }
+
+  .edgeLabel p {
+    background-color: var(--card-bg) !important;
+    color: var(--mermaid-text-primary) !important;
+  }
+
+  [id*="er-onlyOneStart"] path,
+  [id*="er-onlyOneEnd"] path,
+  [id*="er-zeroOrOneStart"] path,
+  [id*="er-zeroOrOneEnd"] path,
+  [id*="er-oneOrMoreStart"] path,
+  [id*="er-oneOrMoreEnd"] path,
+  [id*="er-zeroOrMoreStart"] path,
+  [id*="er-zeroOrMoreEnd"] path {
+    stroke: var(--mermaid-line-primary) !important;
+  }
+  [id*="er-zeroOrOneStart"] circle,
+  [id*="er-zeroOrOneEnd"] circle,
+  [id*="er-zeroOrMoreStart"] circle,
+  [id*="er-zeroOrMoreEnd"] circle {
+    fill: var(--mermaid-line-primary) !important;
+  }
+
+  .nodeLabel {
+    color: var(--mermaid-text-primary) !important;
+  }
+}
 
 /* User Journey Diagram */
 svg[aria-roledescription="journey"] {
