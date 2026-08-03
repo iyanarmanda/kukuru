@@ -1141,6 +1141,34 @@ radar-beta
 
 > Source: [https://mermaid.js.org/syntax/radar.html](https://mermaid.js.org/syntax/radar.html)
 
+## Event Modeling Diagram
+
+```mermaid
+eventmodeling
+  tf 01 ui CartUI
+  tf 02 cmd AddItem
+  tf 03 evt ItemAdded
+
+  rf 04 evt External.InventoryChanged
+  tf 05 pcr InventoryProcessor
+  tf 06 cmd ChangeInventory
+  tf 07 evt Cart.InventoryChanged
+```
+
+```
+eventmodeling
+  tf 01 ui CartUI
+  tf 02 cmd AddItem
+  tf 03 evt ItemAdded
+
+  rf 04 evt External.InventoryChanged
+  tf 05 pcr InventoryProcessor
+  tf 06 cmd ChangeInventory
+  tf 07 evt Cart.InventoryChanged
+```
+
+> Source: [https://mermaid.js.org/syntax/eventmodeling.html](https://mermaid.js.org/syntax/eventmodeling.html)
+
 ## Venn Diagram
 
 :::warning

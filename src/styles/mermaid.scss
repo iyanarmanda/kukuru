@@ -532,6 +532,7 @@ svg[aria-roledescription="sankey"] {
 }
 
 /* XY CHART */
+/* bug UI: sometimes the line chart not rendering correctly */
 svg[aria-roledescription="xychart"] {
   .chart-title text,
   .label text,
@@ -601,6 +602,30 @@ svg[aria-roledescription="radar"] {
 }
 
 /* EVENT MODELING */
+/* data blocks is not supported */
+svg[aria-roledescription="eventmodeling"] {
+  .em-swimlane rect {
+    fill: #999;
+    stroke: #999;
+  }
+
+  .em-relation {
+    stroke: #ccc;
+    stroke-width: 2px;
+  }
+
+  marker polygon {
+    fill: #ccc;
+  }
+
+  text {
+    fill: #fff;
+  }
+
+  b {
+    color: #111;
+  }
+}
 
 /* TREEMAP */
 
