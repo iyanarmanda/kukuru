@@ -9,8 +9,7 @@
   --mermaid-line-secondary: hsl(var(--hue), 80%, 40%);
   --mermaid-text-primary: #333;
   --mermaid-text-secondary: #555;
-
-  --mermaid-class-namespace: hsl(var(--hue), 5%, 98%);
+  --mermaid-container-primary: hsl(var(--hue), 5%, 98%);
 
   --mermaid-gantt-exclude: hsl(var(--hue), 50%, 90%);
   --mermaid-gantt-section: rgba(0, 0, 0, 0.2);
@@ -27,8 +26,7 @@
   --mermaid-line-secondary: hsl(var(--hue), 55%, 40%);
   --mermaid-text-primary: #eee;
   --mermaid-text-secondary: #bbb;
-
-  --mermaid-class-namespace: hsl(var(--hue), 20%, 10%);
+  --mermaid-container-primary: hsl(var(--hue), 20%, 10%);
 
   --mermaid-gantt-exclude: hsl(var(--hue), 95%, 5%);
   --mermaid-gantt-section: rgba(255, 255, 255, 0.8);
@@ -83,7 +81,7 @@ svg[aria-roledescription="flowchart-v2"] {
   }
 
   .cluster rect {
-    fill: var(--mermaid-class-namespace) !important;
+    fill: var(--mermaid-container-primary) !important;
     stroke: var(--mermaid-line-primary) !important;
     stroke-width: 0.5px !important;
   }
@@ -96,6 +94,35 @@ svg[aria-roledescription="flowchart-v2"] {
 }
 
 /* SWIMLANES DIAGRAM */
+/* cannot override container stroke color */
+svg[aria-roledescription="swimlane"] {
+  .label-container,
+  .label-container path {
+    fill: var(--mermaid-node-bg-primary) !important;
+    stroke: var(--mermaid-node-border-primary) !important;
+  }
+
+  .swimlane-title,
+  .swimlane-body {
+    fill: var(--mermaid-container-primary) !important;
+  }
+
+  .edgePath path {
+    stroke: var(--mermaid-line-primary) !important;
+  }
+
+  [id*="_swimlane-pointEnd"] {
+    fill: var(--mermaid-line-primary) !important;
+  }
+
+  .edgeLabel .label foreignObject div .nodeLabel p {
+    background-color: var(--card-bg) !important;
+  }
+
+  .nodeLabel {
+    color: var(--mermaid-node-text-primary) !important;
+  }
+}
 
 /* SEQUENCE DIAGRAM */
 svg[aria-roledescription="sequence"] {
@@ -211,7 +238,7 @@ svg[aria-roledescription="class"] {
   }
 
   .clusters .cluster rect {
-    fill: var(--mermaid-class-namespace) !important;
+    fill: var(--mermaid-container-primary) !important;
     stroke: var(--mermaid-node-border-secondary) !important;
   }
 

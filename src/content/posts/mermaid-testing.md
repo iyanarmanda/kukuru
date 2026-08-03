@@ -148,6 +148,71 @@ flowchart TB
   O --x P
 ```
 
+## Swimlanes Diagram
+
+```mermaid
+swimlane-beta LR
+  subgraph Customer
+    request[Request service]
+    receive[Receive update]
+  end
+
+  subgraph Support
+    triage[Triage request]
+    answer[Send answer]
+  end
+
+  subgraph Engineering
+    investigate[Investigate issue]
+    fix[Prepare fix]
+  end
+
+  request --> triage
+  triage -->|Known issue| answer
+  triage -->|Needs code change| investigate
+  investigate --> fix --> answer
+  answer --> receive
+```
+
+```mermaid
+swimlane-beta LR
+  subgraph Intake
+    start([Start])
+    task[Do work]
+    fix[Fix issues]
+  end
+
+  subgraph Review
+    decision{Ready?}
+  end
+
+  subgraph Complete
+    done((Done))
+  end
+
+  start --> task --> decision
+  decision -->|Yes| done
+  decision -->|No| fix
+  fix --> task
+```
+
+```mermaid
+swimlane-beta TB
+  subgraph ops [Operations]
+    intake[Receive request]
+    plan[Plan work]
+  end
+
+  subgraph legal [Legal]
+    review[Review contract]
+  end
+
+  intake --> plan --> review
+
+  classDef attention fill:#fff2cc,stroke:#d6a500,color:#111;
+  class review attention;
+```
+
 ## Sequence Diagram
 
 Doc: [https://mermaid.js.org/syntax/sequenceDiagram.html](https://mermaid.js.org/syntax/sequenceDiagram.html)
