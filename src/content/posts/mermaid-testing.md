@@ -1394,6 +1394,22 @@ radar-beta
   max 5
 ```
 
+## Event Modeling Diagram
+
+Doc: [https://mermaid.js.org/syntax/eventmodeling.html](https://mermaid.js.org/syntax/eventmodeling.html)
+
+```mermaid
+eventmodeling
+  tf 01 ui CartUI
+  tf 02 cmd AddItem
+  tf 03 evt ItemAdded
+
+  rf 04 evt External.InventoryChanged
+  tf 05 pcr InventoryProcessor
+  tf 06 cmd ChangeInventory
+  tf 07 evt Cart.InventoryChanged
+```
+
 ## Venn Diagram
 
 Doc: [https://mermaid.js.org/syntax/venn.html](https://mermaid.js.org/syntax/venn.html)
