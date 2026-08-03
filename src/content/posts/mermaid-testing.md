@@ -1120,3 +1120,27 @@ C4Deployment
   UpdateRelStyle(api, db2, $offsetX="-40", $offsetY="-20")
   UpdateRelStyle(db, db2, $offsetY="-10")
 ```
+
+## Mindmap
+
+Doc: [https://mermaid.js.org/syntax/mindmap.html](https://mermaid.js.org/syntax/mindmap.html)
+
+```mermaid
+mindmap
+  root((mindmap))
+    Origins
+      Long history
+      ::icon(fa fa-book)
+      Popularisation
+        {{British popular psychology author Tony Buzan}}
+    Research
+      On effectiveness<br/>and features
+      On Automatic creation
+        [Uses]
+          (Creative techniques)
+          (Strategic planning)
+          (Argument mapping)
+    Tools
+      )Pen and paper(
+      ))Mermaid((
+```

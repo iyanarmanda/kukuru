@@ -692,3 +692,47 @@ C4Context
 > Note: *C4 is on experimental*
 
 > Source: [https://mermaid.js.org/syntax/c4.html](https://mermaid.js.org/syntax/c4.html)
+
+## Mindmap
+
+```mermaid
+mindmap
+  root((mindmap))
+    Origins
+      Long history
+      ::icon(fa fa-book)
+      Popularisation
+        {{British popular psychology author Tony Buzan}}
+    Research
+      On effectiveness<br/>and features
+      On Automatic creation
+        [Uses]
+          (Creative techniques)
+          (Strategic planning)
+          (Argument mapping)
+    Tools
+      )Pen and paper(
+      ))Mermaid((
+```
+
+```
+mindmap
+  root((mindmap))
+    Origins
+      Long history
+      ::icon(fa fa-book)
+      Popularisation
+        {{British popular psychology author Tony Buzan}}
+    Research
+      On effectiveness<br/>and features
+      On Automatic creation
+        [Uses]
+          (Creative techniques)
+          (Strategic planning)
+          (Argument mapping)
+    Tools
+      )Pen and paper(
+      ))Mermaid((
+```
+
+> Source: [https://mermaid.js.org/syntax/mindmap.html](https://mermaid.js.org/syntax/mindmap.html)
