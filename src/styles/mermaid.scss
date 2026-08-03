@@ -371,6 +371,10 @@ svg[aria-roledescription="journey"] {
   line {
     stroke: var(--mermaid-text-primary) !important;
   }
+
+  marker path {
+    fill: var(--mermaid-text-primary) !important;
+  }
 }
 
 /* GANTT DIAGRAM & BAR CHART */
@@ -513,11 +517,11 @@ svg[aria-roledescription="timeline"] {
   }
 
   .lineWrapper line {
-    stroke: var(--mermaid-line-primary) !important;
+    stroke: var(--mermaid-text-primary) !important;
   }
 
   marker path {
-    fill: var(--mermaid-line-primary) !important;
+    fill: var(--mermaid-text-primary) !important;
   }
 }
 
