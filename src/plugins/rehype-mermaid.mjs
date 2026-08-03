@@ -1,7 +1,12 @@
-import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import rehypeMermaid from "rehype-mermaid";
+import * as sass from "sass";
 
-const mermaidTheme = new URL("../styles/mermaid.css", import.meta.url);
+const mermaidTheme = fileURLToPath(
+	new URL("../styles/mermaid.scss", import.meta.url),
+);
+
+const compiledCss = sass.compile(mermaidTheme).css;
 
 export const rehypeMermaidConfig = [
 	rehypeMermaid,
@@ -12,7 +17,7 @@ export const rehypeMermaidConfig = [
 			themeVariables: {
 				background: "transparent",
 			},
-			themeCSS: readFileSync(mermaidTheme, "utf-8"),
+			themeCSS: compiledCss,
 		},
 	},
 ];

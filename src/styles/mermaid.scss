@@ -1,0 +1,403 @@
+:root {
+  --mermaid-node-bg-primary: hsl(var(--hue), 15%, 95%);
+  --mermaid-node-bg-secondary: hsl(var(--hue), 20%, 70%);
+  --mermaid-node-text-primary: hsl(var(--hue), 80%, 15%);
+  --mermaid-node-text-secondary: hsl(var(--hue), 75%, 30%);
+  --mermaid-node-border-primary: hsl(var(--hue), 30%, 80%);
+  --mermaid-node-border-secondary: hsl(var(--hue), 35%, 10%);
+  --mermaid-line-primary: hsl(var(--hue), 40%, 40%);
+  --mermaid-line-secondary: hsl(var(--hue), 80%, 40%);
+  --mermaid-text-primary: #333;
+  --mermaid-text-secondary: #555;
+
+  --mermaid-class-namespace: hsl(var(--hue), 5%, 98%);
+
+  --mermaid-gantt-exclude: hsl(var(--hue), 50%, 90%);
+  --mermaid-gantt-section: rgba(0, 0, 0, 0.2);
+}
+
+.dark {
+  --mermaid-node-bg-primary: hsl(var(--hue), 20%, 15%);
+  --mermaid-node-bg-secondary: hsl(var(--hue), 20%, 50%);
+  --mermaid-node-text-primary: hsl(var(--hue), 10%, 90%);
+  --mermaid-node-text-secondary: hsl(var(--hue), 5%, 80%);
+  --mermaid-node-border-primary: hsl(var(--hue), 25%, 30%);
+  --mermaid-node-border-secondary: hsl(var(--hue), 20%, 70%);
+  --mermaid-line-primary: hsl(var(--hue), 30%, 65%);
+  --mermaid-line-secondary: hsl(var(--hue), 55%, 40%);
+  --mermaid-text-primary: #eee;
+  --mermaid-text-secondary: #bbb;
+
+  --mermaid-class-namespace: hsl(var(--hue), 20%, 10%);
+
+  --mermaid-gantt-exclude: hsl(var(--hue), 95%, 5%);
+  --mermaid-gantt-section: rgba(255, 255, 255, 0.8);
+}
+
+/* SVG */
+svg[id^="mermaid-"] {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  height: auto !important;
+
+  /* perf: painfull theme mode switch */
+  /* * {
+    transition: fill 0.3s ease, stroke 0.3s ease, color 0.3s ease; 
+  } */
+}
+
+/* FLOWCHART */
+/* cannot override junction shape */
+svg[aria-roledescription="flowchart-v2"] {
+  .label-container,
+  .node circle,
+  .node path {
+    fill: var(--mermaid-node-bg-primary) !important;
+    stroke: var(--mermaid-node-border-primary) !important;
+    stroke-width: 1.5px !important;
+  }
+
+  .nodeLabel { 
+    color: var(--mermaid-node-text-primary) !important;
+  }
+
+  .labelBkg p {
+    background-color: var(--card-bg) !important;
+  }
+
+  .edgeLabel { 
+    color: var(--mermaid-node-text-primary) !important;
+  }
+
+  .edgePaths path { 
+    stroke: var(--mermaid-line-primary) !important;
+  }
+
+  marker path,
+  marker circle {
+    fill: var(--mermaid-line-primary) !important; 
+    stroke: var(--mermaid-line-primary) !important;
+  }
+
+  .cluster rect {
+    fill: var(--mermaid-class-namespace) !important;
+    stroke: var(--mermaid-line-primary) !important;
+    stroke-width: 0.5px !important;
+  }
+
+  .node rect[class="text"] {
+    fill: none !important;
+    stroke: none !important;
+    stroke-width: none !important;
+  }
+}
+
+/* SWIMLANES DIAGRAM */
+
+/* SEQUENCE DIAGRAM */
+svg[aria-roledescription="sequence"] {
+  .messageText,
+  .sectionTitle,
+  .actor-man tspan,
+  .text tspan {
+    fill: var(--mermaid-text-primary) !important;
+  }
+  
+  .loopText tspan,
+  .sectionTitle {
+    fill: var(--mermaid-text-secondary) !important;
+  }
+  
+  .labelBox {
+    fill: var(--mermaid-node-bg-secondary) !important;
+    stroke: var(--mermaid-node-border-secondary) !important;
+  }
+  .labelText {
+    fill: var(--mermaid-node-text-secondary) !important;
+  }
+  
+  g rect.actor,
+  .actor circle,
+  g .actor,
+  .actor g,
+  g .note {
+    fill: var(--mermaid-node-bg-primary) !important;
+    stroke: var(--mermaid-node-border-primary) !important;
+  }
+  .actor-box tspan,
+  .noteText tspan {
+    fill: var(--mermaid-node-text-primary) !important;
+  }
+  
+  rect[class^="activation"] {
+    fill: var(--mermaid-node-bg-secondary) !important;
+    stroke: var(--mermaid-node-border-primary) !important;
+    stroke-width: 2px;
+  }
+  
+  .actor-line,
+  line[class^="messageLine"] {
+    stroke: var(--mermaid-line-primary) !important;
+  }
+  .loopLine,
+  path[class^="messageLine"] {
+    stroke: var(--mermaid-line-secondary) !important;
+  }
+
+  // #arrowhead
+  [id*="arrowhead"] path {
+    fill: var(--mermaid-line-primary) !important;
+    stroke: var(--mermaid-line-primary) !important;
+  }
+
+  
+  .actor-man circle,
+  .actor-man line,
+  [id*="filled-head-control"] path {
+    fill: var(--mermaid-node-bg-primary) !important;
+    stroke: var(--mermaid-text-secondary) !important;
+  }
+  .actor line {
+    stroke: var(--mermaid-text-secondary) !important;
+  }
+
+
+  .sequenceNumber {
+    fill: var(--mermaid-text-primary) !important;
+  }
+
+  g circle,
+  [id*="sequencenumber"] circle {
+    fill: var(--mermaid-node-bg-secondary) !important;
+  }
+}
+
+/* CLASS DIAGRAM */
+/* cannot override note background color */
+svg[aria-roledescription="class"] {
+  .label-container path {
+    fill: var(--mermaid-node-bg-primary) !important;
+    stroke: var(--mermaid-node-border-primary) !important;
+  }
+  .divider path {
+    stroke: var(--mermaid-node-border-secondary) !important;
+  }
+
+  .nodeLabel {
+    color: var(--mermaid-text-primary) !important;
+  }
+
+  .edgePaths path {
+    stroke: var(--mermaid-line-primary) !important;
+  }
+
+  [id*="extension"] path,
+  [id*="aggregation"] path,
+  [id*="lollipop"] circle {
+    fill: none !important; 
+    stroke: var(--mermaid-line-primary) !important;
+  }
+  [id*="-composition"] path,
+  [id*="-dependency"] path {
+    fill: var(--mermaid-line-primary) !important;
+  }
+
+  .edgeLabel p {
+    background-color: var(--card-bg) !important;
+    color: var(--mermaid-text-primary) !important;
+  }
+
+  .clusters .cluster rect {
+    fill: var(--mermaid-class-namespace) !important;
+    stroke: var(--mermaid-node-border-secondary) !important;
+  }
+
+  .classDiagramTitleText {
+    fill: var(--mermaid-text-primary) !important;
+  }
+}
+
+/* STATE DIAGRAM */
+/* cannot change the inner nested composite background color */
+svg[aria-roledescription="stateDiagram"] {
+  .node rect {
+    fill: var(--mermaid-node-bg-primary) !important;
+    stroke: var(--mermaid-node-border-primary) !important;
+  }
+
+  .nodeLabel {
+    color: var(--mermaid-text-primary) !important;
+  }
+
+  [id*="-if_state-"] path {
+    fill: none !important;
+    stroke: var(--mermaid-node-border-primary) !important;
+  }
+
+  [id*="-fork_state-"] path,
+  [id*="-join_state-"] path {
+    fill: var(--mermaid-line-primary) !important;
+    stroke: var(--mermaid-line-primary) !important;
+  }
+
+  .label-container path {
+    fill: var(--mermaid-node-bg-secondary) !important;
+    stroke: var(--mermaid-node-border-secondary) !important;
+  }
+
+  .edgePaths path {
+    stroke: var(--mermaid-line-primary) !important;
+  }
+  [id*="barbEnd"] {
+    fill: var(--mermaid-line-primary) !important;
+  }
+
+  .state-start {
+    fill: var(--mermaid-line-primary) !important;
+  }
+
+  [id*="_end-"] .outer-path > path {
+    fill: transparent !important; 
+    stroke: var(--mermaid-line-primary) !important;
+  }
+  [id*="_end-"] .outer-path g path {
+    fill: var(--mermaid-line-primary) !important;
+    stroke: var(--mermaid-line-primary) !important;
+  }
+
+  .edgeLabel {
+    color: var(--mermaid-text-primary) !important;
+  }
+  .edgeLabel p {
+    background-color: var(--card-bg) !important;
+  }
+
+  .statediagramTitleText {
+    fill: var(--mermaid-text-primary) !important;
+  }
+
+  .statediagram-cluster rect.inner {
+    stroke: var(--mermaid-node-border-primary);
+  }
+  .statediagram-cluster g rect.outer {
+    fill: var(--mermaid-node-bg-primary) !important;
+    stroke: var(--mermaid-node-border-primary);
+  }
+}
+
+/* ENTITY RELATIONSHIP DIAGRAM */
+
+/* User Journey Diagram */
+svg[aria-roledescription="journey"] {
+  .legend tspan,
+  text {
+    fill: var(--mermaid-text-primary);
+  }
+  
+  line {
+    stroke: var(--mermaid-text-primary) !important;
+  }
+}
+
+/* GANTT DIAGRAM & BAR CHART */
+/* cannot override text color of outside critical and done task text */
+svg[aria-roledescription="gantt"] {
+  .titleText,
+  .sectionTitle tspan,
+  .grid .tick text,
+  g text[class*="taskTextOutsideRight" i],
+  g text[class*="doneText" i],
+  g text[class*="doneCritText" i],
+  g text[class*="taskTextOutside" i] {
+    fill: var(--mermaid-text-primary) !important;
+  }
+
+  rect[class*="crit"] {
+    fill: #ee0000 !important;
+    stroke: #ee0000 !important;
+  }
+
+  g text.taskText[class*="critText"] {
+    fill: #fff !important;
+  }
+
+  rect[class*="active"] {
+    fill: #a9a9ff !important;
+  }
+
+  /* bug UI: stroke don't have a same width and some stroke dissapear */
+  .grid .tick line {
+    stroke-width: 1.6px !important; /* to prevent some stroke dissapear, but it cost inconsistent width */
+  }
+  
+  g rect.exclude-range {
+    fill: var(--mermaid-gantt-exclude) !important;
+  }
+
+  @for $i from 0 through 8 {
+    g .section[class$="#{$i * 2}"] {
+      fill: var(--mermaid-gantt-section) !important;
+    }
+  }
+}
+
+/* PIE CHART */
+svg[aria-roledescription="pie"] {
+  .pieTitleText,
+  .legend text {
+    fill: var(--mermaid-text-primary) !important;
+  }
+  
+  .legend rect {
+    stroke: var(--mermaid-text-primary) !important;
+  }
+}
+
+/* QUADRANT CHART */
+
+/* REQUIREMENT DIAGRAM */
+
+/* Git Graph */
+// svg[aria-roledescription="gitGraph"] {}
+
+/* C4 Diagram */
+svg[aria-roledescription="c4"] {
+  text {
+    fill: var(--mermaid-text-primary);
+  }
+}
+
+/* MIND MAP */
+
+/* TIMELINE */
+
+/* ZEN UML */
+
+/* SANKEY */
+
+/* XY CHART */
+
+/* BLOCK DIAGRAM */
+
+/* PACKET */
+
+/* KANBAN */
+
+/* ARCHITECTURE */
+
+/* EVENT MODELING */
+
+/* TREEMAP */
+
+/* VENN */
+
+/* ISHIKAWA */
+
+/* WARDLEY */
+
+/* CYNEFIN */
+
+/* TREE VIEW */

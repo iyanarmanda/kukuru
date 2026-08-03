@@ -19,7 +19,7 @@ flowchart TD
   B -->|Yes| C[OK]
   C --> D[Rethink]
   D --> B
-  B ---->|No| E[End]
+  B ---->|No| E["`**End**`"]
 ```
 
 ```mermaid
@@ -56,23 +56,163 @@ flowchart LR
   B1 --> B2
 ```
 
+### Components
+
+```mermaid
+flowchart TB
+  A@{ shape: rounded, label: "A" }
+  B@{ shape: stadium, label: "B" }
+  C@{ shape: subproc, label: "C" }
+  D@{ shape: cyl, label: "D" }
+  E@{ shape: circle, label: "E" }
+  F@{ shape: odd, label: "F" }
+  G@{ shape: diamond, label: "G" }
+  H@{ shape: hex, label: "H" }
+  I@{ shape: lean-r, label: "I" }
+  J@{ shape: lean-l, label: "J" }
+
+  K[/K\]
+  L[\L/]
+  M(((M)))
+```
+
+```mermaid
+flowchart TB
+  K@{ shape: datastore, label: "K" }
+  L@{ shape: trap-b, label: "L" }
+  M@{ shape: trap-t, label: "M" }
+  N@{ shape: dbl-circ, label: "N" }
+  O@{ shape: notch-rect, label: "O" }
+  P@{ shape: lin-rect, label: "P" }
+  Q@{ shape: manual-file, label: "Q"}
+  R@{ shape: manual-input, label: "R"}
+  S@{ shape: docs, label: "S"}
+  T@{ shape: procs, label: "T"}
+  U@{ shape: paper-tape, label: "U"}
+```
+
+```mermaid
+flowchart TB
+  V@{ shape: doc, label: "V" }
+  W@{ shape: delay, label: "W" }
+  X@{ shape: das, label: "X" }
+  Y@{ shape: lin-cyl, label: "Y" }
+  Z@{ shape: curv-trap, label: "Z" }
+  AA@{ shape: div-rect, label: "AA" }
+  AB@{ shape: tri, label: "AB" }
+  AC@{ shape: win-pane, label: "AC" }
+  AD@{ shape: lin-doc, label: "AD" }
+  AE@{ shape: notch-pent, label: "AE" }
+  AF@{ shape: flip-tri, label: "AF" }
+```
+
+```mermaid
+flowchart TB
+  AG@{ shape: sl-rect, label: "AG" }
+  AH@{ shape: docs, label: "H" }
+  AI@{ shape: processes, label: "AI" }
+  AJ@{ shape: flag, label: "AJ" }
+  AK@{ shape: bow-rect, label: "AK" }
+  AL@{ shape: tag-doc, label: "AL" }
+  AM@{ shape: tag-rect, label: "AM" }
+```
+
+```mermaid
+flowchart TB
+  A@{ shape: text, label: "Text" }
+  B@{ shape: sm-circ, label: "Small start" }
+  C@{ shape: framed-circle, label: "Stop" }
+  D@{ shape: fork, label: "Fork or Join" }
+  E@{ shape: hourglass, label: "Collate" }
+  F@{ shape: bolt, label: "Communication link" }
+  G@{ shape: f-circ, label: "Junction" }
+  H@{ shape: comment, label: "Comment" }
+  I@{ shape: brace-r, label: "Comment" }
+  J@{ shape: braces, label: "Comment" }
+  K@{ shape: bolt, label: "Communication link" }
+  L@{ shape: cross-circ, label: "Summary" }
+```
+
+```mermaid
+flowchart TB
+  A-->B
+  C --- D
+  E-.->F
+  G ==> H
+  I ~~~ J
+
+  K e1@==> L
+  e1@{ animate: true }
+
+  M --o N
+  O --x P
+```
+
 ## Sequence Diagram
 
 Doc: [https://mermaid.js.org/syntax/sequenceDiagram.html](https://mermaid.js.org/syntax/sequenceDiagram.html)
 
 ```mermaid
 sequenceDiagram
-  Alice->>Bob: Hello Bob, how are you ?
-  Bob->>Alice: Fine, thank you. And you?
-  create participant Carl
-  Alice->>Carl: Hi Carl!
-  create actor D as Donald
-  Carl->>D: Hi!
-  destroy Carl
-  Alice-xCarl: We are too many
-  destroy Bob
-  Bob->>Alice: I agree
+  participant API@{ "type": "boundary", "alias": "Public API" }
+  participant Auth@{ "type": "control", "alias": "Auth Service" }
+  participant DB@{ "type": "database", "alias": "User Database" }
+  API->>Auth: Login request
+  Auth->>DB: Query user
+  DB-->>Auth: User data
+  Auth-->>API: Access token
 ```
+
+```mermaid
+sequenceDiagram
+  participant User@{ "type": "actor" }
+  participant Entity@{ "type": "entity" }
+  participant Repository@{ "type": "collections" }
+  participant EventBroker@{ "type": "queue" }
+
+  User->>()Entity: 1. HTTP request
+  Entity->>Repository: 2. Query Batch Records
+  Repository-->>Entity: 3. Return Data List
+  Entity()->>()EventBroker: 4. Job Async Push
+  EventBroker()-->>User: 5. Callback Event Successfully
+  Note over Repository,EventBroker: A typical interaction
+```
+
+```mermaid
+sequenceDiagram
+  box Purple Alice & John
+  participant A
+  participant J
+  end
+  box Another Group
+  participant B
+  participant C
+  end
+  A->>J: Hello John, how are you?
+  J->>A: Great!
+  A->>B: Hello Bob, how is Charley?
+  B->>C: Hello Charley, how are you?
+```
+
+```mermaid
+sequenceDiagram
+  participant Alice
+  participant John
+
+  rect rgb(191, 223, 255)
+  note right of Alice: Alice calls John.
+  Alice->>+John: Hello John, how are you?
+  rect rgb(200, 150, 255)
+  Alice->>+John: John, can you hear me?
+  John-->>-Alice: Hi Alice, I can hear you!
+  end
+  John-->>-Alice: I feel great!
+  end
+  Alice ->>+ John: Did you want to go to the game tonight?
+  John -->>- Alice: Yeah! See you there.
+```
+
+### Loop, Alt, Parallel, Critical, Break
 
 ```mermaid
 sequenceDiagram
@@ -87,69 +227,52 @@ sequenceDiagram
   Bob-->>John: Jolly good!
 ```
 
-## Gantt Chart
-
-Doc: [https://mermaid.js.org/syntax/gantt.html](https://mermaid.js.org/syntax/gantt.html)
-
 ```mermaid
-gantt
-  dateFormat  YYYY-MM-DD
-  title       Adding GANTT diagram functionality to mermaid
-  excludes    weekends
-
-  section A section
-  Completed task            :done,    des1, 2014-01-06,2014-01-08
-  Active task               :active,  des2, 2014-01-09, 3d
-  Future task               :         des3, after des2, 5d
-  Future task2              :         des4, after des3, 5d
-
-  section Critical tasks
-  Completed task in the critical line :crit, done, 2014-01-06,24h
-  Implement parser and jison          :crit, done, after des1, 2d
-  Create tests for parser             :crit, active, 3d
-  Future task in critical line        :crit, 5d
-  Create tests for renderer           :2d
-  Add to mermaid                      :until isadded
-  Functionality added                 :milestone, isadded, 2014-01-25, 0d
-
-  section Documentation
-  Describe gantt syntax               :active, a1, after des1, 3d
-  Add gantt diagram to demo page      :after a1  , 20h
-  Add another diagram to demo page    :doc1, after a1  , 48h
-
-  section Last section
-  Describe gantt syntax               :after doc1, 3d
-  Add gantt diagram to demo page      :20h
-  Add another diagram to demo page    :48h
+sequenceDiagram
+  Alice->>Bob: Hello Bob, how are you?
+  alt is sick
+    Bob->>Alice: Not so good :(
+  else is well
+    Bob->>Alice: Feeling fresh like a daisy
+  end
+  opt Extra response
+    Bob->>Alice: Thanks for asking
+  end
 ```
 
 ```mermaid
-gantt
-  dateFormat HH:mm
-  axisFormat %H:%M
-  Initial vert : vert, v1, 17:30, 2m
-  Task A : 3m
-  Task B : 8m
-  Final vert : vert, v2, 17:58, 4m
+sequenceDiagram
+  par Alice to Bob
+    Alice->>Bob: Go help John
+  and Alice to John
+    Alice->>John: I want this done today
+    par John to Charlie
+      John->>Charlie: Can we do this today?
+    and John to Diana
+      John->>Diana: Can you help us today?
+    end
+  end
 ```
 
-### Bar Chart
+```mermaid
+sequenceDiagram
+  critical Establish a connection to the DB
+    Service-->DB: connect
+  option Network timeout
+    Service-->Service: Log error
+  option Credentials rejected
+    Service-->Service: Log different error
+  end
+```
 
 ```mermaid
-gantt
-  title Git Issues - days since last update
-  dateFormat X
-  axisFormat %s
-  section Issue19062
-  71   : 0, 71
-  section Issue19401
-  36   : 0, 36
-  section Issue193
-  34   : 0, 34
-  section Issue7441
-  9    : 0, 9
-  section Issue1300
-  5    : 0, 5
+sequenceDiagram
+  Consumer-->API: Book something
+  API-->BookingService: Start booking process
+  break when the booking process fails
+    API-->Consumer: show failure
+  end
+  API-->BillingService: Start billing process
 ```
 
 ## Class Diagram
@@ -305,6 +428,7 @@ classDiagram
   CEO --> Designer : oversees
 ```
 
+
 ## State Diagram
 
 Doc: [https://mermaid.js.org/syntax/stateDiagram.html](https://mermaid.js.org/syntax/stateDiagram.html)
@@ -404,6 +528,86 @@ stateDiagram-v2
   note left of State2 : This is the note to the left.
 ```
 
+## User Journey Diagram
+
+Doc: [https://mermaid.js.org/syntax/userJourney.html](https://mermaid.js.org/syntax/userJourney.html)
+
+```mermaid
+journey
+  title My working day
+  section Go to work
+    Make tea: 5: Me
+    Go upstairs: 3: Me
+    Do work: 1: Me, Cat
+  section Go home
+    Go downstairs: 5: Me
+    Sit down: 5: Me
+```
+
+## Gantt Chart
+
+Doc: [https://mermaid.js.org/syntax/gantt.html](https://mermaid.js.org/syntax/gantt.html)
+
+```mermaid
+gantt
+  dateFormat  YYYY-MM-DD
+  title       Adding GANTT diagram functionality to mermaid
+  excludes    weekends
+
+  section A section
+  Completed task            :done,    des1, 2014-01-06,2014-01-08
+  Active task               :active,  des2, 2014-01-09, 3d
+  Future task               :         des3, after des2, 5d
+  Future task2              :         des4, after des3, 5d
+
+  section Critical tasks
+  Completed task in the critical line :crit, done, 2014-01-06,24h
+  Implement parser and jison          :crit, done, after des1, 2d
+  Create tests for parser             :crit, active, 3d
+  Future task in critical line        :crit, 5d
+  Create tests for renderer           :3d
+  Functionality added                 :milestone, isadded, 2014-01-25, 0d
+
+  section Documentation
+  Describe gantt syntax               :active, a1, after des1, 3d
+  Add gantt diagram to demo page      :after a1  , 20h
+  Add another diagram to demo page    :doc1, after a1  , 48h
+
+  section Last section
+  Describe gantt syntax               :after doc1, 3d
+  Add gantt diagram to demo page      :20h
+  Add another diagram to demo page    :48h
+```
+
+```mermaid
+gantt
+  dateFormat HH:mm
+  axisFormat %H:%M
+  Initial vert : vert, v1, 17:30, 2m
+  Task A : 3m
+  Task B : 8m
+  Final vert : vert, v2, 17:58, 4m
+```
+
+### Bar Chart
+
+```mermaid
+gantt
+  title Git Issues - days since last update
+  dateFormat X
+  axisFormat %s
+  section Issue19062
+  71   : 0, 71
+  section Issue19401
+  36   : 0, 36
+  section Issue193
+  34   : 0, 34
+  section Issue7441
+  9    : 0, 9
+  section Issue1300
+  5    : 0, 5
+```
+
 ## Pie Chart
 
 Doc: [https://mermaid.js.org/syntax/pie.html](https://mermaid.js.org/syntax/pie.html)
@@ -453,20 +657,35 @@ Doc: [live editor](https://mermaid.live/edit#pako:eNqNUEtugzAQvUo064iPDQa8baseoL
     commit
 ```
 
-## User Journey Diagram
-
-Doc: [https://mermaid.js.org/syntax/userJourney.html](https://mermaid.js.org/syntax/userJourney.html)
+```mermaid
+gitGraph
+  commit
+  commit id: "Normal" tag: "v1.0.0"
+  commit
+  commit id: "Reverse" type: REVERSE tag: "RC_1"
+  commit
+  commit id: "Highlight" type: HIGHLIGHT tag: "8.8.4"
+  commit
+```
 
 ```mermaid
-journey
-  title My working day
-  section Go to work
-    Make tea: 5: Me
-    Go upstairs: 3: Me
-    Do work: 1: Me, Cat
-  section Go home
-    Go downstairs: 5: Me
-    Sit down: 5: Me
+gitGraph
+  commit id: "ZERO"
+  branch develop
+  branch release
+  commit id:"A"
+  checkout main
+  commit id:"ONE"
+  checkout develop
+  commit id:"B"
+  checkout main
+  merge develop id:"MERGE"
+  commit id:"TWO"
+  checkout release
+  cherry-pick id:"MERGE" parent:"B"
+  commit id:"THREE"
+  checkout develop
+  commit id:"C"
 ```
 
 ## C4 Diagram
