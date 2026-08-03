@@ -1,3 +1,4 @@
+// TODO: painfull theme and mode switch (performance)
 :root {
   --mermaid-node-bg-primary: hsl(var(--hue), 15%, 95%);
   --mermaid-node-bg-secondary: hsl(var(--hue), 20%, 70%);
@@ -40,11 +41,6 @@ svg[id^="mermaid-"] {
   margin-top: 2rem !important;
   margin-bottom: 2rem !important;
   height: auto !important;
-
-  /* perf: painfull theme mode switch */
-  /* * {
-    transition: fill 0.3s ease, stroke 0.3s ease, color 0.3s ease; 
-  } */
 }
 
 /* FLOWCHART */
@@ -528,6 +524,7 @@ svg[aria-roledescription="timeline"] {
 /* ZEN UML */
 
 /* SANKEY DIAGRAM */
+/* bug UI: diagram disappear on hover in Firefox */
 svg[aria-roledescription="sankey"] {
   text {
     fill: var(--mermaid-text-primary) !important;
@@ -535,6 +532,37 @@ svg[aria-roledescription="sankey"] {
 }
 
 /* XY CHART */
+svg[aria-roledescription="xychart"] {
+  .chart-title text,
+  .label text,
+  .title text {
+    fill: var(--mermaid-text-primary);
+  }
+
+  .axis-line path,
+  .axisl-line path,
+  .ticks path {
+    stroke: var(--mermaid-text-primary);
+  }
+
+  .plot {
+    rect {
+      fill: #7777ff;
+    }
+
+    path {
+      stroke: #77ff77;
+    }
+  
+    text {
+      fill: var(--mermaid-text-primary);
+    }
+
+    text[dominant-baseline="hanging"] {
+      fill: #fff;
+    }
+  }
+}
 
 /* BLOCK DIAGRAM */
 
