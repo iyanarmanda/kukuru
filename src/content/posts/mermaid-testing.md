@@ -1317,3 +1317,20 @@ kanban
     id3[Weird flickering in Firefox]
 ```
 
+## Venn Diagram
+
+Doc: [https://mermaid.js.org/syntax/venn.html](https://mermaid.js.org/syntax/venn.html)
+
+*It's Beta version*
+
+```mermaid
+venn-beta
+  set A["Frontend"]:20
+    text A1["React"]
+    text A2["Design Systems"]
+  set B["Backend"]:12
+    text B1["API"]
+  union A,B["Shared"]:3
+    text AB1["OpenAPI"]
+```
+

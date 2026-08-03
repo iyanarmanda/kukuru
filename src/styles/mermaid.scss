@@ -534,7 +534,7 @@ svg[aria-roledescription="sankey"] {
 
 /* BLOCK DIAGRAM */
 
-/* PACKET */
+/* PACKET DIAGRAM */
 svg[aria-roledescription="packet"] {
   .packetBlock {
     fill: var(--mermaid-node-bg-primary) !important;
@@ -551,7 +551,7 @@ svg[aria-roledescription="packet"] {
   }
 }
 
-/* KANBAN */
+/* KANBAN DIAGRAM */
 svg[aria-roledescription="kanban"] {
   .label-container {
     stroke: #222 !important;
@@ -565,7 +565,16 @@ svg[aria-roledescription="kanban"] {
 
 /* TREEMAP */
 
-/* VENN */
+/* VENN DIAGRAM */
+svg[aria-roledescription="venn"] {
+  tspan {
+    fill: var(--mermaid-text-primary) !important;
+  }
+
+  .venn-text-node {
+    color: var(--mermaid-text-secondary) !important;
+  }
+}
 
 /* ISHIKAWA */
 
