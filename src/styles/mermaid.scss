@@ -506,7 +506,7 @@ svg[aria-roledescription="c4"] {
 /* MIND MAP */
 // svg[aria-roledescription="mindmap"] {}
 
-/* TIMELINE */
+/* TIMELINE DIAGRAM */
 svg[aria-roledescription="timeline"] {
   > text {
     fill: var(--mermaid-text-primary) !important;
@@ -523,7 +523,12 @@ svg[aria-roledescription="timeline"] {
 
 /* ZEN UML */
 
-/* SANKEY */
+/* SANKEY DIAGRAM */
+svg[aria-roledescription="sankey"] {
+  text {
+    fill: var(--mermaid-text-primary) !important;
+  }
+}
 
 /* XY CHART */
 
