@@ -945,6 +945,60 @@ sankey
 
 > Source: [https://mermaid.js.org/syntax/sankey.html](https://mermaid.js.org/syntax/sankey.html)
 
+## XY Chart
+
+```mermaid
+---
+config:
+  xyChart:
+    width: 900
+    height: 600
+    showDataLabel: true
+---
+xychart
+  title "Sales Revenue"
+  x-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
+  y-axis "Revenue (in $)" 4000 --> 11000
+  bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+  line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+```
+
+```
+---
+config:
+  xyChart:
+    width: 900
+    height: 600
+    showDataLabel: true
+---
+xychart
+  title "Sales Revenue"
+  x-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
+  y-axis "Revenue (in $)" 4000 --> 11000
+  bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+  line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+```
+
+### Line Chart
+
+```mermaid
+xychart
+  title "Smallest AI models scoring above 60% on MMLU"
+  x-axis "Date" ["Apr 2022", "Feb 2023", "Jul 2023", "Sep 2023", "Apr 2024"]
+  y-axis "Parameters (B)" 0 --> 600
+  line [540 "PaLM", 65 "LLaMA-65B", 34 "Llama 2 34B", 7 "Mistral 7B", 3.8 "Phi-3-mini"]
+```
+
+```
+xychart
+  title "Smallest AI models scoring above 60% on MMLU"
+  x-axis "Date" ["Apr 2022", "Feb 2023", "Jul 2023", "Sep 2023", "Apr 2024"]
+  y-axis "Parameters (B)" 0 --> 600
+  line [540 "PaLM", 65 "LLaMA-65B", 34 "Llama 2 34B", 7 "Mistral 7B", 3.8 "Phi-3-mini"]
+```
+
+> Source: [https://mermaid.js.org/syntax/xyChart.html](https://mermaid.js.org/syntax/xyChart.html)
+
 ## Packet Diagram
 
 ```mermaid
