@@ -428,6 +428,44 @@ svg[aria-roledescription="pie"] {
 }
 
 /* QUADRANT CHART */
+/* bug UI: sometimes the 4th border lines are not visible */
+svg[aria-roledescription="quadrantChart"] {
+  .title text,
+  .label text {
+    fill: var(--mermaid-text-primary) !important;
+  }
+
+  .quadrants {
+    text {
+      fill: var(--mermaid-text-secondary) !important;
+    }
+
+    .quadrant:nth-child(1) rect {
+      fill: color-mix(in hsl, var(--mermaid-node-bg-primary), black 15%) !important;
+    }
+
+    .quadrant:nth-child(2) rect {
+      fill: color-mix(in hsl, var(--mermaid-node-bg-primary), black 20%) !important;
+    }
+
+    .quadrant:nth-child(3) rect {
+      fill: color-mix(in hsl, var(--mermaid-node-bg-primary), black 25%) !important;
+    }
+
+    .quadrant:nth-child(4) rect {
+      fill: color-mix(in hsl, var(--mermaid-node-bg-primary), black 30%) !important;
+    }
+  }
+
+  .border line {
+    stroke: var(--mermaid-line-primary) !important;
+  }
+
+  .data-point text,
+  .data-point circle {
+    fill: var(--mermaid-text-primary) !important;
+  }
+}
 
 /* REQUIREMENT DIAGRAM */
 
