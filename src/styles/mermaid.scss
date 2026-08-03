@@ -507,6 +507,19 @@ svg[aria-roledescription="c4"] {
 // svg[aria-roledescription="mindmap"] {}
 
 /* TIMELINE */
+svg[aria-roledescription="timeline"] {
+  > text {
+    fill: var(--mermaid-text-primary) !important;
+  }
+
+  .lineWrapper line {
+    stroke: var(--mermaid-line-primary) !important;
+  }
+
+  marker path {
+    fill: var(--mermaid-line-primary) !important;
+  }
+}
 
 /* ZEN UML */
 
