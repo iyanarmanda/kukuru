@@ -613,5 +613,62 @@ svg[aria-roledescription="ishikawa"] {
 /* WARDLEY */
 
 /* CYNEFIN */
+svg[aria-roledescription="cynefin"] {
+  .cynefinTitle {
+    fill: var(--mermaid-text-primary) !important;
+  }
+
+  .cynefinDomainLabel,
+  .cynefinSubtitle,
+  .cynefinArrowLabel,
+  .cynefinItemText {
+    fill: #fff !important;
+  }
+
+  .cynefin-backgrounds {
+    .cynefinDomain {
+      fill-opacity: 0.8 !important;
+    }
+
+    .cynefinDomain:nth-child(1) {
+      fill: #1b361f !important;
+    }
+
+    .cynefinDomain:nth-child(2) {
+      fill: #152d53 !important;
+    }
+
+    .cynefinDomain:nth-child(3) {
+      fill: #5d2617 !important;
+    }
+
+    .cynefinDomain:nth-child(4) {
+      fill: #72431c !important;
+    }
+  }
+
+  .cynefinConfusion {
+    fill: #444499 !important;
+    stroke: #fff !important;
+  }
+
+  .cynefinItem {
+    fill: #000 !important;
+    fill-opacity: 0.2 !important;
+    stroke: #fff !important;
+  }
+
+  .cynefinBoundary {
+    stroke: #fff !important;
+  }
+
+  .cynefinArrowLine {
+    stroke: #fff !important;
+  }
+
+  .cynefinArrowHead {
+    fill: #fff !important;
+  }
+}
 
 /* TREE VIEW */
