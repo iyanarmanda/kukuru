@@ -576,7 +576,28 @@ svg[aria-roledescription="venn"] {
   }
 }
 
-/* ISHIKAWA */
+/* ISHIKAWA DIAGRAM */
+svg[aria-roledescription="ishikawa"] {
+  .ishikawa-label-box,
+  .ishikawa-head {
+    fill: var(--mermaid-node-bg-primary) !important;
+    stroke: var(--mermaid-node-border-primary) !important;
+  }
+
+  tspan {
+    fill: var(--mermaid-text-primary) !important;
+  }
+
+  .ishikawa-spine,
+  .ishikawa-branch,
+  .ishikawa-sub-branch {
+    stroke: var(--mermaid-line-primary) !important;
+  }
+
+  .ishikawa-arrow {
+    fill: var(--mermaid-line-primary) !important;
+  }
+}
 
 /* WARDLEY */
 
