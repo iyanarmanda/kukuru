@@ -31,6 +31,56 @@ flowchart TD
 
 > Source: [https://mermaid.js.org/syntax/flowchart.html](https://mermaid.js.org/syntax/flowchart.html)
 
+### Swimlane Diagram
+
+```mermaid
+swimlane-beta LR
+  subgraph Customer
+    request[Request service]
+    receive[Receive update]
+  end
+
+  subgraph Support
+    triage[Triage request]
+    answer[Send answer]
+  end
+
+  subgraph Engineering
+    investigate[Investigate issue]
+    fix[Prepare fix]
+  end
+
+  request --> triage
+  triage -->|Known issue| answer
+  triage -->|Needs code change| investigate
+  investigate --> fix --> answer
+  answer --> receive
+```
+
+```
+swimlane-beta LR
+  subgraph Customer
+    request[Request service]
+    receive[Receive update]
+  end
+
+  subgraph Support
+    triage[Triage request]
+    answer[Send answer]
+  end
+
+  subgraph Engineering
+    investigate[Investigate issue]
+    fix[Prepare fix]
+  end
+
+  request --> triage
+  triage -->|Known issue| answer
+  triage -->|Needs code change| investigate
+  investigate --> fix --> answer
+  answer --> receive
+```
+
 ### Sequence Diagram
 
 ```mermaid
@@ -58,6 +108,73 @@ sequenceDiagram
 ```
 
 > Source: [https://mermaid.js.org/syntax/sequenceDiagram.html](https://mermaid.js.org/syntax/sequenceDiagram.html)
+
+### Class Diagram
+
+```mermaid
+classDiagram
+  Class01 <|-- AveryLongClass : Cool
+  <<Interface>> Class01
+  Class09 --> C2 : Where am I?
+  Class09 --* C3
+  Class09 --|> Class07
+  Class07 : equals()
+  Class07 : Object[] elementData
+  Class01 : size()
+  Class01 : int chimp
+  Class01 : int gorilla
+  class Class10 {
+    <<service>>
+    int id
+    size()
+  }
+```
+
+```
+classDiagram
+  Class01 <|-- AveryLongClass : Cool
+  <<Interface>> Class01
+  Class09 --> C2 : Where am I?
+  Class09 --* C3
+  Class09 --|> Class07
+  Class07 : equals()
+  Class07 : Object[] elementData
+  Class01 : size()
+  Class01 : int chimp
+  Class01 : int gorilla
+  class Class10 {
+    <<service>>
+    int id
+    size()
+  }
+```
+
+> Source: [https://mermaid.js.org/syntax/classDiagram.html](https://mermaid.js.org/syntax/classDiagram.html)
+
+### State Diagram
+
+```mermaid
+stateDiagram-v2
+  [*]     --> Still
+  Still   --> [*]
+  Still   --> Moving
+  Moving  --> Still
+  Moving  --> Crash
+  Crash   --> [*]
+```
+
+```
+stateDiagram-v2
+  [*]     --> Still
+  Still   --> [*]
+  Still   --> Moving
+  Moving  --> Still
+  Moving  --> Crash
+  Crash   --> [*]
+```
+
+> Source: [https://mermaid.js.org/syntax/stateDiagram.html](https://mermaid.js.org/syntax/stateDiagram.html)
+
 
 ### Gantt Chart
 
@@ -126,72 +243,6 @@ gantt
 ```
 
 > Source: [https://mermaid.js.org/syntax/gantt.html](https://mermaid.js.org/syntax/gantt.html)
-
-### Class Diagram
-
-```mermaid
-classDiagram
-  Class01 <|-- AveryLongClass : Cool
-  <<Interface>> Class01
-  Class09 --> C2 : Where am I?
-  Class09 --* C3
-  Class09 --|> Class07
-  Class07 : equals()
-  Class07 : Object[] elementData
-  Class01 : size()
-  Class01 : int chimp
-  Class01 : int gorilla
-  class Class10 {
-    <<service>>
-    int id
-    size()
-  }
-```
-
-```
-classDiagram
-  Class01 <|-- AveryLongClass : Cool
-  <<Interface>> Class01
-  Class09 --> C2 : Where am I?
-  Class09 --* C3
-  Class09 --|> Class07
-  Class07 : equals()
-  Class07 : Object[] elementData
-  Class01 : size()
-  Class01 : int chimp
-  Class01 : int gorilla
-  class Class10 {
-    <<service>>
-    int id
-    size()
-  }
-```
-
-> Source: [https://mermaid.js.org/syntax/classDiagram.html](https://mermaid.js.org/syntax/classDiagram.html)
-
-### State Diagram
-
-```mermaid
-stateDiagram-v2
-  [*]     --> Still
-  Still   --> [*]
-  Still   --> Moving
-  Moving  --> Still
-  Moving  --> Crash
-  Crash   --> [*]
-```
-
-```
-stateDiagram-v2
-  [*]     --> Still
-  Still   --> [*]
-  Still   --> Moving
-  Moving  --> Still
-  Moving  --> Crash
-  Crash   --> [*]
-```
-
-> Source: [https://mermaid.js.org/syntax/stateDiagram.html](https://mermaid.js.org/syntax/stateDiagram.html)
 
 ### Pie Chart
 
