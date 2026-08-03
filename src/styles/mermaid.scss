@@ -552,6 +552,12 @@ svg[aria-roledescription="packet"] {
 }
 
 /* KANBAN */
+svg[aria-roledescription="kanban"] {
+  .label-container {
+    stroke: #222 !important;
+    fill: #eee !important;
+  }
+}
 
 /* ARCHITECTURE */
 
