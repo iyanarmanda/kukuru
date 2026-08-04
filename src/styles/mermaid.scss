@@ -470,26 +470,31 @@ svg[aria-roledescription="quadrantChart"] {
 /* REQUIREMENT DIAGRAM */
 svg[aria-roledescription="requirement"] {
   .label-container path {
-    fill: var(--mermaid-node-bg-primary) !important;
-    stroke: var(--mermaid-node-border-primary) !important;
+    fill: var(--mermaid-node-bg-primary);
+    stroke: var(--mermaid-node-border-primary);
   }
 
   .nodeLabel {
     color: var(--mermaid-text-primary) !important;
   }
 
+  .divider path {
+    stroke: var(--mermaid-node-border-secondary);
+  }
+
   .edgeLabel p {
-    background-color: var(--card-bg) !important;
-    color: var(--mermaid-text-primary) !important;
+    background-color: var(--card-bg);
+    color: var(--mermaid-text-primary);
   }
 
   .edgePaths path {
     stroke: var(--mermaid-line-primary) !important;
   }
 
-  [id*="containsStart"] g,
-  [id*="arrowEnd"] path {
-    stroke: var(--mermaid-line-primary) !important;
+  marker {
+    g, path {
+      stroke: var(--mermaid-line-primary);
+    }
   }
 }
 
