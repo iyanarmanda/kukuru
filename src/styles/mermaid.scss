@@ -571,6 +571,37 @@ svg[aria-roledescription="xychart"] {
 }
 
 /* BLOCK DIAGRAM */
+svg[aria-roledescription="block"] {
+  .node polygon,
+  .node rect,
+  .node circle,
+  .node path {
+    fill: var(--mermaid-node-bg-primary) !important;
+    stroke: var(--mermaid-node-border-primary) !important;
+  }
+
+  rect.cluster {
+    fill: var(--mermaid-container-primary) !important;
+    stroke: var(--mermaid-node-border-secondary) !important;
+  }
+
+  .edgeLabel {
+    background-color: var(--card-bg) !important;
+  }
+
+  .nodeLabel p,
+  .edgeLabel p {
+    color: var(--mermaid-text-primary) !important;
+  }
+
+  .edge-thickness-normal {
+    stroke: var(--mermaid-line-primary) !important;
+  }
+
+  .arrowMarkerPath {
+    fill: var(--mermaid-line-primary);
+  }
+}
 
 /* PACKET DIAGRAM */
 svg[aria-roledescription="packet"] {
