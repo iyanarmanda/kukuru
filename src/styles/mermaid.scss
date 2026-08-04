@@ -10,6 +10,8 @@
   --mermaid-line-secondary: hsl(var(--hue), 80%, 40%);
   --mermaid-text-primary: #333;
   --mermaid-text-secondary: #555;
+  --mermaid-text-contrast: #000;
+  --mermaid-text-contrast-reverse: #fff;
   --mermaid-container-primary: hsl(var(--hue), 5%, 98%);
 
   --mermaid-gantt-exclude: hsl(var(--hue), 50%, 90%);
@@ -27,6 +29,8 @@
   --mermaid-line-secondary: hsl(var(--hue), 55%, 40%);
   --mermaid-text-primary: #eee;
   --mermaid-text-secondary: #bbb;
+  --mermaid-text-contrast: #fff;
+  --mermaid-text-contrast-reverse: #000;
   --mermaid-container-primary: hsl(var(--hue), 20%, 10%);
 
   --mermaid-gantt-exclude: hsl(var(--hue), 95%, 5%);
@@ -709,9 +713,86 @@ svg[aria-roledescription="ishikawa"] {
   }
 }
 
-/* WARDLEY */
+/* WARDLEY MAPS */
+svg[aria-roledescription="wardley"] {
+  .wardley-title,
+  .wardley-axis-label,
+  .wardley-stage-label,
+  .wardley-node-label,
+  .wardley-link-label,
+  .wardley-notes text {
+    fill: var(--mermaid-text-primary);
+  }
 
-/* CYNEFIN */
+  .wardley-node--anchor text {
+    fill: #0000ff;
+  }
+
+  .wardley-axes line {
+    stroke: var(--mermaid-line-secondary);
+  }
+
+  .wardley-stages line {
+    stroke: var(--mermaid-text-secondary);
+  }
+
+  .wardley-link,
+  .wardley-pipeline-evolution-link,
+  .wardley-pipelines rect {
+    stroke: var(--mermaid-line-primary);
+  }
+
+  [id^="link-arrow"] {
+    path {
+      fill: var(--mermaid-line-primary);
+    }
+  }
+  
+
+  .wardley-annotation {
+    circle {
+      fill: var(--mermaid-node-bg-secondary);
+    }
+
+    text {
+      fill: var(--mermaid-text-primary);
+    }
+  }
+
+  .wardley-node circle {
+    fill: var(--mermaid-node-bg-primary);
+    stroke: var(--mermaid-line-primary);
+  }
+
+  .wardley-accelerators,
+  .wardley-deaccelerators {
+    path {
+      fill: var(--mermaid-node-bg-secondary);
+      stroke: var(--mermaid-node-border-secondary);
+    }
+    
+    text {
+      fill: var(--mermaid-text-primary);
+    }
+  }
+
+  .wardley-annotations-box {
+    rect {
+      fill: var(--mermaid-node-bg-secondary);
+      stroke: var(--mermaid-node-border-secondary);
+    }
+
+    text {
+      fill: var(--mermaid-text-primary);
+    }
+  }
+
+  .wardley-inertia {
+    stroke: var(--mermaid-node-bg-secondary);
+  }
+}
+
+/* CYNEFIN FRAMEWORK DIAGRAM */
 svg[aria-roledescription="cynefin"] {
   .cynefinTitle {
     fill: var(--mermaid-text-primary) !important;
