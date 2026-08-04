@@ -1505,3 +1505,53 @@ cynefin-beta
   chaotic --> complex : "Stabilized"
 ```
 
+## TreeView Diagram
+
+Doc: [https://mermaid.js.org/syntax/treeView.html](https://mermaid.js.org/syntax/treeView.html)
+
+```mermaid
+treeView-beta
+├── src/
+│   ├── App.tsx :::highlight ## main component
+│   └── index.ts ## entry point
+├── .env ## environment variables
+├── Dockerfile
+└── package.json
+```
+
+```mermaid
+treeView-beta
+├── packages/
+│   ├── mermaid/
+│   │   ├── src/
+│   │   │   ├── parser.ts
+│   │   │   └── renderer.ts
+│   │   └── package.json
+│   └── parser/
+│       └── src/
+└── README.md
+```
+
+### Icons / Logos
+
+```mermaid
+---
+config:
+  treeView:
+    showIcons: true
+    defaultIconPack: material-icon-theme
+    filenameIcons:
+      Dockerfile: docker
+    extensionIcons:
+      .ts: typescript
+      .tsx: react-ts
+      .txt: none
+---
+treeView-beta
+  src/
+    App.tsx
+    utils.ts
+  Dockerfile
+  notes.txt
+  README.md
+```
