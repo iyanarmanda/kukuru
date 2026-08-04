@@ -1303,6 +1303,60 @@ xychart
   line [540 "PaLM", 65 "LLaMA-65B", 34 "Llama 2 34B", 7 "Mistral 7B", 3.8 "Phi-3-mini"]
 ```
 
+## Block Diagram
+
+Doc: [https://mermaid.js.org/syntax/block.html](https://mermaid.js.org/syntax/block.html)
+
+```mermaid
+block
+  columns 1
+    db(("DB"))
+    blockArrowId6<["&nbsp;&nbsp;&nbsp;"]>(down)
+    block:ID
+      A
+      B["A wide one in the middle"]
+      C
+    end
+    space
+    D
+    ID-- "X" -->D
+    C --> D
+```
+
+### Components
+
+```mermaid
+block
+  A("Round Edged")
+  B(["Stadium"])
+  C[["Subroutine"]]
+  D[("Cylinder")]
+  E(("Circle"))
+  F>"Asymmetric"]
+  G{"Rhombus"}
+  H{{"Hexagon"}}
+  I((("Double Circle")))
+```
+
+```mermaid
+block
+  blockArrowId<["Label"]>(right)
+  blockArrowId2<["Label"]>(left)
+  blockArrowId3<["Label"]>(up)
+  blockArrowId4<["Label"]>(down)
+  blockArrowId5<["Label"]>(x)
+  blockArrowId6<["Label"]>(y)
+  blockArrowId7<["Label"]>(x, down)
+```
+
+```mermaid
+block
+  id1[/"Parallelogram"/]
+  id2[\"Parallelogram"\]
+  A[/"Trapezoid"\]
+  B[\"Trapezoid"/]
+```
+
 ## Packet Diagram
 
 Doc: [https://mermaid.js.org/syntax/packet.html](https://mermaid.js.org/syntax/packet.html)

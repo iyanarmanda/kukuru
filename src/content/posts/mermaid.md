@@ -981,6 +981,10 @@ xychart
 
 ### Line Chart
 
+:::caution
+**Sometime Line Chart not rendering correctly**
+:::
+
 ```mermaid
 xychart
   title "Smallest AI models scoring above 60% on MMLU"
@@ -998,6 +1002,42 @@ xychart
 ```
 
 > Source: [https://mermaid.js.org/syntax/xyChart.html](https://mermaid.js.org/syntax/xyChart.html)
+
+## Block Diagram
+
+```mermaid
+block
+  columns 1
+    db(("DB"))
+    blockArrowId6<["&nbsp;&nbsp;&nbsp;"]>(down)
+    block:ID
+      A
+      B["A wide one in the middle"]
+      C
+    end
+    space
+    D
+    ID-- "X" -->D
+    C --> D
+```
+
+```
+block
+  columns 1
+    db(("DB"))
+    blockArrowId6<["&nbsp;&nbsp;&nbsp;"]>(down)
+    block:ID
+      A
+      B["A wide one in the middle"]
+      C
+    end
+    space
+    D
+    ID-- "X" -->D
+    C --> D
+```
+
+> Source: [https://mermaid.js.org/syntax/block.html](https://mermaid.js.org/syntax/block.html)
 
 ## Packet Diagram
 
