@@ -629,6 +629,15 @@ svg[aria-roledescription="kanban"] {
 }
 
 /* ARCHITECTURE */
+svg[aria-roledescription="architecture"] {
+  tspan {
+    fill: var(--mermaid-text-primary);
+  }
+
+  .node-bkg {
+    stroke: var(--mermaid-text-secondary) !important;
+  }
+}
 
 /* RADAR DIAGRAM */
 svg[aria-roledescription="radar"] {
