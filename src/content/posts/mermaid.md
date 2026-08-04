@@ -1343,3 +1343,31 @@ cynefin-beta
 
 > Source: [https://mermaid.js.org/syntax/cynefin.html](https://mermaid.js.org/syntax/cynefin.html)
 
+## TreeView Diagram
+
+:::note
+Icons / logos not supported
+:::
+
+```mermaid
+treeView-beta
+├── src/
+│   ├── App.tsx :::highlight ## main component
+│   └── index.ts ## entry point
+├── .env ## environment variables
+├── Dockerfile
+└── package.json
+```
+
+```
+treeView-beta
+├── src/
+│   ├── App.tsx :::highlight ## main component
+│   └── index.ts ## entry point
+├── .env ## environment variables
+├── Dockerfile
+└── package.json
+```
+
+> Source: [https://mermaid.js.org/syntax/treeView.html](https://mermaid.js.org/syntax/treeView.html)
+

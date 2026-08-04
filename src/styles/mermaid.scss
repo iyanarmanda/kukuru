@@ -730,4 +730,15 @@ svg[aria-roledescription="cynefin"] {
   }
 }
 
-/* TREE VIEW */
+/* TREE VIEW DIAGRAM */
+/* icons/logos not supported */
+svg[aria-roledescription="treeView"] {
+  .treeView-node-label {
+    fill: var(--mermaid-text-primary) !important;
+  }
+
+  .treeView-node-line {
+    stroke: var(--mermaid-text-primary) !important;
+  }
+}
+
