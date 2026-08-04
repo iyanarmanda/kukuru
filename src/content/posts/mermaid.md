@@ -779,6 +779,14 @@ timeline
 
 > Source: [https://mermaid.js.org/syntax/mindmap.html](https://mermaid.js.org/syntax/mindmap.html)
 
+## ZenUML
+
+:::caution
+**ZenUML** is **not supported** by [rehype-mermaid](https://github.com/remcohaszing/rehype-mermaid). Use [**Sequnce Diagram**](#sequence-diagram) istead.
+:::
+
+> Source: [https://mermaid.js.org/syntax/zenuml.html](https://mermaid.js.org/syntax/zenuml.html)
+
 ## Sankey Diagram
 
 :::caution

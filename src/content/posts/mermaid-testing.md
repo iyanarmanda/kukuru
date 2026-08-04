@@ -1166,6 +1166,13 @@ timeline
             : The first metal objects are made in Britain.Some other nice things happen. it is a good time to be alive.
 ```
 
+## ZenUML
+
+Doc: [https://mermaid.js.org/syntax/zenuml.html](https://mermaid.js.org/syntax/zenuml.html)
+
+
+**ZenUML is not supported by [rehype-mermaid](https://github.com/remcohaszing/rehype-mermaid)**
+
 ## Sankey Diagram
 
 Doc: [https://mermaid.js.org/syntax/sankey.html](https://mermaid.js.org/syntax/sankey.html)
