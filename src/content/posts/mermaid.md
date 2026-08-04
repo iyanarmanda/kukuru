@@ -1169,6 +1169,48 @@ eventmodeling
 
 > Source: [https://mermaid.js.org/syntax/eventmodeling.html](https://mermaid.js.org/syntax/eventmodeling.html)
 
+## Treemap Diagram
+
+:::warning
+**Treemap Diagram is beta version**
+:::
+
+```mermaid
+---
+config:
+  treemap:
+    valueFormat: '$0,0'
+---
+treemap-beta
+"Budget"
+  "Operations"
+    "Salaries": 700000
+    "Equipment": 200000
+    "Supplies": 100000
+  "Marketing"
+    "Advertising": 400000
+    "Events": 100000
+```
+
+```
+---
+config:
+  treemap:
+    valueFormat: '$0,0'
+---
+treemap-beta
+"Budget"
+  "Operations"
+    "Salaries": 700000
+    "Equipment": 200000
+    "Supplies": 100000
+  "Marketing"
+    "Advertising": 400000
+    "Events": 100000
+```
+
+> Source: [https://mermaid.js.org/syntax/treemap.html](https://mermaid.js.org/syntax/treemap.html)
+
 ## Venn Diagram
 
 :::warning
