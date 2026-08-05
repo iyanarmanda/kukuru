@@ -95,7 +95,7 @@ All commands are run from the root of the project, from a terminal:
         - [x] Remove **PostCSS** plugins
     - [ ] CSS Optimization
         - [ ] Refactor & reconfigure base style of `main.css`, `variables.scss` **!**
-        - [ ] Refactor `mermaid.css`
+        - [x] Refactor `mermaid.css`
         - [ ] Simplify `giscus-*.css`
     - [ ] Reconfiguring DevDependencies
         - [x] Reconfiguring **TypeScript** config
@@ -103,22 +103,13 @@ All commands are run from the root of the project, from a terminal:
         - [x] Add **Svelte** check
     - [ ] Optimazation of JS and **Svelte** islands
     - [x] Migration from Astro v5 toward Astro **v6** or **v7** **!**
-    - [x] Dependencies update (*Major Bump*)
-        - [x] `@iconify/svelte@5.2.2`
-        - [x] `remark-directive@4.0.0`
-        - [x] `remark-github-admonitions-to-directives@2.1.0`
-        - [x] `remark-directive-rehype@1.0.0`
-        - [x] `@expressive-code 0.44.0`
-        - [x] `astro-expressive-code@0.44.0`
-        - [x] `@tailwindcss/typography@0.5.20`
-        - [x] `katex@0.17.0`
-        - [x] `sharp@0.35.3`
     - [ ] Expand **Husky** utilities
     - [ ] Add and reconfigure **Dependabot**
     - [ ] Page load performance
         - [x] Image lazy load
         - [ ] Minimize icon bundle
-    - [ ] **Katex** minimization
+    - [ ] Minimize **Katex**
+    - [ ] Long page performance
     - [ ] Testing **?**
         - [x] **Vitest** (*unit testing*)
         - [ ] **Playwright** (*e2e*)
@@ -138,6 +129,8 @@ All commands are run from the root of the project, from a terminal:
             - [x] Integrate using **playwright** and **rehype-mermaid**
             - [ ] Fix UI bugs
                 - [ ] Sankey Diagram
+                - [ ] Line Chart
+                - [ ] Gantt Chart
             - [x] Expand mermaid features
         - [ ] Unlisted post (accessible via direct URL only) **?**
         - [ ] swup navigation progress bar for load content
@@ -163,7 +156,7 @@ All commands are run from the root of the project, from a terminal:
         - [ ] Music album under the tag list **?**
     - [ ] Restyle homepage and route **?**
         - [ ] Post pinning feature **?**
-        - [ ] "About" page become root and renamed to "Home"
+        - [ ] "About" page become root and renamed to "Home" **?**
 
 ## 📄 License
 
