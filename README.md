@@ -118,6 +118,7 @@ All commands are run from the root of the project, from a terminal:
     - [ ] Page load performance
         - [x] Image lazy load
         - [ ] Minimize icon bundle
+    - [ ] **Katex** minimization
     - [ ] Testing **?**
         - [x] **Vitest** (*unit testing*)
         - [ ] **Playwright** (*e2e*)
@@ -135,8 +136,9 @@ All commands are run from the root of the project, from a terminal:
         - [x] Table row colours and horizontal scroll bar
         - [ ] **Mermaid**
             - [x] Integrate using **playwright** and **rehype-mermaid**
-            - [ ] Fix UI bug
-            - [ ] Expand mermaid features
+            - [ ] Fix UI bugs
+                - [ ] Sankey Diagram
+            - [x] Expand mermaid features
         - [ ] Unlisted post (accessible via direct URL only) **?**
         - [ ] swup navigation progress bar for load content
         - [ ] Responsive for large screens
