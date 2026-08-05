@@ -990,7 +990,7 @@ xychart
 ### Line Chart
 
 :::caution
-**Sometime Line Chart not rendering correctly**
+**Sometime Line Chart not rendering correctly in Firefox**
 :::
 
 ```mermaid

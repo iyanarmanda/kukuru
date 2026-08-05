@@ -214,8 +214,12 @@ svg[aria-roledescription="class"] {
     stroke: var(--mermaid-node-border-secondary) !important;
   }
 
-  .nodeLabel {
-    color: var(--mermaid-text-primary) !important;
+  .nodeLabel p {
+    color: var(--mermaid-text-primary);
+  }
+
+  .undefined .markdown-node-label p {
+    color: #222;
   }
 
   .edgePaths path {
@@ -306,18 +310,21 @@ svg[aria-roledescription="stateDiagram"] {
     fill: var(--mermaid-text-primary) !important;
   }
 
-  .statediagram-cluster-alt rect {
-   fill: var(--mermaid-container-primary) !important; 
-  }
   .statediagram-cluster {
     .inner {
-      stroke: var(--mermaid-node-border-primary) !important;
-    }
-    .outer {
       fill: var(--mermaid-node-bg-primary) !important;
       stroke: var(--mermaid-node-border-primary) !important;
     }
-  }  
+    .outer {
+      fill: var(--mermaid-node-bg-secondary) !important;
+      stroke: var(--mermaid-node-border-secondary) !important;
+    }
+  }
+  .statediagram-cluster-alt {
+    .inner {
+      fill: var(--mermaid-container-primary) !important; 
+    }
+  }
 }
 
 /* ENTITY RELATIONSHIP DIAGRAM */
@@ -380,32 +387,6 @@ svg[aria-roledescription="gantt"] {
   .grid .tick text,
   .taskTextOutsideRight {
     fill: var(--mermaid-text-primary) !important;
-  }
-
-  .task[class*="crit"] {
-    fill: #ee3434 !important;
-    stroke: #ee3434 !important;
-  }
-
-  [class*="critText"] {
-    fill: #fff !important;
-  }
-
-  [class*="active"] {
-    fill: #85acff !important;
-  }
-
-  .task[class*="activeCrit"] {
-    stroke: #ee3434 !important;
-  }
-
-  .task[class*="done"] {
-    fill: #eee !important;
-    stroke: #ccc !important;
-  }
-
-  .task[class*="doneCrit"] {
-    stroke: #ee3434 !important;
   }
 
   /* bug UI: stroke don't have a same width and some stroke dissapear */
@@ -551,33 +532,13 @@ svg[aria-roledescription="sankey"] {
 /* XY CHART */
 /* bug UI: sometimes the line chart not rendering correctly */
 svg[aria-roledescription="xychart"] {
-  .chart-title text,
-  .label text,
-  .title text {
-    fill: var(--mermaid-text-primary);
-  }
-
-  .axis-line path,
-  .axisl-line path,
-  .ticks path {
-    stroke: var(--mermaid-text-primary);
-  }
-
   .plot {
-    rect {
-      fill: #7777ff;
-    }
-
     path {
       stroke: #77ff77;
     }
-  
-    text {
-      fill: var(--mermaid-text-primary);
-    }
 
-    text[dominant-baseline="hanging"] {
-      fill: #fff;
+    text[dominant-baseline="middle"] {
+      fill: #5555dd;
     }
   }
 }
@@ -638,12 +599,7 @@ svg[aria-roledescription="packet"] {
 }
 
 /* KANBAN DIAGRAM */
-svg[aria-roledescription="kanban"] {
-  .label-container {
-    stroke: #222 !important;
-    fill: #eee !important;
-  }
-}
+// svg[aria-roledescription="kanban"] {}
 
 /* ARCHITECTURE */
 svg[aria-roledescription="architecture"] {
@@ -651,8 +607,14 @@ svg[aria-roledescription="architecture"] {
     fill: var(--mermaid-text-primary);
   }
 
-  .node-bkg {
+  .node-bkg,
+  .architecture-edges path {
     stroke: var(--mermaid-text-secondary) !important;
+  }
+
+  .arrow {
+    fill: var(--mermaid-text-secondary) !important;
+    stroke: var(--mermaid-text-secondary);
   }
 }
 
@@ -694,7 +656,7 @@ svg[aria-roledescription="eventmodeling"] {
 
 /* VENN DIAGRAM */
 svg[aria-roledescription="venn"] {
-  tspan {
+  .venn-intersection tspan {
     fill: var(--mermaid-text-primary);
   }
 
@@ -727,83 +689,7 @@ svg[aria-roledescription="ishikawa"] {
 }
 
 /* WARDLEY MAPS */
-svg[aria-roledescription="wardley"] {
-  .wardley-title,
-  .wardley-axis-label,
-  .wardley-stage-label,
-  .wardley-node-label,
-  .wardley-link-label,
-  .wardley-notes text {
-    fill: var(--mermaid-text-primary);
-  }
-
-  .wardley-node--anchor text {
-    fill: #0000ff;
-  }
-
-  .wardley-axes line {
-    stroke: var(--mermaid-line-secondary);
-  }
-
-  .wardley-stages line {
-    stroke: var(--mermaid-text-secondary);
-  }
-
-  .wardley-link,
-  .wardley-pipeline-evolution-link,
-  .wardley-pipelines rect {
-    stroke: var(--mermaid-line-primary);
-  }
-
-  [id^="link-arrow"] {
-    path {
-      fill: var(--mermaid-line-primary);
-    }
-  }
-  
-
-  .wardley-annotation {
-    circle {
-      fill: var(--mermaid-node-bg-secondary);
-    }
-
-    text {
-      fill: var(--mermaid-text-primary);
-    }
-  }
-
-  .wardley-node circle {
-    fill: var(--mermaid-node-bg-primary);
-    stroke: var(--mermaid-line-primary);
-  }
-
-  .wardley-accelerators,
-  .wardley-deaccelerators {
-    path {
-      fill: var(--mermaid-node-bg-secondary);
-      stroke: var(--mermaid-node-border-secondary);
-    }
-    
-    text {
-      fill: var(--mermaid-text-primary);
-    }
-  }
-
-  .wardley-annotations-box {
-    rect {
-      fill: var(--mermaid-node-bg-secondary);
-      stroke: var(--mermaid-node-border-secondary);
-    }
-
-    text {
-      fill: var(--mermaid-text-primary);
-    }
-  }
-
-  .wardley-inertia {
-    stroke: var(--mermaid-node-bg-secondary);
-  }
-}
+// svg[aria-roledescription="wardley"] {}
 
 /* CYNEFIN FRAMEWORK DIAGRAM */
 svg[aria-roledescription="cynefin"] {
