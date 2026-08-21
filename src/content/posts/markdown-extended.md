@@ -83,6 +83,22 @@ This is a note with a custom title.
 > The GitHub syntax is also supported.
 ```
 
+### Ruby Text
+
+Add small characters above the text. For example:
+
+- Welcome to {Tokyo}^(とうきょう)!
+- {[漢][字]}^([かん][じ]) are Japanese characters.
+- He is a {rookie}^(beginner) in this baseball team.
+
+```markdown
+Welcome to {Tokyo}^(とうきょう)!
+
+{[漢][字]}^([かん][じ]) are Japanese characters.
+
+He is a {rookie}^(beginner) in this baseball team.
+```
+
 ### Spoiler
 
 You can add spoilers to your text. The text also supports **Markdown** syntax.

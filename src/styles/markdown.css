@@ -143,4 +143,8 @@
     tr:nth-child(even) td {
         @apply bg-(--btn-plain-bg-hover);
     }
+
+    ruby rt {
+        padding-bottom: 0.3em; 
+    }
 }
