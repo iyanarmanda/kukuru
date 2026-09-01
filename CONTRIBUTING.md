@@ -16,5 +16,5 @@ Please use the [Conventional Commits](https://www.conventionalcommits.org/) form
 Before starting code, please run prepare script for automatically Biome formatting (`pnpm format`) on git commit and prevent error astro error (`pnpm check`) and TypeScript error (`pnpm type-check`) on git push.
 
 ```bash
-pnpm prepare
+pnpm local-prepare
 ```
