@@ -67,7 +67,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm playwright install --with-deps chromium
 
       - name: Run Astro Build
         run: pnpm astro build
