@@ -17,6 +17,7 @@
 		"test": "vitest",
 		"test-coverage": "vitest run --coverage",
 		"preinstall": "npx only-allow pnpm",
+		"prepare": "pnpm playwright install --with-deps chromium",
 		"local-prepare": "husky && pnpm playwright install --with-deps chromium"
 	},
 	"dependencies": {
