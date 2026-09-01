@@ -19,7 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7 
+      - name: Install playwright
+        run: npx playwright install --with-deps chromium
       - name: Install, build, and upload site
         uses: withastro/action@v6
 
@@ -33,3 +35,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
