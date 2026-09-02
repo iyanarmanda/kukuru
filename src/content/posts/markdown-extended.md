@@ -99,6 +99,10 @@ Welcome to {Tokyo}^(とうきょう)!
 He is a {rookie}^(beginner) in this baseball team.
 ```
 
+:::warning
+Ruby Text not supported on **post title** and **TOC**
+:::
+
 ### Spoiler
 
 You can add spoilers to your text. The text also supports **Markdown** syntax.
