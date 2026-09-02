@@ -17,8 +17,8 @@
 		"test": "vitest",
 		"test-coverage": "vitest run --coverage",
 		"preinstall": "npx only-allow pnpm",
-		"prepare": "pnpm playwright install --with-deps chromium",
-		"local-prepare": "husky && pnpm playwright install --with-deps chromium"
+		"prepare": "pnpm playwright install",
+		"local-prepare": "husky && pnpm playwright install"
 	},
 	"dependencies": {
 		"@astrojs/markdown-remark": "^7.3.0",
